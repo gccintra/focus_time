@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% set exclude_header = true %}
+
+
+{% block content %}
+
+    <div class="my-4" id="taskTitle">
+        <div id="taskTitleContent" class="d-flex align-items-center gap-4">
+            <i class="bi bi-chevron-left" id="backButtom"></i>
+            <span>{{ task.title }}</span>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="container text-center">
+        <!-- Cronômetro -->
+        <p class="mb-4">Time in Focus Today: </p>
+        <div id="timer" class="mb-4">
+            <span>00:00:00</span>
+        </div>
+        <button class="btn btn-custom" onclick="startTimer()">Start</button>
+    </div>
+    
+{% endblock %}
+
+
+{% block script %}
+    <script>
+
+        document.getElementById('backButtom').addEventListener('click', function() {
+            window.location.href = `/tasks/`;
+        });
+
+
+
+        let timerInterval;
+        let startTime = null;
+
+        function formatTime(duration) {
+        const hours = Math.floor(duration / 3600);
+        const minutes = Math.floor((duration % 3600) / 60);
+        const seconds = duration % 60;
+        return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+
+        function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        startTime = new Date();
+        timerInterval = setInterval(() => {
+            const currentTime = new Date();
+            const elapsedSeconds = Math.floor((currentTime - startTime) / 1000);
+            document.getElementById('timer').innerText = formatTime(elapsedSeconds);
+        }, 1000);
+        }
+    </script>
+  {% endblock %}

@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+  <!-- Task Grid -->  
+  <div class="row g-5 my-5" id="taskGrid">
+    {% for task in tasks %}
+      <div class="col-md-4">
+        <!-- ignora esse erro, o html não está reconhecendo o jinja -->
+        <div 
+          class="custom-card" 
+          style="border-color: {{ task.color }}"
+          data-id="{{ task.identificator }}"
+        > 
+          <h3>{{ task.title }}</h3>
+          <p>Today: {{  task.today_total_time  }}</p>
+          <p>Week: {{  task.week_total_time  }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+
+
+
+  <!-- Button New Task -->
+
+  <div class="d-grid py-3">
+    <button class="btn btn-primary py-3 fs-5" type="button" data-bs-toggle="modal" data-bs-target="#newTask">New Task</button>
+  </div>
+
+
+
+  <!-- Modal New Task -->
+
+  <div class="modal fade" id="newTask"  data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="newTaskLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="newTaskLabel">New Task</h3>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="row g-3">
+              <div class="col-md-10">
+                <label for="taskName" class="form-label modal-label">Task Name</label>
+                <input type="text" class="form-control" id="taskName" placeholder="Digite algo">
+              </div>
+              <div class="col-md-2">
+                <label for="taskColor" class="form-label modal-label">Color</label>
+                <input type="color" class="form-control form-control-color" id="taskColor" value="#563d7c">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary w-100 fs-5 py-3" type="button" id="createTask">Create Task</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
+
+{% block script %}
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    document.querySelectorAll('.custom-card').forEach(function(card) {
+      card.addEventListener('click', function() {
+          const taskId = card.getAttribute('data-id');
+          if (taskId) {
+              window.location.href = `/tasks/start_task/${taskId}`;
+          }
+      });
+    });
+
+    document.getElementById('createTask').addEventListener('click', function() {
+      // Captura os valores dos inputs
+      var taskName = document.getElementById('taskName').value;
+      var taskColor = document.getElementById('taskColor').value;
+
+      // Verifica se o nome da tarefa foi preenchido
+      if (taskName.trim() !== "") {
+        // Envia os dados ao servidor usando AJAX
+        fetch("/tasks/new_task", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ name: taskName, color: taskColor })
+        })
+        .then(response => response.json())
+        .then(data => {
+          // Adiciona a nova tarefa à página
+          var taskHTML = `
+            <div class="col-md-4">
+              <div class="custom-card" style="border-color: ${data.color}">
+                <h3>${data.name}</h3>
+                <p>Today: ${data.today_total_time}</p>
+                <p>Week: ${data.week_total_time}</p>
+              </div>
+            </div>
+          `;
+          document.querySelector('#taskGrid').innerHTML += taskHTML;
+          $('#newTask').modal('hide'); 
+        });
+      } else {
+        alert("Please provide a task name.");
+      }
+    });
+  </script>
+{% endblock %}

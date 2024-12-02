@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Stick+No+Bills:wght@200..800&display=swap');
+
+body {
+    background-color: #212121; 
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+
+}
+
+
+/* NavBar */
+
+.navbar {
+    background-color: #212121 !important;
+}
+
+.navbar .navbar-brand, 
+.navbar .nav-link {
+    color: #ffffff !important;
+}
+
+.navbar .navbar-brand{
+    font-family: "Stick No Bills", sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+}
+
+.navbar .nav-link {
+    font-size: 20px;
+
+}
+
+.nav-link.active {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Primary Button */
+
+.btn-primary {
+    background-color: #000000;  
+    color: #ffffff;  
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #161616;  
+}
+
+.btn-primary:active {
+    background-color: #161616 !important; 
+    border-color: #161616 !important;    
+}
+
+
+
+/* My Tasks Modal New Task */
+
+#newTask .modal-content{
+    background-color: #212121;
+    border-color: #696969;
+}
+
+#newTask .modal-header{
+    border-color: #ffffff;
+}
+
+#newTask .modal-footer{
+    border: none;
+}
+
+#newTask .modal-label{
+    font-weight: 200;
+}
+
+
+
+
+
+.custom-card {
+    background-color: #474747;  /* Cor de fundo similar ao cinza */
+    color: white;               /* Cor do texto */
+    border-radius: 15px;        /* Bordas arredondadas */
+    padding: 20px;
+    border: 2px solid transparent;
+}
+
+#taskTitle {
+    background-color: #474747;
+    border-radius: 15px;    
+    border: 2px solid transparent;
+    color: white;
+}
+
+#taskTitleContent {
+    padding: 20px;
+}
+
+
+
+#taskTitle span {
+    font-size: 32px;
+
+}
+
+#taskTitle #backButtom {
+    cursor: pointer; 
+    font-size: 2.2rem;
+}
+
+#taskTitle #backButtom:hover {
+    color: #e700c8; 
+    transform: scale(1.1); /* Um pequeno efeito de aumentar o ícone */
+    transition: all 0.3s ease; /* Adiciona uma transição suave ao efeito de hover */
+}

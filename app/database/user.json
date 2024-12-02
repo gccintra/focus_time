@@ -1,0 +1,56 @@
+[
+    {
+        "identificator": "6554752a-6dfa-44b7-bc01-6703d1e88250",
+        "title": "Jogar MK1",
+        "color": "#ff007b",
+        "time_in_focus_per_day": {
+            "2024-11-30": "4h11m",
+            "2024-12-01": "2h23m",
+            "2024-12-02": "1h23m",
+            "2024-12-03": "6h42m",
+            "2024-12-04": "4h29m",
+            "2024-12-05": "1h33m",
+            "2024-12-06": "1h12m"
+        }
+    },
+    {
+        "identificator": "163d9725-3519-474e-8e68-fc446ad71303",
+        "title": "Estudar",
+        "color": "#d400ff",
+        "time_in_focus_per_day": {
+            "2024-11-30": "4h11m",
+            "2024-12-01": "2h23m",
+            "2024-12-02": "1h23m",
+            "2024-12-03": "6h42m",
+            "2024-12-04": "4h29m",
+            "2024-12-05": "1h33m",
+            "2024-12-06": "1h12m"
+        }
+    },
+    {
+        "identificator": "69e1df5c-3133-495f-90a6-f64416acce64",
+        "title": "Trabalhar",
+        "color": "#009dff",
+        "time_in_focus_per_day": {
+            "2024-11-30": "4h11m",
+            "2024-12-01": "2h23m",
+            "2024-12-02": "1h23m",
+            "2024-12-03": "6h42m",
+            "2024-12-04": "4h29m",
+            "2024-12-05": "1h33m",
+            "2024-12-06": "1h12m"
+        }
+    },
+    {
+        "identificator": "4763e43a-4eec-463b-8853-6de552878c12",
+        "title": "chat gpt",
+        "color": "#ffdd00",
+        "time_in_focus_per_day": {}
+    },
+    {
+        "identificator": "5e0ab18c-c242-4a6a-8912-e33ec3a318be",
+        "title": "sdas",
+        "color": "#563d7c",
+        "time_in_focus_per_day": {}
+    }
+]
