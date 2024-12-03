@@ -7,8 +7,6 @@ task_bp = Blueprint("task", __name__, url_prefix="/tasks")
 db = DataRecord("user.json")
 
 
-# ver como atualizar os dados, chamar esse metodo, sempre que o usuario dar f5, atualmente so funciona se fechar e abrir o servidor.
-
 @task_bp.route("/", methods=["GET"])
 def my_tasks():
     tasks_data = db.get_models()
@@ -19,7 +17,7 @@ def my_tasks():
             identificator=task_data.get('identificator'),
             title=task_data.get('title'),
             color=task_data.get('color'), 
-            time_in_focus_per_day=task_data.get("time_in_focus_per_day")
+            minutes_in_focus_per_day=task_data.get("minutes_in_focus_per_day")
         )
         tasks.append(task_data)
         
@@ -44,7 +42,7 @@ def new_task():
         'week_total_time': new_task.week_total_time
     })
 
-@task_bp.route("/start_task/<task_id>", methods=["GET", "POST"])
+@task_bp.route("/<task_id>", methods=["GET", "POST"])
 def start_task(task_id):
     tasks_data = db.get_models()
 
@@ -54,10 +52,9 @@ def start_task(task_id):
             identificator=task_data.get('identificator'),
             title=task_data.get('title'),
             color=task_data.get('color'), 
-            time_in_focus_per_day=task_data.get("time_in_focus_per_day")
+            minutes_in_focus_per_day=task_data.get("minutes_in_focus_per_day")
             )
             break
-       
 
     return render_template("start_task.html", title="Start Task", task=task)
 

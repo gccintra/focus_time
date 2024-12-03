@@ -32,6 +32,7 @@ class DataRecord:
             print(f"Erro ao salvar os dados: {e}")
 
     def get_models(self):
+        self.read()
         return self.__models
 
     def id_exists(self, tasks, new_id):

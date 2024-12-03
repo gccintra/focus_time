@@ -72,7 +72,7 @@
       card.addEventListener('click', function() {
           const taskId = card.getAttribute('data-id');
           if (taskId) {
-              window.location.href = `/tasks/start_task/${taskId}`;
+              window.location.href = `/tasks/${taskId}`;
           }
       });
     });
