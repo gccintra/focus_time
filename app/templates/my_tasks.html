@@ -22,14 +22,11 @@
   </div>
 
 
-
-
   <!-- Button New Task -->
 
   <div class="d-grid py-3">
     <button class="btn btn-primary py-3 fs-5" type="button" data-bs-toggle="modal" data-bs-target="#newTask">New Task</button>
   </div>
-
 
 
   <!-- Modal New Task -->
@@ -68,23 +65,22 @@
 {% block script %}
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
-    document.querySelectorAll('.custom-card').forEach(function(card) {
-      card.addEventListener('click', function() {
+
+    document.getElementById('taskGrid').addEventListener('click', function(event) {
+      const card = event.target.closest('.custom-card');
+      if (card) {
           const taskId = card.getAttribute('data-id');
           if (taskId) {
               window.location.href = `/tasks/${taskId}`;
           }
-      });
-    });
+      }
+  });
 
     document.getElementById('createTask').addEventListener('click', function() {
-      // Captura os valores dos inputs
       var taskName = document.getElementById('taskName').value;
       var taskColor = document.getElementById('taskColor').value;
 
-      // Verifica se o nome da tarefa foi preenchido
       if (taskName.trim() !== "") {
-        // Envia os dados ao servidor usando AJAX
         fetch("/tasks/new_task", {
           method: "POST",
           headers: {
@@ -94,10 +90,9 @@
         })
         .then(response => response.json())
         .then(data => {
-          // Adiciona a nova tarefa à página
           var taskHTML = `
             <div class="col-md-4">
-              <div class="custom-card" style="border-color: ${data.color}">
+              <div class="custom-card" style="border-color : ${data.color}" data-id="${data.id}">
                 <h3>${data.name}</h3>
                 <p>Today: ${data.today_total_time}</p>
                 <p>Week: ${data.week_total_time}</p>
@@ -111,5 +106,6 @@
         alert("Please provide a task name.");
       }
     });
+
   </script>
 {% endblock %}

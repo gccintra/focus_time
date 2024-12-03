@@ -17,7 +17,7 @@
         <div class="mt-5 d-inline-block text-start"> 
             <p class="mb-3">Time in Focus Today:</p>
             <div id="timer" class="mb-4">
-                <span class="display-1">00:00:00</span>
+                <span class="display-1" id="timerStr">{{ task.today_total_time_cronometer }}</span>
             </div>
             <button class="btn btn-primary w-100 py-2 fs-4">Start</button>
         </div>
@@ -34,26 +34,54 @@
             window.location.href = `/tasks/`;
         });
 
-
-
         let timerInterval;
-        let startTime = null;
+        let elapsedTime = parseInt("{{ task.today_total_seconds_cronometer }}") || 0;
+        let isRunning = false;
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            const startButton = document.querySelector(".btn-primary");
+            const timerDisplay = document.getElementById("timerStr");
+            const taskId = "{{ task.identificator }}"; 
+        
+            startButton.addEventListener("click", function() {
+                if (isRunning) {
+                    // Parar cronômetro e enviar dados para o backend
+                    clearInterval(timerInterval);
+                    isRunning = false;
+                    startButton.textContent = "Start";
+        
+                    // Enviar minutos para o backend
+                    fetch(`/tasks/update_task_time/${taskId}`, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ elapsed_minutes: Math.floor(elapsedTime / 60) })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log("Tempo atualizado no backend:", data);
+                    })
+                    .catch(error => console.error("Erro ao atualizar:", error));
+                } else {
+                    isRunning = true;
+                    startButton.textContent = "Stop";
+                    updateTimerDisplay(timerDisplay, elapsedTime);
+                    timerInterval = setInterval(() => {
+                        elapsedTime += 1;
+                        updateTimerDisplay(timerDisplay, elapsedTime);
+                    }, 1000);
+                }
+            });
+        
+            function updateTimerDisplay(timerDisplay, seconds) {
+                const hours = String(Math.floor(seconds / 3600)).padStart(2, '0');
+                const minutes = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+                const secs = String(seconds % 60).padStart(2, '0');
+                timerDisplay.textContent = `${hours}:${minutes}:${secs}`;
+            }
+        });
+        
 
-        function formatTime(duration) {
-        const hours = Math.floor(duration / 3600);
-        const minutes = Math.floor((duration % 3600) / 60);
-        const seconds = duration % 60;
-        return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-        }
-
-        function startTimer() {
-        if (timerInterval) clearInterval(timerInterval);
-        startTime = new Date();
-        timerInterval = setInterval(() => {
-            const currentTime = new Date();
-            const elapsedSeconds = Math.floor((currentTime - startTime) / 1000);
-            document.getElementById('timer').innerText = formatTime(elapsedSeconds);
-        }, 1000);
-        }
     </script>
   {% endblock %}

@@ -20,6 +20,7 @@ def my_tasks():
             minutes_in_focus_per_day=task_data.get("minutes_in_focus_per_day")
         )
         tasks.append(task_data)
+
         
     return render_template("my_tasks.html", title="My Tasks", active_page="home", tasks=tasks)
 
@@ -36,8 +37,9 @@ def new_task():
 
     # Retorna os dados da tarefa criada para o frontend
     return jsonify({
+        'id': new_task.identificator,
         'name': new_task.title,
-        'color': task_color,
+        'color': new_task.color,
         'today_total_time': new_task.today_total_time,
         'week_total_time': new_task.week_total_time
     })
@@ -55,8 +57,31 @@ def start_task(task_id):
             minutes_in_focus_per_day=task_data.get("minutes_in_focus_per_day")
             )
             break
+    
 
     return render_template("start_task.html", title="Start Task", task=task)
 
+
+@task_bp.route("/update_task_time/<task_id>", methods=["POST"])
+def update_task_time(task_id):
+    tasks_data = db.get_models()
+    data = request.get_json()
+    minutes = int(data.get("elapsed_minutes"))
+
+    for task_data in tasks_data:
+        if task_id == task_data.get('identificator'):
+            task = Task(
+            identificator=task_data.get('identificator'),
+            title=task_data.get('title'),
+            color=task_data.get('color'), 
+            minutes_in_focus_per_day=task_data.get("minutes_in_focus_per_day")
+            )
+            break
+
+    task.set_minutes_in_focus_per_day(minutes)
+    db.save()
+    return jsonify({
+        'minutes': task.today_total_minutes,
+    })
 
 

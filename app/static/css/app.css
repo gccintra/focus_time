@@ -84,6 +84,7 @@ body {
     border-radius: 15px;        /* Bordas arredondadas */
     padding: 20px;
     border: 2px solid transparent;
+    cursor: pointer; 
 }
 
 #taskTitle {
@@ -114,3 +115,6 @@ body {
     transform: scale(1.1); /* Um pequeno efeito de aumentar o ícone */
     transition: all 0.3s ease; /* Adiciona uma transição suave ao efeito de hover */
 }
+
+
+
