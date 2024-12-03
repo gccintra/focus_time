@@ -38,28 +38,26 @@ def new_task():
     # Retorna os dados da tarefa criada para o frontend
     return jsonify({
         'id': new_task.identificator,
-        'name': new_task.title,
+        'name': new_task.title, 
         'color': new_task.color,
         'today_total_time': new_task.today_total_time,
         'week_total_time': new_task.week_total_time
     })
 
-@task_bp.route("/<task_id>", methods=["GET", "POST"])
+@task_bp.route("/<task_id>", methods=["GET"])
 def start_task(task_id):
     tasks_data = db.get_models()
-
+    
     for task_data in tasks_data:
         if task_id == task_data.get('identificator'):
-            task = Task(
+            principal_task = Task(
             identificator=task_data.get('identificator'),
             title=task_data.get('title'),
             color=task_data.get('color'), 
             minutes_in_focus_per_day=task_data.get("minutes_in_focus_per_day")
             )
-            break
     
-
-    return render_template("start_task.html", title="Start Task", task=task)
+    return render_template("start_task.html", title="Start Task", task=principal_task)
 
 
 @task_bp.route("/update_task_time/<task_id>", methods=["POST"])
@@ -85,3 +83,26 @@ def update_task_time(task_id):
     })
 
 
+@task_bp.route("/get_data_for_chart", methods=["GET"])
+def task_data():
+    tasks_data = db.get_models()
+    tasks_for_chart = []
+
+    for task_data in tasks_data:
+        task = Task(
+            identificator=task_data.get('identificator'),
+            title=task_data.get('title'),
+            color=task_data.get('color'), 
+            minutes_in_focus_per_day=task_data.get("minutes_in_focus_per_day")
+        )
+        if task.today_total_minutes != 0:
+            tasks_for_chart.append({
+                "identificator": task.identificator,
+                "title": task.title,
+                "color": task.color,
+                "minutes": task.today_total_minutes
+            })
+
+    # Só enviar as tasks se tiver today_total_minutes
+    create_chart = len(tasks_for_chart) > 0
+    return jsonify({"tasks": tasks_for_chart, "createChart": create_chart})

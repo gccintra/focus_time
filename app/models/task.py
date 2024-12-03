@@ -38,13 +38,13 @@ class Task:
         return formatted_time
     
     @property
-    def today_total_time_cronometer(self):
+    def today_total_time_timer(self):
         hours, minutes = divmod(self.today_total_minutes, 60)
         formatted_time = f"{hours:02}:{minutes:02}:00"
         return formatted_time 
 
     @property
-    def today_total_seconds_cronometer(self):
+    def today_total_seconds_timer(self):
         seconds = self.today_total_minutes * 60
         return seconds 
     
