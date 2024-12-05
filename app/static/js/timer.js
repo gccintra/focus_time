@@ -1,6 +1,7 @@
 let timerInterval;
 let elapsedTime = parseInt(task_data.today_total_seconds) || 0;
 let isRunning = false;
+let startTime
 
 document.addEventListener("DOMContentLoaded", function() {
     const startButton = document.querySelector(".btn-primary");
@@ -20,21 +21,25 @@ document.addEventListener("DOMContentLoaded", function() {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ elapsed_minutes: Math.floor(elapsedTime / 60) })
+                body: JSON.stringify({ elapsed_seconds: elapsedTime })
             })
             .then(response => response.json())
             .then(data => {
-                console.log("Tempo atualizado no backend:", data);
+                console.log(data);
             })
             .catch(error => console.error("Erro ao atualizar:", error));
         } else {
+            startTime = Date.now() - elapsedTime * 1000;
             isRunning = true;
             startButton.textContent = "Stop";
-            updateTimerDisplay(timerDisplay, elapsedTime);
+
+
             timerInterval = setInterval(() => {
-                elapsedTime += 60;
+                elapsedTime = Math.floor((Date.now() - startTime) / 1000);
                 updateTimerDisplay(timerDisplay, elapsedTime);
             }, 1000);
+
+
         }
     });
 

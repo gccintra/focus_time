@@ -17,7 +17,7 @@ def my_tasks():
             identificator=task_data.get('identificator'),
             title=task_data.get('title'),
             color=task_data.get('color'), 
-            minutes_in_focus_per_day=task_data.get("minutes_in_focus_per_day")
+            seconds_in_focus_per_day=task_data.get("seconds_in_focus_per_day")
         )
         tasks.append(task_data)
 
@@ -54,7 +54,7 @@ def start_task(task_id):
             identificator=task_data.get('identificator'),
             title=task_data.get('title'),
             color=task_data.get('color'), 
-            minutes_in_focus_per_day=task_data.get("minutes_in_focus_per_day")
+            seconds_in_focus_per_day=task_data.get("seconds_in_focus_per_day")
             )
     
     return render_template("start_task.html", title="Start Task", task=principal_task)
@@ -64,7 +64,7 @@ def start_task(task_id):
 def update_task_time(task_id):
     tasks_data = db.get_models()
     data = request.get_json()
-    minutes = int(data.get("elapsed_minutes"))
+    seconds = int(data.get("elapsed_seconds"))
 
     for task_data in tasks_data:
         if task_id == task_data.get('identificator'):
@@ -72,14 +72,14 @@ def update_task_time(task_id):
             identificator=task_data.get('identificator'),
             title=task_data.get('title'),
             color=task_data.get('color'), 
-            minutes_in_focus_per_day=task_data.get("minutes_in_focus_per_day")
+            seconds_in_focus_per_day=task_data.get("seconds_in_focus_per_day")
             )
             break
 
-    task.set_minutes_in_focus_per_day(minutes)
+    task.set_seconds_in_focus_per_day(seconds)
     db.save()
     return jsonify({
-        'minutes': task.today_total_minutes,
+        'message': "success! the seconds has been saved."
     })
 
 
@@ -93,7 +93,7 @@ def task_data():
             identificator=task_data.get('identificator'),
             title=task_data.get('title'),
             color=task_data.get('color'), 
-            minutes_in_focus_per_day=task_data.get("minutes_in_focus_per_day")
+            seconds_in_focus_per_day=task_data.get("seconds_in_focus_per_day")
         )
         if task.today_total_minutes != 0:
             tasks_for_chart.append({
