@@ -11,7 +11,7 @@ class Task:
     @property
     def today_total_seconds(self):
         today = str(date.today())  
-        total_seconds = self.seconds_in_focus_per_day.get(today, "0")
+        total_seconds = self.seconds_in_focus_per_day.get(today, 0)
         return int(total_seconds)
 
     @property
@@ -39,7 +39,7 @@ class Task:
 
         total_week_seconds = 0
         for day in last_7_days:
-            seconds_day = int(self.seconds_in_focus_per_day.get(day, "0")) 
+            seconds_day = int(self.seconds_in_focus_per_day.get(day, 0)) 
             total_week_seconds += seconds_day
         
         return int(total_week_seconds)

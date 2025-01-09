@@ -77,11 +77,10 @@ body {
 
 
 
-
 .custom-card {
-    background-color: #474747;  /* Cor de fundo similar ao cinza */
-    color: white;               /* Cor do texto */
-    border-radius: 15px;        /* Bordas arredondadas */
+    background-color: #474747;  
+    color: white;              
+    border-radius: 15px;       
     padding: 20px;
     border: 2px solid transparent;
     cursor: pointer; 

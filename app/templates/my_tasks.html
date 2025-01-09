@@ -6,21 +6,38 @@
   <!-- Task Grid -->  
   <div class="row g-5 my-5" id="taskGrid">
     {% for task in tasks %}
-      <div class="col-md-4">
+      <div class="col-md-6">
         <!-- ignora esse erro, o html não está reconhecendo o jinja -->
         <div 
-          class="custom-card" 
+          class="d-flex custom-card " 
           style="border-color: {{ task.color }}"
-          data-id="{{ task.identificator }}"
-        > 
-          <h3>{{ task.title }}</h3>
-          <p>Today: {{  task.today_total_time  }}</p>
-          <p>Week: {{  task.week_total_time  }}</p>
+          data-id="{{ task.identificator }}"> 
+
+          <div class="flex-grow-1">
+            <h3>{{ task.title }}</h3>
+            <p>Today: {{  task.today_total_time  }}</p>
+            <p>Week: {{  task.week_total_time  }}</p>
+          </div>
+
+          <div class="flex-shrink-0">
+            <canvas id="myPieChart-{{ task.identificator }}" style="max-width: 150px; max-height: 150px;"></canvas>
+          </div>
+
         </div>
       </div>
     {% endfor %}
   </div>
 
+  
+  <!-- <div class="container mt-2">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <canvas id="myPieChart"></canvas>
+        </div>
+        <div class="col-md-8"></div>
+    </div>
+  </div>
+ -->
 
   <!-- Button New Task -->
 
@@ -63,6 +80,7 @@
 {% endblock %}
 
 {% block script %}
+  <script src="{{ url_for('static', filename='js/chart_menu_tasks.js') }}"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="{{ url_for('static', filename='js/create_task.js') }}"></script>
 

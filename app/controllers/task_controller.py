@@ -106,3 +106,36 @@ def task_data():
     # Só enviar as tasks se tiver today_total_minutes
     create_chart = len(tasks_for_chart) > 0
     return jsonify({"tasks": tasks_for_chart, "createChart": create_chart})
+
+
+
+@task_bp.route("/get_data_for_chart_my_tasks_menu/<task_id>", methods=["GET"])
+def task_data_for_my_tasks_chart(task_id):
+    tasks_data = db.get_models()
+    tasks_for_chart = []
+
+    for task_data in tasks_data:
+        task = Task(
+            identificator=task_data.get('identificator'),
+            title=task_data.get('title'),
+            color=task_data.get('color'), 
+            seconds_in_focus_per_day=task_data.get("seconds_in_focus_per_day")
+        )
+        if task.identificator == task_id:
+            tasks_for_chart.append({
+                "identificator": task.identificator,
+                "title": task.title,
+                "color": task.color,
+                "minutes": task.week_total_minutes
+            })
+        else:
+            tasks_for_chart.append({
+                "identificator": task.identificator,
+                "title": task.title,
+                "color": '#474747',
+                "minutes": task.week_total_minutes
+            })
+
+    # Só enviar as tasks se tiver today_total_minutes
+    create_chart = len(tasks_for_chart) > 0
+    return jsonify({"tasks": tasks_for_chart, "createChart": create_chart})
