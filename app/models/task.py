@@ -1,11 +1,25 @@
 from datetime import date, timedelta
+from app.models.task_to_do_list import TaskToDoList
 
 class Task:    
-    def __init__(self, identificator, title, color, seconds_in_focus_per_day={}):
+    def __init__(self, identificator, title, color, seconds_in_focus_per_day={}, task_to_do_list=[]):
         self.identificator = identificator
         self.title = title
         self.color = color
         self.seconds_in_focus_per_day = seconds_in_focus_per_day
+
+        # Garante que `task_to_do_list` contenha apenas instâncias de `TaskToDoList`
+        self.task_to_do_list = [
+            TaskToDoList(
+                title=to_do.get('to_do_title'),
+                identificator=to_do.get('to_do_identificator'),
+                to_do_created_time=to_do.get('to_do_created_time'),
+                to_do_status=to_do.get('to_do_status'),
+                to_do_completed_time=to_do.get('to_do_completed_time'),
+            ) if isinstance(to_do, dict) else to_do for to_do in task_to_do_list
+        ]
+
+         
 
 
     @property

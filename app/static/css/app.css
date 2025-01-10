@@ -57,20 +57,20 @@ body {
 
 /* My Tasks Modal New Task */
 
-#newTask .modal-content{
+.primary-modal .modal-content{
     background-color: #212121;
     border-color: #696969;
 }
 
-#newTask .modal-header{
+.primary-modal .modal-header{
     border-color: #ffffff;
 }
 
-#newTask .modal-footer{
+.primary-modal .modal-footer{
     border: none;
 }
 
-#newTask .modal-label{
+.primary-modal .modal-label{
     font-weight: 200;
 }
 
@@ -114,6 +114,5 @@ body {
     transform: scale(1.1); /* Um pequeno efeito de aumentar o ícone */
     transition: all 0.3s ease; /* Adiciona uma transição suave ao efeito de hover */
 }
-
 
 

@@ -1,4 +1,4 @@
-document.getElementById('createTask').addEventListener('click', function() {
+document.getElementById('createTaskButton').addEventListener('click', function() {
     var taskName = document.getElementById('taskName').value;
     var taskColor = document.getElementById('taskColor').value;
 

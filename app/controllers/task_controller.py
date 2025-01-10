@@ -1,10 +1,11 @@
 from flask import Blueprint, request, redirect, url_for, render_template, jsonify
 from app.models.task import Task
-from .data_record import DataRecord
+from .task_record import TaskRecord
 from ..models.task import Task
+from app.models.task_to_do_list import TaskToDoList
 
 task_bp = Blueprint("task", __name__, url_prefix="/tasks")
-db = DataRecord("user.json")
+db = TaskRecord("user.json")
 
 
 @task_bp.route("/", methods=["GET"])
@@ -17,8 +18,9 @@ def my_tasks():
             identificator=task_data.get('identificator'),
             title=task_data.get('title'),
             color=task_data.get('color'), 
-            seconds_in_focus_per_day=task_data.get("seconds_in_focus_per_day")
-        )
+            seconds_in_focus_per_day=task_data.get("seconds_in_focus_per_day"),
+            task_to_do_list = task_data.get("task_to_do_list")
+            )
         tasks.append(task_data)
 
         
@@ -32,7 +34,7 @@ def new_task():
 
     identificator = db.generate_unique_id()
     new_task = Task(identificator=identificator, title=task_name, color=task_color)
- 
+
     db.write(new_task)
 
     # Retorna os dados da tarefa criada para o frontend
@@ -50,14 +52,15 @@ def start_task(task_id):
     
     for task_data in tasks_data:
         if task_id == task_data.get('identificator'):
-            principal_task = Task(
+            task = Task(
             identificator=task_data.get('identificator'),
             title=task_data.get('title'),
             color=task_data.get('color'), 
-            seconds_in_focus_per_day=task_data.get("seconds_in_focus_per_day")
+            seconds_in_focus_per_day=task_data.get("seconds_in_focus_per_day"),
+            task_to_do_list = task_data.get("task_to_do_list")
             )
     
-    return render_template("start_task.html", title="Start Task", task=principal_task)
+    return render_template("start_task.html", title="Start Task", task=task)
 
 
 @task_bp.route("/update_task_time/<task_id>", methods=["POST"])
@@ -72,7 +75,8 @@ def update_task_time(task_id):
             identificator=task_data.get('identificator'),
             title=task_data.get('title'),
             color=task_data.get('color'), 
-            seconds_in_focus_per_day=task_data.get("seconds_in_focus_per_day")
+            seconds_in_focus_per_day=task_data.get("seconds_in_focus_per_day"),
+            task_to_do_list = task_data.get("task_to_do_list")
             )
             break
 
@@ -81,33 +85,6 @@ def update_task_time(task_id):
     return jsonify({
         'message': "success! the seconds has been saved."
     })
-
-
-@task_bp.route("/get_data_for_chart", methods=["GET"])
-def task_data():
-    tasks_data = db.get_models()
-    tasks_for_chart = []
-
-    for task_data in tasks_data:
-        task = Task(
-            identificator=task_data.get('identificator'),
-            title=task_data.get('title'),
-            color=task_data.get('color'), 
-            seconds_in_focus_per_day=task_data.get("seconds_in_focus_per_day")
-        )
-        if task.today_total_minutes != 0:
-            tasks_for_chart.append({
-                "identificator": task.identificator,
-                "title": task.title,
-                "color": task.color,
-                "minutes": task.today_total_minutes
-            })
-
-    # Só enviar as tasks se tiver today_total_minutes
-    create_chart = len(tasks_for_chart) > 0
-    return jsonify({"tasks": tasks_for_chart, "createChart": create_chart})
-
-
 
 @task_bp.route("/get_data_for_chart_my_tasks_menu/<task_id>", methods=["GET"])
 def task_data_for_my_tasks_chart(task_id):
@@ -119,8 +96,9 @@ def task_data_for_my_tasks_chart(task_id):
             identificator=task_data.get('identificator'),
             title=task_data.get('title'),
             color=task_data.get('color'), 
-            seconds_in_focus_per_day=task_data.get("seconds_in_focus_per_day")
-        )
+            seconds_in_focus_per_day=task_data.get("seconds_in_focus_per_day"),
+            task_to_do_list = task_data.get("task_to_do_list")
+            )
         if task.identificator == task_id:
             tasks_for_chart.append({
                 "identificator": task.identificator,
@@ -139,3 +117,25 @@ def task_data_for_my_tasks_chart(task_id):
     # Só enviar as tasks se tiver today_total_minutes
     create_chart = len(tasks_for_chart) > 0
     return jsonify({"tasks": tasks_for_chart, "createChart": create_chart})
+
+
+
+
+
+@task_bp.route("/<task_id>/new_task_to_do", methods=["POST"])
+def new_task_to_do(task_id):
+    data = request.get_json()  # Obtém os dados do corpo da requisição (nome e cor)
+    to_do_name = data.get('name')
+
+    new_task_to_do = TaskToDoList(title=to_do_name)
+    if not db.create_to_do(task_id, new_task_to_do):
+            return jsonify({'error': 'Task not found or could not add to-do'}), 404
+ 
+    # Retorna os dados da tarefa criada para o frontend
+    return jsonify({
+        'to_do_identificator': new_task_to_do.to_do_identificator,
+        'to_do_title': new_task_to_do.to_do_title, 
+        'to_do_created_time': new_task_to_do.to_do_created_time,
+        'to_do_status': new_task_to_do.to_do_status,
+        'to_do_completed_time': new_task_to_do.to_do_completed_time
+    })

@@ -1,8 +1,24 @@
+Doing:
+- [ ] ToDo para cada task
+    - [x] BackEnd: Create
+
+        Obs.:
+        Os IDs dos To-Dos são únicos apenas dentro de cada Task. Isso significa que podem existir To-Dos com IDs iguais em Tasks diferentes. Para identificar um To-Do de forma precisa, sempre utilizamos a combinação Task/To-Do. Essa abordagem funciona porque a lista de To-Dos é uma composição da Task, garantindo o contexto necessário para localizar qualquer To-Do.
+
+        Usar a combinação Task/To-Do para identificar os To-Dos oferece benefícios como:
+
+        - Unicidade e Clareza: Evita conflitos de ID entre diferentes Tasks, mantendo a integridade dos dados.
+        - Contextualização: Facilita a busca por To-Dos dentro de uma Task específica, garantindo precisão.
+        - Escalabilidade: Permite o crescimento sem risco de colisões de ID, mesmo com várias Tasks e To-Dos.
+        
+    - [ ] Validação do nome do status
+    - [ ] FrontEnd: Apresentação das tasks
+- [ ] BUG: Ao criar nova task, tem que criar o gráfico tambem. (Atualizar no arquivo js)
+- [ ] Abstrair mais o codigo (templates, js, partials, mais classes, rotas)
+
 To do:
 
-- [ ] abstrair mais o codigo (templates, js, partials, mais classes, rotas)
-- [ ] subtasks
-- [ ] ToDo para cada task
+- [ ] Validações de campo
 - [ ] Gráfico do git hub
 - [ ] Separar melhor as pastas dos arquivos (por funcionalidade talvez)
 
@@ -12,3 +28,5 @@ Pensar no cenário onde o timer foi iniciado antes da 00:00 e continuou até ap�
 - [ ] salvar em banco de dados inves de arquivo
 - [ ] my perfomance
 - [ ] edit e delete
+
+

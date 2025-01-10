@@ -25,14 +25,46 @@
 
     <hr>
 
-    <div class="container mt-2">
-        <div class="row justify-content-center">
-            <div class="col-md-4">
-                <canvas id="myPieChart"></canvas>
+    <h2 class="mt-5">To Do</h2>
+
+    <!-- <div class="row g-5 my-5" id="taskToDoGrid">
+        {% for to_do in task_to_do_list %}
+
+        {% endfor %}
+    </div> -->
+    <!-- Button New Task -->
+
+    <div class="d-grid py-3">
+        <button class="btn btn-primary py-3 fs-5" type="button" data-bs-toggle="modal" data-bs-target="#newTaskToDo">New</button>
+    </div>
+
+
+    <!-- Modal New Task -->
+
+    <div class="modal fade primary-modal" id="newTaskToDo"  data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="newTaskLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="newTaskLabel">New To Do</h3>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row g-3">
+                            <div>
+                                <label for="taskToDoName" class="form-label modal-label">To Do Title</label>
+                                <input type="text" class="form-control" id="taskToDoName">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary w-100 fs-5 py-3" type="button" id="createTaskToDoButton">New</button>
+                </div>
             </div>
-            <div class="col-md-8"></div>
         </div>
-      </div>
+    </div>
+
       
 {% endblock %}
 
@@ -50,8 +82,8 @@
         });
 
     </script>
-
-
-    <script src="{{ url_for('static', filename='js/chart.js') }}"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/create_task_to_do.js') }}"></script>
     <script src="{{ url_for('static', filename='js/timer.js') }}"></script>
   {% endblock %}
