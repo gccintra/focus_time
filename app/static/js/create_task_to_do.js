@@ -14,16 +14,24 @@ document.getElementById('createTaskToDoButton').addEventListener('click', functi
       })
       .then(response => response.json())
       .then(data => {
-        // var taskHTML = `
-        //   <div class="col-md-4">
-        //     <div class="custom-card" style="border-color : ${data.color}" data-id="${data.id}">
-        //       <h3>${data.name}</h3>
-        //       <p>Today: ${data.today_total_time}</p>
-        //       <p>Week: ${data.week_total_time}</p>
-        //     </div>
-        //   </div>
-        // `;
-        // document.querySelector('#taskGrid').innerHTML += taskHTML;
+         var toDoHTML = `
+            <div class="col-md-12">
+
+                <div 
+                    class="d-flex justify-content-between align-items-center to-do-card"
+                    data-id="${data.to_do_identificator }">
+        
+                    <div class="d-flex align-items-center" id="toDoTextCheck">
+                        <input class="form-check-input me-3 mt-0 rounded-checkbox" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+                        <span id="taskTitle" class="mb-0">${data.to_do_title}</span>
+                    </div>
+                    
+                    <i class="bi bi-trash fs-4" id="deleteToDo"></i>
+                </div>
+
+            </div>
+         `;
+        document.querySelector('#toDoGrid').innerHTML += toDoHTML;
         $('#newTaskToDo').modal('hide'); 
       });
     } else {

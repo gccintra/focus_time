@@ -60,7 +60,7 @@ def start_task(task_id):
             task_to_do_list = task_data.get("task_to_do_list")
             )
     
-    return render_template("start_task.html", title="Start Task", task=task)
+    return render_template("start_task.html", title="Start Task", task=task, to_do_list=task.task_to_do_list)
 
 
 @task_bp.route("/update_task_time/<task_id>", methods=["POST"])
@@ -117,7 +117,6 @@ def task_data_for_my_tasks_chart(task_id):
     # Só enviar as tasks se tiver today_total_minutes
     create_chart = len(tasks_for_chart) > 0
     return jsonify({"tasks": tasks_for_chart, "createChart": create_chart})
-
 
 
 

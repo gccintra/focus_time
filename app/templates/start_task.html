@@ -25,13 +25,42 @@
 
     <hr>
 
-    <h2 class="mt-5">To Do</h2>
+    <h2 class="mt-5">To Do List</h2>
+
+    
+    <div class="row g-4 my-3" id="toDoGrid">
+
+        {% for to_do_item in to_do_list %}
+
+            <div class="col-md-12">
+
+                <div 
+                    class="d-flex justify-content-between align-items-center to-do-card"
+                    data-id="{{ to_do_item.to_do_identificator }}">
+        
+                    <div class="d-flex align-items-center" id="toDoTextCheck">
+                        <input class="form-check-input me-3 mt-0 rounded-checkbox" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+                        <span id="taskTitle" class="mb-0">{{ to_do_item.to_do_title }}</span>
+                    </div>
+                    
+                    <i class="bi bi-trash fs-4" id="deleteToDo"></i>
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+    
+    
 
     <!-- <div class="row g-5 my-5" id="taskToDoGrid">
         {% for to_do in task_to_do_list %}
 
         {% endfor %}
     </div> -->
+
+
     <!-- Button New Task -->
 
     <div class="d-grid py-3">
