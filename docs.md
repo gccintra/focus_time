@@ -12,9 +12,10 @@ Doing:
         - Escalabilidade: Permite o crescimento sem risco de colisões de ID, mesmo com várias Tasks e To-Dos.
         
     - [ ] Validação do nome do status
-    - [ ] FrontEnd: Apresentação das tasks
+    - [x] FrontEnd: Apresentação das tasks
 - [ ] BUG: Ao criar nova task, tem que criar o gráfico tambem. (Atualizar no arquivo js)
 - [ ] Abstrair mais o codigo (templates, js, partials, mais classes, rotas)
+- [ ] Refatorar pesado aqui (+segurança, melhorar a manipulação dos dados (dicionário x instâncias), melhorar os models.)
 
 To do:
 

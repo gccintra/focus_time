@@ -3,6 +3,7 @@ from app.models.task import Task
 from .task_record import TaskRecord
 from ..models.task import Task
 from app.models.task_to_do_list import TaskToDoList
+from datetime import datetime
 
 task_bp = Blueprint("task", __name__, url_prefix="/tasks")
 db = TaskRecord("user.json")
@@ -120,7 +121,6 @@ def task_data_for_my_tasks_chart(task_id):
 
 
 
-
 @task_bp.route("/<task_id>/new_task_to_do", methods=["POST"])
 def new_task_to_do(task_id):
     data = request.get_json()  # Obtém os dados do corpo da requisição (nome e cor)
@@ -138,3 +138,33 @@ def new_task_to_do(task_id):
         'to_do_status': new_task_to_do.to_do_status,
         'to_do_completed_time': new_task_to_do.to_do_completed_time
     })
+
+
+@task_bp.route("/<task_id>/change_to_do_state", methods=["PUT"])
+def change_to_do_state(task_id):
+    data = request.get_json()  # Obtém os dados do corpo da requisição
+    to_do_id = data.get('id')
+    new_status = data.get('status')
+
+
+    for record in db._models:
+        if record["identificator"] == task_id:
+            for to_do in record["task_to_do_list"]:
+                if to_do["to_do_identificator"] == to_do_id:
+                    to_do["to_do_status"] = new_status
+                    to_do["to_do_completed_time"] = datetime.now().isoformat() if new_status == 'completed' else None
+                    db.save()
+                    return jsonify({"success": True, "status": new_status}), 200
+            return jsonify({"success": False, "error": "To-Do not found"}), 404
+    return jsonify({"success": False, "error": "Task not found"}), 404
+
+    
+
+
+
+
+
+
+
+
+    

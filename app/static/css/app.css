@@ -144,6 +144,7 @@ body {
     transform: scale(1.2);
 }
 
+
 /* Checkbox redondo com hover */
 .rounded-checkbox {
     width: 20px;
@@ -167,14 +168,20 @@ body {
     border-color: #42c642;
 }
 
+
 /* Centralização e estilo do texto */
-#toDoTextCheck {
+.to-do-text-check {
     display: flex;
     align-items: center; /* Alinhando o texto e o checkbox verticalmente */
     gap: 10px; /* Ajuste do espaço entre checkbox e texto */
 }
 
-#toDoTextCheck span {
+.to-do-text-check span {
     font-size: 20px;
     color: #ffffff;
+}
+
+
+.finished-container-collapse {
+    margin-bottom: 120px;
 }

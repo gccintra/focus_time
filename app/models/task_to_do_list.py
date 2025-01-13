@@ -11,4 +11,6 @@ class TaskToDoList():
 
 
 
-  
+    def set_to_do_status(self, new_status):
+        self.to_do_status = new_status
+

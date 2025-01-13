@@ -20,8 +20,6 @@ class Task:
         ]
 
          
-
-
     @property
     def today_total_seconds(self):
         today = str(date.today())  
