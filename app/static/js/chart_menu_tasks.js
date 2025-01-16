@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+function inicializateChartContent(){
     const tasks = document.querySelectorAll('.custom-card');
 
     tasks.forEach((task, index) => { // Passando o índice do forEach aqui
@@ -76,4 +76,14 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(error => console.error("Erro ao carregar dados:", error));
     });
+   
+};
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    inicializateChartContent();
 });
+
+function reinitializateChartContentAfterDOMUpdate(){
+    inicializateChartContent();
+}

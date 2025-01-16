@@ -13,7 +13,9 @@ Doing:
         
     - [ ] Validação do nome do status
     - [x] FrontEnd: Apresentação das tasks
-- [ ] BUG: Ao criar nova task, tem que criar o gráfico tambem. (Atualizar no arquivo js)
+    - [ ] Delete
+    - [ ] Info: Created Time and Completed Time
+- [x] BUG: Ao criar nova task, tem que criar o gráfico tambem. (Atualizar no arquivo js)
 - [ ] Abstrair mais o codigo (templates, js, partials, mais classes, rotas)
 - [ ] Refatorar pesado aqui (+segurança, melhorar a manipulação dos dados (dicionário x instâncias), melhorar os models.)
 

@@ -51,14 +51,14 @@ def new_task():
 def start_task(task_id):
     tasks_data = db.get_models()
     
-    for task_data in tasks_data:
-        if task_id == task_data.get('identificator'):
+    for record in tasks_data:
+        if task_id == record.get('identificator'):
             task = Task(
-            identificator=task_data.get('identificator'),
-            title=task_data.get('title'),
-            color=task_data.get('color'), 
-            seconds_in_focus_per_day=task_data.get("seconds_in_focus_per_day"),
-            task_to_do_list = task_data.get("task_to_do_list")
+            identificator=record.get('identificator'),
+            title=record.get('title'),
+            color=record.get('color'), 
+            seconds_in_focus_per_day=record.get("seconds_in_focus_per_day"),
+            task_to_do_list = record.get("task_to_do_list")
             )
     
     return render_template("start_task.html", title="Start Task", task=task, to_do_list=task.task_to_do_list)
@@ -100,21 +100,14 @@ def task_data_for_my_tasks_chart(task_id):
             seconds_in_focus_per_day=task_data.get("seconds_in_focus_per_day"),
             task_to_do_list = task_data.get("task_to_do_list")
             )
-        if task.identificator == task_id:
-            tasks_for_chart.append({
-                "identificator": task.identificator,
-                "title": task.title,
-                "color": task.color,
-                "minutes": task.week_total_minutes
-            })
-        else:
-            tasks_for_chart.append({
-                "identificator": task.identificator,
-                "title": task.title,
-                "color": '#474747',
-                "minutes": task.week_total_minutes
-            })
-
+        task_color = task.color if task.identificator == task_id else '#474747'
+        tasks_for_chart.append({
+            "identificator": task.identificator,
+            "title": task.title,
+            "color": task_color,
+            "minutes": task.week_total_minutes
+        })
+       
     # Só enviar as tasks se tiver today_total_minutes
     create_chart = len(tasks_for_chart) > 0
     return jsonify({"tasks": tasks_for_chart, "createChart": create_chart})

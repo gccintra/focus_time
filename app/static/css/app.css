@@ -185,3 +185,17 @@ body {
 .finished-container-collapse {
     margin-bottom: 120px;
 }
+
+
+/* Estilo do botão de exclusão */
+.to-do-card #infoToDo {
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: #e0e0e0;
+    transition: color 0.3s ease;
+}
+
+.to-do-card #infoToDo:hover {
+    color: #21b9f5;
+    transform: scale(1.2);
+}

@@ -43,7 +43,10 @@
                         <span class="to-do-title mb-0">{{ to_do_item.to_do_title }}</span>
                     </div>
                     
-                    <i class="bi bi-trash fs-4" id="deleteToDo"></i>
+                    <div class="icons">
+                        <i class="bi bi-info-circle fs-4 me-3" id="infoToDo"></i>
+                        <i class="bi bi-trash fs-4" id="deleteToDo"></i>
+                    </div>
                 </div>
 
             </div>
@@ -90,7 +93,10 @@
                                 <input class="form-check-input to-do-check-box me-3 mt-0 rounded-checkbox" type="checkbox" value="" aria-label="..." checked>
                                 <span class="to-do-title mb-0"><del>{{ to_do_item.to_do_title }}</del></span>
                             </div>
-                            <i class="bi bi-trash fs-4" id="deleteToDo"></i>
+                            <div class="icons">
+                                <i class="bi bi-info-circle fs-4 me-3" id="infoToDo"></i>
+                                <i class="bi bi-trash fs-4" id="deleteToDo"></i>
+                            </div>
                         </div>
         
                     </div>
