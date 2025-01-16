@@ -44,9 +44,25 @@
                     </div>
                     
                     <div class="icons">
-                        <i class="bi bi-info-circle fs-4 me-3" id="infoToDo"></i>
+                        <i 
+                            class="bi bi-info-circle fs-4 me-3" 
+                            id="infoToDo" 
+                            data-bs-toggle="tooltip" 
+                            data-bs-placement="left"
+                            data-bs-custom-class="info-to-do-tooltip"
+                            data-bs-html="true"
+                            title=" 
+                            {% if to_do_item.to_do_status == 'completed' %}
+                                Created Time:<br>{{ to_do_item.to_do_created_time }}
+                                <br>
+                                Completed Time:<br>{{ to_do_item.to_do_completed_time }}
+                            {% else %}
+                                Created Time:<br>{{ to_do_item.to_do_created_time }}
+                            {% endif %}">
+                        </i>                                             
                         <i class="bi bi-trash fs-4" id="deleteToDo"></i>
                     </div>
+
                 </div>
 
             </div>
@@ -94,7 +110,22 @@
                                 <span class="to-do-title mb-0"><del>{{ to_do_item.to_do_title }}</del></span>
                             </div>
                             <div class="icons">
-                                <i class="bi bi-info-circle fs-4 me-3" id="infoToDo"></i>
+                                <i 
+                                    class="bi bi-info-circle fs-4 me-3" 
+                                    id="infoToDo" 
+                                    data-bs-toggle="tooltip" 
+                                    data-bs-placement="left"
+                                    data-bs-custom-class="info-to-do-tooltip"
+                                    data-bs-html="true"
+                                    title=" 
+                                    {% if to_do_item.to_do_status == 'completed' %}
+                                        Created Time:<br>{{ to_do_item.to_do_created_time }}
+                                        <br>
+                                        Completed Time:<br>{{ to_do_item.to_do_completed_time }}
+                                    {% else %}
+                                        Created Time:<br>{{ to_do_item.to_do_created_time }}
+                                    {% endif %}">
+                                </i>                                                                
                                 <i class="bi bi-trash fs-4" id="deleteToDo"></i>
                             </div>
                         </div>
@@ -159,4 +190,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ url_for('static', filename='js/to_do_manage.js') }}"></script>
     <script src="{{ url_for('static', filename='js/timer.js') }}"></script>
-  {% endblock %}
+    <script src="{{ url_for('static', filename='js/start_task_tooltip_manage.js') }}"></script>
+
+{% endblock %}

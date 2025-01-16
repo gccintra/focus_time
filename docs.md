@@ -15,6 +15,7 @@ Doing:
     - [x] FrontEnd: Apresentação das tasks
     - [ ] Delete
     - [ ] Info: Created Time and Completed Time
+    - [ ] To Do List Filtros (por data de criação/finalização)
 - [x] BUG: Ao criar nova task, tem que criar o gráfico tambem. (Atualizar no arquivo js)
 - [ ] Abstrair mais o codigo (templates, js, partials, mais classes, rotas)
 - [ ] Refatorar pesado aqui (+segurança, melhorar a manipulação dos dados (dicionário x instâncias), melhorar os models.)
@@ -23,6 +24,7 @@ To do:
 
 - [ ] Validações de campo
 - [ ] Gráfico do git hub
+- [ ] Testes unitários  
 - [ ] Separar melhor as pastas dos arquivos (por funcionalidade talvez)
 
 Pensar no cenário onde o timer foi iniciado antes da 00:00 e continuou até após 00:00
@@ -31,5 +33,13 @@ Pensar no cenário onde o timer foi iniciado antes da 00:00 e continuou até ap�
 - [ ] salvar em banco de dados inves de arquivo
 - [ ] my perfomance
 - [ ] edit e delete
+
+
+
+
+Aprender:
+
+- [ ] Docker
+- [ ] Git
 
 

@@ -27,13 +27,26 @@ document.getElementById('createTaskToDoButton').addEventListener('click', functi
                         <span class="to-do-title mb-0">${data.to_do_title}</span>
                     </div>
                     
-                    <i class="bi bi-trash fs-4" id="deleteToDo"></i>
+                    <div class="icons">
+                      <i 
+                        class="bi bi-info-circle fs-4 me-3" 
+                        id="infoToDo" 
+                        data-bs-toggle="tooltip" 
+                        data-bs-placement="left"
+                        data-bs-custom-class="info-to-do-tooltip"
+                        data-bs-html="true"
+                        title="Created Time:<br>${data.to_do_created_time}">
+                      </i>  
+                      <i class="bi bi-trash fs-4" id="deleteToDo"></i>
+                    </div>
+
                 </div>
 
             </div>
         `;
       document.querySelector('#toDoGridInProgress').innerHTML += toDoHTML;
       $('#newTaskToDo').modal('hide'); 
+      reinitializateToDoTooltipsAfterDOMUpdate();
     });
   } else {
     alert("Please provide a to do task name.");
@@ -62,7 +75,8 @@ document.querySelectorAll('.to-do-grid').forEach(grid => {
           .then(response => response.json())
           .then(data => {
             if (data.success) {
-              
+              const infoIcon = toDoItem.querySelector('#infoToDo');
+
               const currentGrid = isChecked
                 ? document.querySelector('#toDoGridInProgress')
                 : document.querySelector('#toDoGridCompleted');
@@ -78,10 +92,24 @@ document.querySelectorAll('.to-do-grid').forEach(grid => {
                   ? `<del>${toDoTitle.textContent}</del>`
                   : toDoTitle.textContent.replace(/<del>|<\/del>/g, "");
               }
+              
+              if (infoIcon) {
+                if (data.status == 'completed'){
+                  newTitle = ` Created Time:<br>${data.created_time}
+                                <br>
+                                Completed Time:<br>${data.completed_time}`
+                  infoIcon.setAttribute('title', newTitle);
+                } else {
+                  newTitle = `Created Time:<br>${data.created_time}`
+                  infoIcon.setAttribute('title', newTitle);
+                }
+                 
+              }
 
               newGrid.appendChild(toDoItem);
 
               checkbox.checked = isChecked;
+              reinitializateToDoTooltipsAfterDOMUpdate();
             } else {
               alert("Erro ao atualizar o status do To-Do.");
               checkbox.checked = !isChecked; 

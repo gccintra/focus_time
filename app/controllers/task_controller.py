@@ -60,6 +60,16 @@ def start_task(task_id):
             seconds_in_focus_per_day=record.get("seconds_in_focus_per_day"),
             task_to_do_list = record.get("task_to_do_list")
             )
+
+            # Altera a formatação da data/hora para visualização
+            # Talvez seja legal eu criar um registro "to_do_created_time_formatted"
+            for to_do_item in task.task_to_do_list:
+                created_time_iso = to_do_item.to_do_created_time
+                to_do_item.to_do_created_time = datetime.fromisoformat(created_time_iso).strftime("%m-%d-%Y %H:%M")
+
+                if to_do_item.to_do_completed_time:
+                    completed_time_iso = to_do_item.to_do_completed_time
+                    to_do_item.to_do_completed_time = datetime.fromisoformat(completed_time_iso).strftime("%m-%d-%Y %H:%M")
     
     return render_template("start_task.html", title="Start Task", task=task, to_do_list=task.task_to_do_list)
 
@@ -122,12 +132,17 @@ def new_task_to_do(task_id):
     new_task_to_do = TaskToDoList(title=to_do_name)
     if not db.create_to_do(task_id, new_task_to_do):
             return jsonify({'error': 'Task not found or could not add to-do'}), 404
- 
+    
+
+    formatted_created_time = datetime.fromisoformat(new_task_to_do.to_do_created_time).strftime("%m-%d-%Y %H:%M")
+
+    
+
     # Retorna os dados da tarefa criada para o frontend
     return jsonify({
         'to_do_identificator': new_task_to_do.to_do_identificator,
         'to_do_title': new_task_to_do.to_do_title, 
-        'to_do_created_time': new_task_to_do.to_do_created_time,
+        'to_do_created_time': formatted_created_time,
         'to_do_status': new_task_to_do.to_do_status,
         'to_do_completed_time': new_task_to_do.to_do_completed_time
     })
@@ -146,9 +161,20 @@ def change_to_do_state(task_id):
                 if to_do["to_do_identificator"] == to_do_id:
                     to_do["to_do_status"] = new_status
                     to_do["to_do_completed_time"] = datetime.now().isoformat() if new_status == 'completed' else None
+                    
                     db.save()
-                    return jsonify({"success": True, "status": new_status}), 200
+
+                    formatted_created_time = datetime.fromisoformat(to_do["to_do_created_time"]).strftime("%m-%d-%Y %H:%M") 
+
+                    if to_do["to_do_completed_time"]:
+                        formatted_completed_time = datetime.fromisoformat(to_do["to_do_completed_time"]).strftime("%m-%d-%Y %H:%M") 
+                        
+                        return jsonify({"success": True, "status": new_status, "completed_time": formatted_completed_time, "created_time": formatted_created_time}), 200
+                    
+                    return jsonify({"success": True, "status": new_status, "created_time": formatted_created_time}), 200
+                
             return jsonify({"success": False, "error": "To-Do not found"}), 404
+        
     return jsonify({"success": False, "error": "Task not found"}), 404
 
     

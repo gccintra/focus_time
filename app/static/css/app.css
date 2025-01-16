@@ -187,7 +187,6 @@ body {
 }
 
 
-/* Estilo do botão de exclusão */
 .to-do-card #infoToDo {
     cursor: pointer;
     font-size: 1.4rem;
@@ -199,3 +198,10 @@ body {
     color: #21b9f5;
     transform: scale(1.2);
 }
+
+/* Estilização para o tooltip */
+.info-to-do-tooltip {
+    --bs-tooltip-bg: #21b9f5;
+    --bs-tooltip-color: #ffffff;
+}
+

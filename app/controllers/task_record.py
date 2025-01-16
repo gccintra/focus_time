@@ -6,6 +6,7 @@ class TaskRecord(DataRecord):
     def __init__(self, filename):
         super().__init__(filename)
 
+    # Colocar essa parte do codigo em outro lugar... (deixar so a logica de arquivo aqui)
     def id_exists(self, tasks, new_id):
         return any(task.get('identificator', 0) == new_id for task in tasks)
 
