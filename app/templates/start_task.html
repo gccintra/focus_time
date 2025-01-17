@@ -60,7 +60,7 @@
                                 Created Time:<br>{{ to_do_item.to_do_created_time }}
                             {% endif %}">
                         </i>                                             
-                        <i class="bi bi-trash fs-4" id="deleteToDo"></i>
+                        <i class="bi bi-trash fs-4" id="deleteToDo" data-bs-toggle="modal" data-bs-target="#DeleteToDo"></i>
                     </div>
 
                 </div>
@@ -126,7 +126,7 @@
                                         Created Time:<br>{{ to_do_item.to_do_created_time }}
                                     {% endif %}">
                                 </i>                                                                
-                                <i class="bi bi-trash fs-4" id="deleteToDo"></i>
+                                <i class="bi bi-trash fs-4" id="deleteToDo" data-bs-toggle="modal" data-bs-target="#DeleteToDo"></i>
                             </div>
                         </div>
         
@@ -168,7 +168,31 @@
         </div>
     </div>
 
-      
+
+
+
+    <!-- Delete To Do Modal -->
+    
+    <div class="modal fade primary-modal" id="DeleteToDo" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="DeleteToDo" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Delete To Do</h3>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete the To Do item <strong id="toDoTitleModal"></strong>?</p>
+                </div>
+                <!-- Melhorar disposição do botões, aumentar o tamanho, mas manter lado a lado. Padrao de cor dos botões secundários -->
+                <div class="modal-footer">
+                    <button class="btn btn-outline-secondary fs-5 py-2" data-bs-dismiss="modal">Cancel</button>
+                    <button class="btn btn-primary fs-5 py-2" type="button" id="confirmDeleteToDoButton">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 {% endblock %}
 
 

@@ -1,5 +1,6 @@
 const taskId = task_data.task_id; 
 
+// Create
 document.getElementById('createTaskToDoButton').addEventListener('click', function() {
   var taskToDoName = document.getElementById('taskToDoName').value;
 
@@ -53,7 +54,7 @@ document.getElementById('createTaskToDoButton').addEventListener('click', functi
   }
 });
 
-
+// Change State
 document.querySelectorAll('.to-do-grid').forEach(grid => {
   grid.addEventListener('click', function (event) {
     const checkbox = event.target.closest('.to-do-check-box');
@@ -95,9 +96,9 @@ document.querySelectorAll('.to-do-grid').forEach(grid => {
               
               if (infoIcon) {
                 if (data.status == 'completed'){
-                  newTitle = ` Created Time:<br>${data.created_time}
-                                <br>
-                                Completed Time:<br>${data.completed_time}`
+                  newTitle = `Created Time:<br>${data.created_time}
+                              <br>
+                              Completed Time:<br>${data.completed_time}`
                   infoIcon.setAttribute('title', newTitle);
                 } else {
                   newTitle = `Created Time:<br>${data.created_time}`
@@ -121,5 +122,24 @@ document.querySelectorAll('.to-do-grid').forEach(grid => {
           });
       }
     }
+  });
+});
+
+
+// Delete
+document.addEventListener('DOMContentLoaded', function () {
+  const deleteModal = document.getElementById('DeleteToDo');
+  const toDoTitleInModal = document.getElementById('toDoTitleModal');
+  const confirmDeleteButton = document.getElementById('confirmDeleteToDoButton');
+
+  deleteModal.addEventListener('show.bs.modal', function (event) {
+      const icon = event.relatedTarget; // Ícone que acionou a modal
+      const toDoCard = icon.closest(".to-do-card")
+      const toDoId = toDoCard.getAttribute('data-id');
+      const toDoTitle = toDoCard.querySelector(".to-do-title").textContent;
+
+      // Preencher os campos na modal
+      toDoTitleInModal.textContent = toDoTitle;
+      confirmDeleteButton.setAttribute('data-id', toDoId);
   });
 });

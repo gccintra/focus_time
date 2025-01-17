@@ -14,7 +14,7 @@ Doing:
     - [ ] Validação do nome do status
     - [x] FrontEnd: Apresentação das tasks
     - [ ] Delete
-    - [ ] Info: Created Time and Completed Time
+    - [x] Info: Created Time and Completed Time
     - [ ] To Do List Filtros (por data de criação/finalização)
 - [x] BUG: Ao criar nova task, tem que criar o gráfico tambem. (Atualizar no arquivo js)
 - [ ] Abstrair mais o codigo (templates, js, partials, mais classes, rotas)

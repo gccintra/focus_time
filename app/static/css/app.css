@@ -53,9 +53,13 @@ body {
     border-color: #161616 !important;    
 }
 
+.btn-outline-secondary {  
+    color: #cccccc;
+    border-color: #cccccc;
+}
 
 
-/* My Tasks Modal New Task */
+/* Primary Modal */
 
 .primary-modal .modal-content{
     background-color: #212121;
@@ -63,15 +67,16 @@ body {
 }
 
 .primary-modal .modal-header{
-    border-color: #ffffff;
+    border-color: #696969;
 }
 
 .primary-modal .modal-footer{
-    border: none;
+    border-color: #696969;
+
 }
 
 .primary-modal .modal-label{
-    font-weight: 200;
+    font-weight: 300;
 }
 
 
