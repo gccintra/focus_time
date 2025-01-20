@@ -38,7 +38,7 @@ document.getElementById('createTaskToDoButton').addEventListener('click', functi
                         data-bs-html="true"
                         title="Created Time:<br>${data.to_do_created_time}">
                       </i>  
-                      <i class="bi bi-trash fs-4" id="deleteToDo"></i>
+                      <i class="bi bi-trash fs-4" id="deleteToDo" data-bs-toggle="modal" data-bs-target="#DeleteToDo"></i>
                     </div>
 
                 </div>
@@ -54,7 +54,7 @@ document.getElementById('createTaskToDoButton').addEventListener('click', functi
   }
 });
 
-// Change State
+// Change State REFATORAR ESSA PARTE AQUI, TA MUITO CONFUSO
 document.querySelectorAll('.to-do-grid').forEach(grid => {
   grid.addEventListener('click', function (event) {
     const checkbox = event.target.closest('.to-do-check-box');
@@ -140,6 +140,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Preencher os campos na modal
       toDoTitleInModal.textContent = toDoTitle;
-      confirmDeleteButton.setAttribute('data-id', toDoId);
+      confirmDeleteButton.setAttribute('to-do-id', toDoId);
+
   });
+  
+  confirmDeleteButton.addEventListener('click', function () {
+    const toDoId = confirmDeleteButton.getAttribute('to-do-id');
+
+    // Enviar requisição para deletar o item
+    fetch(`/tasks/${taskId}/delete_to_do`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ id: toDoId })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Remover o item do DOM
+            document.querySelector(`.to-do-card[data-id="${toDoId}"]`).closest('.to-do-item').remove();
+            $('#DeleteToDo').modal('hide'); 
+        } else {
+            alert("Error deleting the To Do item.");
+            $('#DeleteToDo').modal('hide'); 
+        }
+    })
+    .catch(error => console.error("Error:", error));
+});
 });

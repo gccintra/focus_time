@@ -21,7 +21,9 @@ Doing:
 - [ ] Refatorar pesado aqui (+segurança, melhorar a manipulação dos dados (dicionário x instâncias), melhorar os models.)
 
 To do:
-
+- [ ] Salvar o seconds_in_focus_per_day a todo segundo, e não somente quando o usuário clicar em stop. (para salvar o tempo msm se o usuário sair dar tela, fechar a tela, perder conexão com internet.)
+- [ ] Tratamento de Erros e apresentação para o usuário
+- [ ] Getters e Setters, + Segurança
 - [ ] Validações de campo
 - [ ] Gráfico do git hub
 - [ ] Testes unitários  

@@ -4,8 +4,8 @@ let isRunning = false;
 let startTime
 
 document.addEventListener("DOMContentLoaded", function() {
-    const startButton = document.querySelector(".btn-primary");
-    const timerDisplay = document.getElementById("timerStr");
+    const startButton = document.querySelector("#timerButton");
+    const timerDisplay = document.getElementById("timerDisplay");
     const taskId = task_data.task_id; 
 
     startButton.addEventListener("click", function() {

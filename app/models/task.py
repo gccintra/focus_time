@@ -71,7 +71,3 @@ class Task:
     def set_seconds_in_focus_per_day(self, seconds):
         today = str(date.today()) 
         self.seconds_in_focus_per_day[today] = seconds
-
-    
-
-

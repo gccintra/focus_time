@@ -17,9 +17,9 @@
         <div class="mt-5 d-inline-block text-start"> 
             <p class="mb-3">Time in Focus Today:</p>
             <div id="timer" class="mb-4">
-                <span class="display-1" id="timerStr">{{ task.today_total_time_timer }}</span>
+                <span class="display-1" id="timerDisplay">{{ task.today_total_time_timer }}</span>
             </div>
-            <button class="btn btn-primary w-100 py-2 fs-4">Start</button>
+            <button class="btn btn-primary w-100 py-2 fs-4" id="timerButton">Start</button>
         </div>
     </div>
 
@@ -51,14 +51,7 @@
                             data-bs-placement="left"
                             data-bs-custom-class="info-to-do-tooltip"
                             data-bs-html="true"
-                            title=" 
-                            {% if to_do_item.to_do_status == 'completed' %}
-                                Created Time:<br>{{ to_do_item.to_do_created_time }}
-                                <br>
-                                Completed Time:<br>{{ to_do_item.to_do_completed_time }}
-                            {% else %}
-                                Created Time:<br>{{ to_do_item.to_do_created_time }}
-                            {% endif %}">
+                            title="Created Time:<br>{{ to_do_item.to_do_created_time }}">
                         </i>                                             
                         <i class="bi bi-trash fs-4" id="deleteToDo" data-bs-toggle="modal" data-bs-target="#DeleteToDo"></i>
                     </div>
@@ -118,13 +111,9 @@
                                     data-bs-custom-class="info-to-do-tooltip"
                                     data-bs-html="true"
                                     title=" 
-                                    {% if to_do_item.to_do_status == 'completed' %}
-                                        Created Time:<br>{{ to_do_item.to_do_created_time }}
-                                        <br>
-                                        Completed Time:<br>{{ to_do_item.to_do_completed_time }}
-                                    {% else %}
-                                        Created Time:<br>{{ to_do_item.to_do_created_time }}
-                                    {% endif %}">
+                                    Created Time:<br>{{ to_do_item.to_do_created_time }}
+                                    <br>
+                                    Completed Time:<br>{{ to_do_item.to_do_completed_time }}">
                                 </i>                                                                
                                 <i class="bi bi-trash fs-4" id="deleteToDo" data-bs-toggle="modal" data-bs-target="#DeleteToDo"></i>
                             </div>

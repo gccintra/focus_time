@@ -34,6 +34,9 @@ function inicializateChartContent(){
                             plugins: {
                                 legend: {
                                     display: false // Remove a legenda
+                                },
+                                tooltip: {
+                                    enabled: false // Desabilita os tooltips
                                 }
                             }
                         },
