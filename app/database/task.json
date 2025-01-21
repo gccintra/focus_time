@@ -1,0 +1,124 @@
+[
+    {
+        "identificator": "6554752a-6dfa-44b7-bc01-6703d1e88250",
+        "title": "Leitura",
+        "color": "#009dff",
+        "seconds_in_focus_per_day": {
+            "2024-11-30": 1000,
+            "2024-12-01": 1000,
+            "2024-12-02": 1000,
+            "2024-12-03": 1000,
+            "2024-12-04": 1000,
+            "2024-12-05": 9986,
+            "2024-12-06": 1000,
+            "2025-01-08": 809,
+            "2025-01-09": 810,
+            "2025-01-21": 12013
+        },
+        "task_to_do_list": [
+            {
+                "to_do_title": "Steve Jobs",
+                "to_do_identificator": "9e175a77-48cf-4c89-a1f8-d7d2fbcc5c35",
+                "to_do_created_time": "2025-01-16T14:22:37.086992",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "Clean Code",
+                "to_do_identificator": "84fa28c6-59ac-4ab0-adb4-e1a1dbd0fbe4",
+                "to_do_created_time": "2025-01-16T14:22:37.086992",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "Lord of the Flies",
+                "to_do_identificator": "497f0279-6f49-4d8e-8a51-f2e05e2b2360",
+                "to_do_created_time": "2025-01-16T14:22:37.086992",
+                "to_do_status": "completed",
+                "to_do_completed_time": "2025-01-21T15:20:12.302699"
+            }
+        ]
+    },
+    {
+        "identificator": "163d9725-3519-474e-8e68-fc446ad71303",
+        "title": "Estudar",
+        "color": "#d400ff",
+        "seconds_in_focus_per_day": {
+            "2024-12-03": 2039,
+            "2024-12-04": 1003,
+            "2024-12-05": 9492,
+            "2025-01-08": 2300,
+            "2025-01-09": 809,
+            "2025-01-12": 6004,
+            "2025-01-21": 29000
+        },
+        "task_to_do_list": [
+            {
+                "to_do_title": "Projeto OO",
+                "to_do_identificator": "b675822c-7887-4c52-a6b1-eacdff73456b",
+                "to_do_created_time": "2025-01-12T17:33:55.264851",
+                "to_do_status": "completed",
+                "to_do_completed_time": "2025-01-17T14:47:45.953140"
+            },
+            {
+                "to_do_title": "Bottle",
+                "to_do_identificator": "bb4f0d6f-7810-464f-8c52-5dda594dcc66",
+                "to_do_created_time": "2025-01-12T18:38:29.940703",
+                "to_do_status": "completed",
+                "to_do_completed_time": "2025-01-19T22:07:36.788702"
+            },
+            {
+                "to_do_title": "Ver como que faço para blabla agua mineral",
+                "to_do_identificator": "bb4f0d6f-7810-464f-8c52-5dda594dcc66",
+                "to_do_created_time": "2025-01-12T18:38:29.940703",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "Orientação a Objetos",
+                "to_do_identificator": "9f848461-0e85-42aa-a92a-a21ba8039d01",
+                "to_do_created_time": "2025-01-12T18:38:38.153245",
+                "to_do_status": "completed",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "Lista de IAL",
+                "to_do_identificator": "ea9b818b-df7e-42dc-a9bb-5c2a63b64d39",
+                "to_do_created_time": "2025-01-12T18:38:43.845675",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "testes unitarios",
+                "to_do_identificator": "c8373ccc-b99f-4981-95be-1801fbf79601",
+                "to_do_created_time": "2025-01-16T12:43:21.957968",
+                "to_do_status": "completed",
+                "to_do_completed_time": "2025-01-16T17:23:26.241946"
+            },
+            {
+                "to_do_title": "Tarefa 2",
+                "to_do_identificator": "95316170-b1ec-47e4-844c-eee09adfa5a5",
+                "to_do_created_time": "2025-01-16T14:22:37.086992",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            }
+        ]
+    },
+    {
+        "identificator": "4a25959c-c4f9-486e-8874-9508426f5acd",
+        "title": "Trabalho (Teste Real)",
+        "color": "#75ff7e",
+        "seconds_in_focus_per_day": {
+            "2025-01-18": 8999,
+            "2025-01-21": 8999
+        },
+        "task_to_do_list": []
+    },
+    {
+        "identificator": "7a68dad6-a874-4396-9609-59d23b5f56ae",
+        "title": "adasd",
+        "color": "#561ea9",
+        "seconds_in_focus_per_day": {},
+        "task_to_do_list": []
+    }
+]

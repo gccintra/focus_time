@@ -13,7 +13,7 @@ Doing:
         
     - [ ] Validação do nome do status
     - [x] FrontEnd: Apresentação das tasks
-    - [ ] Delete
+    - [x] Delete
     - [x] Info: Created Time and Completed Time
     - [ ] To Do List Filtros (por data de criação/finalização)
 - [x] BUG: Ao criar nova task, tem que criar o gráfico tambem. (Atualizar no arquivo js)
@@ -21,9 +21,11 @@ Doing:
 - [ ] Refatorar pesado aqui (+segurança, melhorar a manipulação dos dados (dicionário x instâncias), melhorar os models.)
 
 To do:
+- [ ] Getters e Setters, + Segurança
+- [ ] REFATORAR TUDO, TENDO EM VISTA A REFATORACAO DE DATA_RECORD 
+- [ ] SEPARAR CONTROLLER E ROUTES (ta tudo junto hoje em dia)
 - [ ] Salvar o seconds_in_focus_per_day a todo segundo, e não somente quando o usuário clicar em stop. (para salvar o tempo msm se o usuário sair dar tela, fechar a tela, perder conexão com internet.)
 - [ ] Tratamento de Erros e apresentação para o usuário
-- [ ] Getters e Setters, + Segurança
 - [ ] Validações de campo
 - [ ] Gráfico do git hub
 - [ ] Testes unitários  

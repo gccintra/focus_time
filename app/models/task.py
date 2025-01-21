@@ -71,3 +71,13 @@ class Task:
     def set_seconds_in_focus_per_day(self, seconds):
         today = str(date.today()) 
         self.seconds_in_focus_per_day[today] = seconds
+
+
+    def to_dict(self):
+        return {
+            "identificator": self.identificator,
+            "title": self.title,
+            "color": self.color,
+            "seconds_in_focus_per_day": self.seconds_in_focus_per_day,
+            "task_to_do_list": [to_do.to_dict() for to_do in self.task_to_do_list]
+        }

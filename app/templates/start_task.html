@@ -51,7 +51,7 @@
                             data-bs-placement="left"
                             data-bs-custom-class="info-to-do-tooltip"
                             data-bs-html="true"
-                            title="Created Time:<br>{{ to_do_item.to_do_created_time }}">
+                            title="Created Time:<br>{{ to_do_item.to_do_created_time_formatted }}">
                         </i>                                             
                         <i class="bi bi-trash fs-4" id="deleteToDo" data-bs-toggle="modal" data-bs-target="#DeleteToDo"></i>
                     </div>
@@ -111,9 +111,9 @@
                                     data-bs-custom-class="info-to-do-tooltip"
                                     data-bs-html="true"
                                     title=" 
-                                    Created Time:<br>{{ to_do_item.to_do_created_time }}
+                                    Created Time:<br>{{ to_do_item.to_do_created_time_formatted }}
                                     <br>
-                                    Completed Time:<br>{{ to_do_item.to_do_completed_time }}">
+                                    Completed Time:<br>{{ to_do_item.to_do_completed_time_formatted }}">
                                 </i>                                                                
                                 <i class="bi bi-trash fs-4" id="deleteToDo" data-bs-toggle="modal" data-bs-target="#DeleteToDo"></i>
                             </div>

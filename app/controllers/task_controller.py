@@ -6,25 +6,12 @@ from app.models.task_to_do_list import TaskToDoList
 from datetime import datetime
 
 task_bp = Blueprint("task", __name__, url_prefix="/tasks")
-db = TaskRecord("user.json")
+db = TaskRecord("task.json")
 
 
 @task_bp.route("/", methods=["GET"])
 def my_tasks():
-    tasks_data = db.get_models()
-    tasks = []
-
-    for task_data in tasks_data:
-        task_data = Task(
-            identificator=task_data.get('identificator'),
-            title=task_data.get('title'),
-            color=task_data.get('color'), 
-            seconds_in_focus_per_day=task_data.get("seconds_in_focus_per_day"),
-            task_to_do_list = task_data.get("task_to_do_list")
-            )
-        tasks.append(task_data)
-
-        
+    tasks = db.get_models()
     return render_template("my_tasks.html", title="My Tasks", active_page="home", tasks=tasks)
 
 @task_bp.route("/new_task", methods=["POST"])
@@ -53,17 +40,6 @@ def start_task(task_id):
     if not task:
         return jsonify({"error": "Task not found"}), 404
 
-    # Altera a formatação da data/hora para visualização
-    # Talvez seja legal eu mudar as  "to_do_created_time_formatted"/"to_do_completed_time_formatted" 
-    # e "to_do_created_time_iso"/"to_do_completed_time_iso"
-    for to_do_item in task.task_to_do_list:
-        created_time_iso = to_do_item.to_do_created_time
-        to_do_item.to_do_created_time = datetime.fromisoformat(created_time_iso).strftime("%m-%d-%Y %H:%M")
-
-        if to_do_item.to_do_completed_time:
-            completed_time_iso = to_do_item.to_do_completed_time
-            to_do_item.to_do_completed_time = datetime.fromisoformat(completed_time_iso).strftime("%m-%d-%Y %H:%M")
-
     return render_template("start_task.html", title="Start Task", task=task, to_do_list=task.task_to_do_list)
 
 
@@ -87,25 +63,23 @@ def update_task_time(task_id):
 def task_data_for_my_tasks_chart(task_id):
     tasks_data = db.get_models()
     tasks_for_chart = []
+    create_chart = False
 
-    for task_data in tasks_data:
-        task = Task(
-            identificator=task_data.get('identificator'),
-            title=task_data.get('title'),
-            color=task_data.get('color'), 
-            seconds_in_focus_per_day=task_data.get("seconds_in_focus_per_day"),
-            task_to_do_list = task_data.get("task_to_do_list")
-            )
-        task_color = task.color if task.identificator == task_id else '#474747'
-        tasks_for_chart.append({
-            "identificator": task.identificator,
-            "title": task.title,
-            "color": task_color,
-            "minutes": task.week_total_minutes
-        })
+    for task in tasks_data:
+
+        if task.week_total_minutes > 0:
+            tasks_for_chart.append( {
+                    "identificator": task.identificator,
+                    "title": task.title,
+                    "color": task.color if task.identificator == task_id else "#474747",
+                    "minutes": task.week_total_minutes
+                }) 
+            
+            if task.identificator == task_id:
+                create_chart = True
+            
        
-    # Só enviar as tasks se tiver today_total_minutes
-    create_chart = len(tasks_for_chart) > 0
+ 
     return jsonify({"tasks": tasks_for_chart, "createChart": create_chart})
 
 
@@ -119,15 +93,11 @@ def new_task_to_do(task_id):
     if not db.create_to_do(task_id, new_task_to_do):
             return jsonify({'error': 'Task not found or could not add to-do'}), 404
     
-
-    formatted_created_time = datetime.fromisoformat(new_task_to_do.to_do_created_time).strftime("%m-%d-%Y %H:%M")
-    
     return jsonify({
         'to_do_identificator': new_task_to_do.to_do_identificator,
         'to_do_title': new_task_to_do.to_do_title, 
-        'to_do_created_time': formatted_created_time,
+        'to_do_created_time': new_task_to_do.to_do_created_time_formatted,
         'to_do_status': new_task_to_do.to_do_status,
-        'to_do_completed_time': new_task_to_do.to_do_completed_time
     })
 
 
@@ -147,17 +117,13 @@ def change_to_do_state(task_id):
             to_do.to_do_status = new_status
             to_do.to_do_completed_time = datetime.now().isoformat() if new_status == 'completed' else None
             
-            if not db.update_to_do(task.identificator, to_do):
+            if not db.update_to_do_status(task, to_do):
                 return jsonify({"success": False}), 503
-            
-            formatted_created_time = datetime.fromisoformat(to_do.to_do_created_time).strftime("%m-%d-%Y %H:%M") 
 
             if to_do.to_do_completed_time:
-                formatted_completed_time = datetime.fromisoformat(to_do.to_do_completed_time).strftime("%m-%d-%Y %H:%M") 
-                
-                return jsonify({"success": True, "status": new_status, "completed_time": formatted_completed_time, "created_time": formatted_created_time}), 200
+                return jsonify({"success": True, "status": new_status, "created_time": to_do.to_do_created_time_formatted, "completed_time": to_do.to_do_completed_time_formatted}), 200
                         
-            return jsonify({"success": True, "status": new_status, "created_time": formatted_created_time}), 200
+            return jsonify({"success": True, "status": new_status, "created_time": to_do.to_do_created_time_formatted}), 200
         
     return jsonify({"success": False, "error": "To-Do not found"}), 404
 
@@ -189,12 +155,6 @@ def get_task_instance_by_id(task_id):
     tasks_data = db.get_models()
 
     for record in tasks_data:
-        if task_id == record.get('identificator'):
-            return Task(
-                identificator=record.get('identificator'),
-                title=record.get('title'),
-                color=record.get('color'),
-                seconds_in_focus_per_day=record.get("seconds_in_focus_per_day"),
-                task_to_do_list=record.get("task_to_do_list"),
-            )
+        if task_id == record.identificator:
+            return record
     return None  # Retorna None se a tarefa não for encontrada
