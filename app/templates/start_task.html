@@ -181,12 +181,23 @@
         </div>
     </div>
 
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div class="toast align-items-center text-bg-success border-0" id="successToast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3500">
+            <div class="d-flex">
+                <div class="toast-body">
+                    Success! To Do Created.
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 {% endblock %}
 
 
 {% block script %}
     <script>
+        
         const task_data = {
             today_total_seconds: "{{ task.today_total_seconds }}",
             task_id: "{{ task.identificator }}"

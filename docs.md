@@ -22,7 +22,7 @@ Doing:
 
 To do:
 - [ ] Getters e Setters, + Segurança
-- [ ] REFATORAR TUDO, TENDO EM VISTA A REFATORACAO DE DATA_RECORD 
+- [x] REFATORAR TUDO, TENDO EM VISTA A REFATORACAO DE DATA_RECORD 
 - [ ] SEPARAR CONTROLLER E ROUTES (ta tudo junto hoje em dia)
 - [ ] Salvar o seconds_in_focus_per_day a todo segundo, e não somente quando o usuário clicar em stop. (para salvar o tempo msm se o usuário sair dar tela, fechar a tela, perder conexão com internet.)
 - [ ] Tratamento de Erros e apresentação para o usuário

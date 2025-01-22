@@ -3,6 +3,9 @@ const taskId = task_data.task_id;
 // Create
 document.getElementById('createTaskToDoButton').addEventListener('click', function() {
   var taskToDoName = document.getElementById('taskToDoName').value;
+  const toastSuccessToast = document.getElementById('successToast')
+  const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastSuccessToast)
+
 
   if (taskToDoName.trim() !== "") {
 
@@ -47,6 +50,7 @@ document.getElementById('createTaskToDoButton').addEventListener('click', functi
         `;
       document.querySelector('#toDoGridInProgress').innerHTML += toDoHTML;
       $('#newTaskToDo').modal('hide'); 
+      toastBootstrap.show()
       reinitializateToDoTooltipsAfterDOMUpdate();
     });
   } else {

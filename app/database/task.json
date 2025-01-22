@@ -27,8 +27,8 @@
                 "to_do_title": "Clean Code",
                 "to_do_identificator": "84fa28c6-59ac-4ab0-adb4-e1a1dbd0fbe4",
                 "to_do_created_time": "2025-01-16T14:22:37.086992",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
+                "to_do_status": "completed",
+                "to_do_completed_time": "2025-01-21T21:51:55.448728"
             },
             {
                 "to_do_title": "Lord of the Flies",
@@ -36,6 +36,20 @@
                 "to_do_created_time": "2025-01-16T14:22:37.086992",
                 "to_do_status": "completed",
                 "to_do_completed_time": "2025-01-21T15:20:12.302699"
+            },
+            {
+                "to_do_title": "400",
+                "to_do_identificator": "2c1ea4ce-05f0-433b-8555-de1bdf1099d9",
+                "to_do_created_time": "2025-01-21T22:19:53.140402",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "10",
+                "to_do_identificator": "e03206cf-9575-4a1d-81ba-848c71adcaba",
+                "to_do_created_time": "2025-01-21T22:21:33.003482",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
             }
         ]
     },
@@ -79,7 +93,7 @@
                 "to_do_identificator": "9f848461-0e85-42aa-a92a-a21ba8039d01",
                 "to_do_created_time": "2025-01-12T18:38:38.153245",
                 "to_do_status": "completed",
-                "to_do_completed_time": null
+                "to_do_completed_time": "2025-01-21T17:21:37.801510"
             },
             {
                 "to_do_title": "Lista de IAL",
@@ -118,7 +132,59 @@
         "identificator": "7a68dad6-a874-4396-9609-59d23b5f56ae",
         "title": "adasd",
         "color": "#561ea9",
+        "seconds_in_focus_per_day": {
+            "2025-01-21": 7623
+        },
+        "task_to_do_list": []
+    },
+    {
+        "identificator": "04d54a48-71db-46e2-afa8-d320b45a1458",
+        "title": "Jogar Marvel Rivals",
+        "color": "#f2a41c",
         "seconds_in_focus_per_day": {},
         "task_to_do_list": []
+    },
+    {
+        "identificator": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "title": "Focus Time Develop",
+        "color": "#ff0000",
+        "seconds_in_focus_per_day": {},
+        "task_to_do_list": [
+            {
+                "to_do_title": "Getters + Setters",
+                "to_do_identificator": "e3ef22c7-eb27-4e70-a3d8-d21c8f3e627e",
+                "to_do_created_time": "2025-01-21T22:24:10.822040",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "Separar Controllers e Routes",
+                "to_do_identificator": "fbea0e87-0aeb-4323-9fe7-80f1f5e9b452",
+                "to_do_created_time": "2025-01-21T22:24:32.356318",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "Salvar o seconds_in_focus_per_day a todo segundo, e não somente quando o usuário clicar em stop",
+                "to_do_identificator": "49096c26-6162-4246-a439-ea7b83012e4a",
+                "to_do_created_time": "2025-01-21T22:24:49.431641",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "Tratamento de Erros ",
+                "to_do_identificator": "f1caf21c-1c5f-434c-818d-b5e9b6c9a4a2",
+                "to_do_created_time": "2025-01-21T22:25:01.546454",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "Apresentação de mensagens para o usuário",
+                "to_do_identificator": "56f2f68a-c246-4a7d-8869-a018a1fb2d61",
+                "to_do_created_time": "2025-01-21T22:25:11.684168",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            }
+        ]
     }
 ]
