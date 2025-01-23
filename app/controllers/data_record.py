@@ -4,9 +4,6 @@ from ..models.task import Task
 from ..models.user import User
 
 class DataRecord:
-    # MUDAR AQUI E REFATORAR TUDO
-    # Guardar na models as classes já instânciadas
-    # Vou ter que criar varios tipos de data record e ter que mudar todo o código para mexer diretamente com a instância e não com o dict
     def __init__(self, filename):
         self.models_classes = {
             'user.json': User,

@@ -27,8 +27,8 @@
                 "to_do_title": "Clean Code",
                 "to_do_identificator": "84fa28c6-59ac-4ab0-adb4-e1a1dbd0fbe4",
                 "to_do_created_time": "2025-01-16T14:22:37.086992",
-                "to_do_status": "completed",
-                "to_do_completed_time": "2025-01-21T21:51:55.448728"
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
             },
             {
                 "to_do_title": "Lord of the Flies",
@@ -36,20 +36,6 @@
                 "to_do_created_time": "2025-01-16T14:22:37.086992",
                 "to_do_status": "completed",
                 "to_do_completed_time": "2025-01-21T15:20:12.302699"
-            },
-            {
-                "to_do_title": "400",
-                "to_do_identificator": "2c1ea4ce-05f0-433b-8555-de1bdf1099d9",
-                "to_do_created_time": "2025-01-21T22:19:53.140402",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
-            },
-            {
-                "to_do_title": "10",
-                "to_do_identificator": "e03206cf-9575-4a1d-81ba-848c71adcaba",
-                "to_do_created_time": "2025-01-21T22:21:33.003482",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
             }
         ]
     },
@@ -123,17 +109,33 @@
         "title": "Trabalho (Teste Real)",
         "color": "#75ff7e",
         "seconds_in_focus_per_day": {
-            "2025-01-18": 8999,
-            "2025-01-21": 8999
+            "2025-01-22": 6420,
+            "2025-01-23": 2
         },
-        "task_to_do_list": []
+        "task_to_do_list": [
+            {
+                "to_do_title": "SIVOB Manual (Realizar Vistoria)",
+                "to_do_identificator": "de7004f5-8f0e-4cfe-9ccb-b32e913ccf69",
+                "to_do_created_time": "2025-01-22T15:38:18.302539",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "SIVOB Manual (Gerar Laudo)",
+                "to_do_identificator": "f9f20661-f992-4f34-8fef-a76aea7ad55f",
+                "to_do_created_time": "2025-01-22T16:50:24.387975",
+                "to_do_status": "completed",
+                "to_do_completed_time": "2025-01-22T16:53:49.085390"
+            }
+        ]
     },
     {
         "identificator": "7a68dad6-a874-4396-9609-59d23b5f56ae",
         "title": "adasd",
         "color": "#561ea9",
         "seconds_in_focus_per_day": {
-            "2025-01-21": 7623
+            "2025-01-21": 7623,
+            "2025-01-23": 9
         },
         "task_to_do_list": []
     },
@@ -141,14 +143,18 @@
         "identificator": "04d54a48-71db-46e2-afa8-d320b45a1458",
         "title": "Jogar Marvel Rivals",
         "color": "#f2a41c",
-        "seconds_in_focus_per_day": {},
+        "seconds_in_focus_per_day": {
+            "2025-01-23": 2341
+        },
         "task_to_do_list": []
     },
     {
         "identificator": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
         "title": "Focus Time Develop",
         "color": "#ff0000",
-        "seconds_in_focus_per_day": {},
+        "seconds_in_focus_per_day": {
+            "2025-01-23": 6445
+        },
         "task_to_do_list": [
             {
                 "to_do_title": "Getters + Setters",
@@ -182,6 +188,20 @@
                 "to_do_title": "Apresentação de mensagens para o usuário",
                 "to_do_identificator": "56f2f68a-c246-4a7d-8869-a018a1fb2d61",
                 "to_do_created_time": "2025-01-21T22:25:11.684168",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "Estrutura de Pastas (Organizar)",
+                "to_do_identificator": "72a95286-cef2-4f93-861b-0a0b3f6ebd1e",
+                "to_do_created_time": "2025-01-23T11:01:54.773123",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "Salvar os arquivos static em cache (toda vez que dou f5 ele tenta buscar os dados e da 304)",
+                "to_do_identificator": "28cff7b3-857a-4d41-adb0-48733cb9d4e2",
+                "to_do_created_time": "2025-01-23T11:16:08.312918",
                 "to_do_status": "in progress",
                 "to_do_completed_time": null
             }

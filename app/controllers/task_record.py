@@ -71,7 +71,7 @@ class TaskRecord(DataRecord):
     def _update_record_field(self, task_instance, field, value):
         for record in self._models:
             if record.identificator == task_instance.identificator:
-                record.field = value
+                setattr(record, field, value)
                 self.save()
                 return True
         return False
