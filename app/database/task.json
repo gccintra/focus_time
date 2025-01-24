@@ -110,7 +110,7 @@
         "color": "#75ff7e",
         "seconds_in_focus_per_day": {
             "2025-01-22": 6420,
-            "2025-01-23": 2
+            "2025-01-23": 17080
         },
         "task_to_do_list": [
             {
@@ -126,6 +126,20 @@
                 "to_do_created_time": "2025-01-22T16:50:24.387975",
                 "to_do_status": "completed",
                 "to_do_completed_time": "2025-01-22T16:53:49.085390"
+            },
+            {
+                "to_do_title": "Backlog ITL",
+                "to_do_identificator": "49b21a9b-86a1-461e-813d-b7950d0d1896",
+                "to_do_created_time": "2025-01-23T13:49:31.786219",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "Passar em todas as issues do ITL e verificar o milestones (Nas que não são HU)",
+                "to_do_identificator": "a2eaa24d-31a6-4879-a561-43185120ffab",
+                "to_do_created_time": "2025-01-23T17:50:16.602357",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
             }
         ]
     },
@@ -174,8 +188,8 @@
                 "to_do_title": "Salvar o seconds_in_focus_per_day a todo segundo, e não somente quando o usuário clicar em stop",
                 "to_do_identificator": "49096c26-6162-4246-a439-ea7b83012e4a",
                 "to_do_created_time": "2025-01-21T22:24:49.431641",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
+                "to_do_status": "completed",
+                "to_do_completed_time": "2025-01-23T12:05:15.506893"
             },
             {
                 "to_do_title": "Tratamento de Erros ",
@@ -195,13 +209,48 @@
                 "to_do_title": "Estrutura de Pastas (Organizar)",
                 "to_do_identificator": "72a95286-cef2-4f93-861b-0a0b3f6ebd1e",
                 "to_do_created_time": "2025-01-23T11:01:54.773123",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
+                "to_do_status": "completed",
+                "to_do_completed_time": "2025-01-23T21:56:53.659791"
             },
             {
                 "to_do_title": "Salvar os arquivos static em cache (toda vez que dou f5 ele tenta buscar os dados e da 304)",
                 "to_do_identificator": "28cff7b3-857a-4d41-adb0-48733cb9d4e2",
                 "to_do_created_time": "2025-01-23T11:16:08.312918",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "Prioridade de Tasks",
+                "to_do_identificator": "61bb41f5-2a5d-4c2d-8763-7d65657f936c",
+                "to_do_created_time": "2025-01-23T14:45:56.841963",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "Ordenação das Tasks",
+                "to_do_identificator": "321711f8-86d7-4653-8009-e8d34cae2abb",
+                "to_do_created_time": "2025-01-23T14:46:02.699241",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "Ícone para o FocusTime",
+                "to_do_identificator": "8f31225e-b42a-4f0e-8655-6d43163cbd92",
+                "to_do_created_time": "2025-01-23T14:46:28.513909",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "Tratativa para quando o usuário pressionar o \"Enter\" ao invés de confirmar clicando no botão",
+                "to_do_identificator": "0ebe1277-660b-4e0a-81fc-4acbaef6004a",
+                "to_do_created_time": "2025-01-23T14:46:47.849630",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "Fonte do Timer",
+                "to_do_identificator": "bfa65277-dae8-42c5-bfd7-dfdcf39f37c3",
+                "to_do_created_time": "2025-01-23T16:44:01.623855",
                 "to_do_status": "in progress",
                 "to_do_completed_time": null
             }

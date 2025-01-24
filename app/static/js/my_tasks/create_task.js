@@ -13,7 +13,7 @@ document.getElementById('createTaskButton').addEventListener('click', function()
       .then(response => response.json())
       .then(data => {
         var taskHTML = `
-          <div class="col-md-6">
+          <div class="col-md-4">
             <div 
               class="d-flex custom-card " 
               style="border-color : ${data.color}"

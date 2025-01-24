@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "partials/base.html" %}
 {% set exclude_header = true %}
 
 
@@ -212,8 +212,8 @@
     </script>
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="{{ url_for('static', filename='js/to_do_manage.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/timer.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/start_task_tooltip_manage.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/start_task/to_do_manage.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/start_task/timer.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/start_task/tooltip_manage.js') }}"></script>
 
 {% endblock %}
