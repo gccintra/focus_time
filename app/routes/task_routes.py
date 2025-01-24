@@ -1,4 +1,4 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, render_template
 from app.controllers.task_controller import TaskController
 
 
@@ -42,5 +42,4 @@ def change_to_do_state_route(task_id):
 def delete_to_do(task_id):
     data = request.get_json()
     return controller.delete_to_do(task_id, data)
-
 

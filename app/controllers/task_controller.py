@@ -1,4 +1,4 @@
-from flask import jsonify, render_template
+from flask import jsonify, render_template, abort
 from app.services.task_service import TaskService
 
 class TaskController:
@@ -28,7 +28,7 @@ class TaskController:
     def start_task(self, task_id):
         task = self.service.get_task_by_id(task_id)
         if not task:
-            return jsonify({"error": "Task not found"}), 404
+            return abort(404)
         return render_template("start_task.html", title="Start Task", task=task, to_do_list=task.task_to_do_list)
 
     def update_task_time(self, task_id, data):
