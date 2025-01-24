@@ -1,4 +1,6 @@
-class User():
+from app.models.base_model import BaseModel
+
+class User(BaseModel):
     def __init__(self, username, password, name, email, email_token, tasks=[]):
         self.username = username
         self.password = password
@@ -6,3 +8,8 @@ class User():
         self.email = email
         self.email_token = email_token
         self.tasks = tasks
+
+
+
+    def to_dict(self):
+        return {}

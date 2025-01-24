@@ -1,8 +1,9 @@
+from app.models.base_model import BaseModel
 from datetime import datetime
 import uuid
 
 
-class TaskToDo():
+class TaskToDo(BaseModel):
     def __init__(self, title, identificator=None, to_do_completed_time=None, to_do_status=None, to_do_created_time=None):
         self.to_do_title = title
         self._to_do_identificator = identificator or str(uuid.uuid4())

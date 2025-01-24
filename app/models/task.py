@@ -1,7 +1,8 @@
 from datetime import date, timedelta
 from app.models.task_to_do import TaskToDo
+from app.models.base_model import BaseModel
 
-class Task:    
+class Task(BaseModel):    
     def __init__(self, identificator, title, color, seconds_in_focus_per_day={}, task_to_do_list=[]):
         self.identificator = identificator
         self.title = title
