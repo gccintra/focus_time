@@ -181,8 +181,8 @@
                 "to_do_title": "Separar Controllers e Routes",
                 "to_do_identificator": "fbea0e87-0aeb-4323-9fe7-80f1f5e9b452",
                 "to_do_created_time": "2025-01-21T22:24:32.356318",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
+                "to_do_status": "completed",
+                "to_do_completed_time": "2025-01-24T09:59:48.059155"
             },
             {
                 "to_do_title": "Salvar o seconds_in_focus_per_day a todo segundo, e não somente quando o usuário clicar em stop",
@@ -237,8 +237,8 @@
                 "to_do_title": "Ícone para o FocusTime",
                 "to_do_identificator": "8f31225e-b42a-4f0e-8655-6d43163cbd92",
                 "to_do_created_time": "2025-01-23T14:46:28.513909",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
+                "to_do_status": "completed",
+                "to_do_completed_time": "2025-01-24T09:59:39.539191"
             },
             {
                 "to_do_title": "Tratativa para quando o usuário pressionar o \"Enter\" ao invés de confirmar clicando no botão",
@@ -251,6 +251,13 @@
                 "to_do_title": "Fonte do Timer",
                 "to_do_identificator": "bfa65277-dae8-42c5-bfd7-dfdcf39f37c3",
                 "to_do_created_time": "2025-01-23T16:44:01.623855",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "Adicionar cache em memória usando bibliotecas como functools.lru_cache.",
+                "to_do_identificator": "bb084bf2-4f49-4281-9041-1e3048ffb4fa",
+                "to_do_created_time": "2025-01-24T10:43:20.382125",
                 "to_do_status": "in progress",
                 "to_do_completed_time": null
             }

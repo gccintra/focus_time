@@ -15,8 +15,11 @@ To do:
 
 Doing:
 - [ ] Getters e Setters, + Segurança
-- [ ] Tratamento de Erros e apresentação para o usuário
+- [ ] Tratamento de Erros e apresentação para o usuário 
+- [ ] Classe exept
+- [ ] logging
 
+- [ ] Adicionar cache em memória usando bibliotecas como functools.lru_cache.
 - [ ] Estudar e Melhorar os blueprints
 - [x] REFATORAR TUDO, TENDO EM VISTA A REFATORACAO DE DATA_RECORD 
 - [x] SEPARAR CONTROLLER E ROUTES (ta tudo junto hoje em dia)
