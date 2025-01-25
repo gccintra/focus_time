@@ -110,7 +110,8 @@
         "color": "#75ff7e",
         "seconds_in_focus_per_day": {
             "2025-01-22": 6420,
-            "2025-01-23": 17080
+            "2025-01-23": 17080,
+            "2025-01-24": 19599
         },
         "task_to_do_list": [
             {
@@ -138,6 +139,27 @@
                 "to_do_title": "Passar em todas as issues do ITL e verificar o milestones (Nas que não são HU)",
                 "to_do_identificator": "a2eaa24d-31a6-4879-a561-43185120ffab",
                 "to_do_created_time": "2025-01-23T17:50:16.602357",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "Sprint 27 ITL",
+                "to_do_identificator": "3430d58f-0eb4-4c31-96af-63bfdf8b28bd",
+                "to_do_created_time": "2025-01-24T13:51:23.900530",
+                "to_do_status": "completed",
+                "to_do_completed_time": "2025-01-24T16:20:34.955184"
+            },
+            {
+                "to_do_title": "Documentar Mudanças - ITL",
+                "to_do_identificator": "a820aade-a99d-4b76-9f57-ee94283d0144",
+                "to_do_created_time": "2025-01-24T13:51:32.815434",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "Documentar - Sprint 27 (ITL)",
+                "to_do_identificator": "6544eed5-e607-4878-abf3-e6b3532769dc",
+                "to_do_created_time": "2025-01-24T16:21:17.098126",
                 "to_do_status": "in progress",
                 "to_do_completed_time": null
             }
@@ -258,6 +280,13 @@
                 "to_do_title": "Adicionar cache em memória usando bibliotecas como functools.lru_cache.",
                 "to_do_identificator": "bb084bf2-4f49-4281-9041-1e3048ffb4fa",
                 "to_do_created_time": "2025-01-24T10:43:20.382125",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "Repository",
+                "to_do_identificator": "b8061865-bed1-43fe-bc75-7927c8f48599",
+                "to_do_created_time": "2025-01-24T13:52:12.472491",
                 "to_do_status": "in progress",
                 "to_do_completed_time": null
             }

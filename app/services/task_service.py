@@ -1,7 +1,7 @@
 from ..models.task import Task
 from ..models.task_to_do import TaskToDo
 from ..models.exceptions import TaskError
-from ..controllers.task_record import TaskRecord
+from ..repository.task_record import TaskRecord
 from datetime import datetime
 
 class TaskService:
