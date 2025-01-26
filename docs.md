@@ -18,6 +18,9 @@ Doing:
 - [ ] Tratamento de Erros e apresentação para o usuário 
 - [ ] Classe exept
 - [ ] logging
+- [ ] configurar logging do flask: https://flask.palletsprojects.com/en/stable/logging/
+- [ ] Testes Unitários Fazer para Failure e Success
+- [ ] Validações ao tentar criar uma task com id igual (hard coded)
 
 - [ ] Adicionar cache em memória usando bibliotecas como functools.lru_cache.
 - [ ] Estudar e Melhorar os blueprints

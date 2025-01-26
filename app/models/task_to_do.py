@@ -1,12 +1,13 @@
 from app.models.base_model import BaseModel
 from datetime import datetime
 import uuid
+from app.models.exceptions import TaskValidationError
 
 
 class TaskToDo(BaseModel):
-    def __init__(self, title, identificator=None, to_do_completed_time=None, to_do_status=None, to_do_created_time=None):
-        self.to_do_title = title
-        self._to_do_identificator = identificator or str(uuid.uuid4())
+    def __init__(self, to_do_title, to_do_identificator=None, to_do_completed_time=None, to_do_status=None, to_do_created_time=None):
+        self.to_do_title = to_do_title
+        self._to_do_identificator = to_do_identificator or str(uuid.uuid4())
         self.to_do_created_time = to_do_created_time or datetime.now().isoformat()
         self._to_do_status = to_do_status or 'in progress'
         self.to_do_completed_time = to_do_completed_time
@@ -32,7 +33,7 @@ class TaskToDo(BaseModel):
     def to_do_status(self, value):
         valid_statuses = ["in progress", "completed"]
         if value not in valid_statuses:
-            raise ValueError(f"Invalid Status. Choose one: {', '.join(valid_statuses)}.")
+            raise TaskValidationError('To-do Status', f"Invalid Status. Choose one: {', '.join(valid_statuses)}.")
         self._to_do_status = value
 
     @to_do_identificator.setter

@@ -1,5 +1,35 @@
 class TaskError(Exception):
-    def __init__(self, message, status_code=400):
-        self.message = message
-        self.status_code = status_code
-        super().__init__(self.message)
+    """Erro geral relacionado a tarefas."""
+    def __init__(self, message="Erro relacionado à tarefa."):
+        super().__init__(message)
+
+
+class TaskNotFoundError(TaskError):
+    """Erro para quando uma tarefa não é encontrada."""
+    def __init__(self, task_id=None, message="Tarefa não encontrada."):
+        if task_id:
+            message = f"Tarefa com ID '{task_id}' não foi encontrada."
+        super().__init__(message)
+
+class TaskTodoNotFoundError(TaskError):
+    """Erro para quando um to-do não é encontrada."""
+    def __init__(self, todo_id=None, message="To-do não encontrado."):
+        if todo_id:
+            message = f"To-do com ID '{todo_id}' não foi encontrado."
+        super().__init__(message)
+
+class TaskValidationError(TaskError):
+    """Erro para validação de dados."""
+    def __init__(self, field=None, message=None):
+        if field and not message:
+            message = f"O campo '{field}' é inválido ou está vazio."
+        elif field and message:
+            message = f"O campo '{field}' apresenta erro: {message}"
+        else:
+             message = f"Erro de validação de dados."
+        super().__init__(message)
+
+class DatabaseError(Exception):
+    """Erro geral relacionado ao banco de dados."""
+    def __init__(self, message="Erro ao acessar o banco de dados."):
+        super().__init__(message)

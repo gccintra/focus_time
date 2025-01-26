@@ -16,17 +16,17 @@ document.getElementById('createTaskButton').addEventListener('click', function()
           <div class="col-md-4">
             <div 
               class="d-flex custom-card " 
-              style="border-color : ${data.color}"
-              data-id="${data.id}"> 
+              style="border-color : ${data.data.color}"
+              data-id="${data.data.id}"> 
 
               <div class="flex-grow-1">
-                <h3>${data.name}</h3>
-                <p>Today: ${data.today_total_time}</p>
-                <p>Week: ${data.week_total_time}</p>
+                <h3>${data.data.name}</h3>
+                <p>Today: ${data.data.today_total_time}</p>
+                <p>Week: ${data.data.week_total_time}</p>
               </div>
 
               <div class="flex-shrink-0">
-                <canvas id="myPieChart-${data.id}" style="max-width: 150px; max-height: 150px;"></canvas>
+                <canvas id="myPieChart-${data.data.id}" style="max-width: 150px; max-height: 150px;"></canvas>
               </div>
 
             </div>

@@ -1,5 +1,6 @@
 from datetime import date, timedelta
 from app.models.task_to_do import TaskToDo
+from app.models.exceptions import TaskValidationError
 from app.models.base_model import BaseModel
 
 class Task(BaseModel):    
@@ -12,8 +13,8 @@ class Task(BaseModel):
         # Garante que `task_to_do_list` contenha apenas instâncias de `TaskToDoList`
         self.task_to_do_list = [
             TaskToDo(
-                title=to_do.get('to_do_title'),
-                identificator=to_do.get('to_do_identificator'),
+                to_do_title=to_do.get('to_do_title'),
+                to_do_identificator=to_do.get('to_do_identificator'),
                 to_do_created_time=to_do.get('to_do_created_time'),
                 to_do_status=to_do.get('to_do_status'),
                 to_do_completed_time=to_do.get('to_do_completed_time'),
@@ -70,6 +71,11 @@ class Task(BaseModel):
     
 
     def set_seconds_in_focus_per_day(self, seconds):
+        if not isinstance(seconds, (int, float)):
+            raise TaskValidationError(field="seconds", message="O valor deve ser um número (int ou float).")
+        if seconds <= 0:
+            raise TaskValidationError(field="seconds", message="O valor deve ser maior que 0.")
+    
         today = str(date.today()) 
         self.seconds_in_focus_per_day[today] = seconds
 

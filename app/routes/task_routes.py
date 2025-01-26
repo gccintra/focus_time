@@ -10,9 +10,9 @@ controller = TaskController()
 def tasks_route():
     return controller.my_tasks()
 
-@task_bp.route("/get_data_for_chart_my_tasks_menu/<task_id>", methods=["GET"])
-def task_data_for_my_tasks_chart(task_id):
-    return controller.get_data_for_chart(task_id)
+@task_bp.route("/get_data_for_all_charts", methods=["GET"])
+def get_data_for_all_charts_menu_route():
+    return controller.get_data_for_all_charts()
 
 @task_bp.route("/new_task", methods=["POST"])
 def new_task_route():

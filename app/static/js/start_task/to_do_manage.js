@@ -24,11 +24,11 @@ document.getElementById('createTaskToDoButton').addEventListener('click', functi
 
                 <div 
                     class="d-flex justify-content-between align-items-center to-do-card"
-                    data-id="${data.to_do_identificator}">
+                    data-id="${data.data.to_do_identificator}">
         
                     <div class="to-do-text-check d-flex align-items-center">
                         <input class="form-check-input to-do-check-box me-3 mt-0 rounded-checkbox" type="checkbox" value="" aria-label="...">
-                        <span class="to-do-title mb-0">${data.to_do_title}</span>
+                        <span class="to-do-title mb-0">${data.data.to_do_title}</span>
                     </div>
                     
                     <div class="icons">
@@ -39,7 +39,7 @@ document.getElementById('createTaskToDoButton').addEventListener('click', functi
                         data-bs-placement="left"
                         data-bs-custom-class="info-to-do-tooltip"
                         data-bs-html="true"
-                        title="Created Time:<br>${data.to_do_created_time}">
+                        title="Created Time:<br>${data.data.to_do_created_time}">
                       </i>  
                       <i class="bi bi-trash fs-4" id="deleteToDo" data-bs-toggle="modal" data-bs-target="#DeleteToDo"></i>
                     </div>
@@ -99,13 +99,13 @@ document.querySelectorAll('.to-do-grid').forEach(grid => {
               }
               
               if (infoIcon) {
-                if (data.status == 'completed'){
-                  newTitle = `Created Time:<br>${data.created_time}
+                if (data.data.status == 'completed'){
+                  newTitle = `Created Time:<br>${data.data.created_time}
                               <br>
-                              Completed Time:<br>${data.completed_time}`
+                              Completed Time:<br>${data.data.completed_time}`
                   infoIcon.setAttribute('title', newTitle);
                 } else {
-                  newTitle = `Created Time:<br>${data.created_time}`
+                  newTitle = `Created Time:<br>${data.data.created_time}`
                   infoIcon.setAttribute('title', newTitle);
                 }
                  

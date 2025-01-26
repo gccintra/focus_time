@@ -189,7 +189,8 @@
         "title": "Focus Time Develop",
         "color": "#ff0000",
         "seconds_in_focus_per_day": {
-            "2025-01-23": 6445
+            "2025-01-23": 6445,
+            "2025-01-26": 78
         },
         "task_to_do_list": [
             {
@@ -287,8 +288,81 @@
                 "to_do_title": "Repository",
                 "to_do_identificator": "b8061865-bed1-43fe-bc75-7927c8f48599",
                 "to_do_created_time": "2025-01-24T13:52:12.472491",
+                "to_do_status": "completed",
+                "to_do_completed_time": "2025-01-25T14:47:00.192545"
+            },
+            {
+                "to_do_title": "Configurar Logging do Flask: https://flask.palletsprojects.com/en/stable/logging/",
+                "to_do_identificator": "fbfdd7e4-b5bc-41b1-aaa7-5955225dc4b1",
+                "to_do_created_time": "2025-01-25T15:15:52.679308",
                 "to_do_status": "in progress",
                 "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "get_data_for_chart_my_tasks_menu - Realizar somente 1 requisição e enviar todos os dados, tratar o resto no front-end",
+                "to_do_identificator": "5169f076-943b-4ae5-9027-e45b7021b7d6",
+                "to_do_created_time": "2025-01-25T22:27:52.904706",
+                "to_do_status": "completed",
+                "to_do_completed_time": "2025-01-26T11:25:35.854003"
+            },
+            {
+                "to_do_title": "Travar quantidade de caracteres para criação de to-do e de task",
+                "to_do_identificator": "c0aeaaa4-8c9e-4ee8-9b97-91103cfa043a",
+                "to_do_created_time": "2025-01-26T13:30:51.537011",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": " Padrão de dados enviados para o front end (succes(true/false), data{}, error{code, message, detail}, message)",
+                "to_do_identificator": "a1ad893b-faa8-4982-a68c-fac9ae6b737f",
+                "to_do_created_time": "2025-01-26T13:34:18.452639",
+                "to_do_status": "in progress",
+                "to_do_completed_time": null
+            },
+            {
+                "to_do_title": "testando",
+                "to_do_identificator": "95a7f657-acca-4c8e-9817-b5af9a02d4bc",
+                "to_do_created_time": "2025-01-26T14:34:50.488998",
+                "to_do_status": "completed",
+                "to_do_completed_time": "2025-01-26T14:34:53.569914"
+            },
+            {
+                "to_do_title": "gesg",
+                "to_do_identificator": "7a47972b-6936-41f5-bafd-1c57dde3c3a5",
+                "to_do_created_time": "2025-01-26T14:36:33.918785",
+                "to_do_status": "completed",
+                "to_do_completed_time": "2025-01-26T14:36:44.087705"
+            },
+            {
+                "to_do_title": "sss",
+                "to_do_identificator": "1b19a240-04f5-4022-9c4a-9d2315d41de6",
+                "to_do_created_time": "2025-01-26T14:38:07.171449",
+                "to_do_status": "completed",
+                "to_do_completed_time": "2025-01-26T14:38:09.799797"
+            }
+        ]
+    },
+    {
+        "identificator": "ed14180b-60f0-47cd-9ba4-194e75e60677",
+        "title": "chat gpt",
+        "color": "#00fffb",
+        "seconds_in_focus_per_day": {},
+        "task_to_do_list": []
+    },
+    {
+        "identificator": "b17f0dca-2367-4f06-8691-e293c4297754",
+        "title": "dsgfsdgsfg",
+        "color": "#180830",
+        "seconds_in_focus_per_day": {
+            "2025-01-26": 2
+        },
+        "task_to_do_list": [
+            {
+                "to_do_title": "sdasf",
+                "to_do_identificator": "1bce5f6f-7848-4912-9f5b-ed511cacbc33",
+                "to_do_created_time": "2025-01-26T15:02:17.711230",
+                "to_do_status": "completed",
+                "to_do_completed_time": "2025-01-26T15:02:18.989400"
             }
         ]
     }

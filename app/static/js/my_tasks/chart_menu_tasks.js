@@ -1,23 +1,25 @@
-function inicializateChartContent(){
+function inicializateChartContent() {
     const tasks = document.querySelectorAll('.custom-card');
 
-    tasks.forEach((task, index) => { // Passando o índice do forEach aqui
-        const taskId = task.getAttribute('data-id');
-        const ctx = document.getElementById(`myPieChart-${taskId}`).getContext('2d');
-    
-        fetch(`/tasks/get_data_for_chart_my_tasks_menu/${taskId}`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.createChart) {
-                    const labels = data.tasks.map(task => task.title);
-                    const taskMinutes = data.tasks.map(task => task.minutes);
-                    const colors = data.tasks.map(task => task.color);
+    fetch('/tasks/get_data_for_all_charts')
+        .then(response => response.json())
+        .then(data => {
+            const allTasksData = data.data.tasks;
 
-                    const totalMinutes = taskMinutes.reduce((a, b) => a + b, 0); // Calcula o total de minutos
-                    const percentage = ((taskMinutes[index] / totalMinutes) * 100).toFixed(1); // Porcentagem da tarefa específica
-                    console.log(taskMinutes)
-                    console.log(labels)
-                    console.log(percentage)
+            tasks.forEach(task => {
+                const taskId = task.getAttribute('data-id');
+                const ctx = document.getElementById(`myPieChart-${taskId}`).getContext('2d');
+
+                // Filtra os dados da tarefa específica
+                const taskData = allTasksData.filter(t => t.identificator === taskId);
+                if (taskData.length > 0) {
+                    const labels = allTasksData.map(t => t.title);
+                    const taskMinutes = allTasksData.map(t => t.minutes);
+                    const colors = allTasksData.map(t => t.identificator === taskId ? t.color : "#474747");
+
+                    const totalMinutes = taskMinutes.reduce((a, b) => a + b, 0);
+                    const percentage = ((taskMinutes[labels.indexOf(taskData[0].title)] / totalMinutes) * 100).toFixed(1);
+
                     new Chart(ctx, {
                         type: 'doughnut',
                         data: {
@@ -30,13 +32,13 @@ function inicializateChartContent(){
                             }]
                         },
                         options: {
-                            cutout: '70%', // Tamanho do buraco no centro
+                            cutout: '70%',
                             plugins: {
                                 legend: {
-                                    display: false // Remove a legenda
+                                    display: false
                                 },
                                 tooltip: {
-                                    enabled: false // Desabilita os tooltips
+                                    enabled: false
                                 }
                             }
                         },
@@ -48,13 +50,10 @@ function inicializateChartContent(){
                                 const { height } = chart;
                                 const centerX = width / 2;
                                 const centerY = height / 2;
-                        
-                                // Calcula o raio interno e externo
-                                const innerRadius = chart._metasets[0].data[0].innerRadius; // Valor padrão caso seja undefined
+
+                                const innerRadius = chart._metasets[0].data[0].innerRadius;
                                 const outerRadius = chart._metasets[0].data[0].outerRadius;
-                        
-                                console.log("Raio interno:", innerRadius, "Raio externo:", outerRadius);
-                        
+
                                 // Fundo preto no centro
                                 ctx.save();
                                 ctx.beginPath();
@@ -62,7 +61,7 @@ function inicializateChartContent(){
                                 ctx.fillStyle = '#212121';
                                 ctx.fill();
                                 ctx.restore();
-                        
+
                                 // Texto no centro
                                 ctx.font = 'bold 20px Arial';
                                 ctx.fillStyle = 'white';
@@ -70,18 +69,16 @@ function inicializateChartContent(){
                                 ctx.textBaseline = 'middle';
                                 ctx.fillText(`${percentage}%`, centerX, centerY);
                             }
-                        }]                        
+                        }]
                     });
                 } else {
-                    document.getElementById(`myPieChart-${taskId}`).style.display = 'none'; // Esconde o canvas se não houver dados
-                    console.log("Nenhum dado disponível para o gráfico.");
+                    document.getElementById(`myPieChart-${taskId}`).style.display = 'none';
+                    console.log(`Nenhum dado disponível para a tarefa ${taskId}.`);
                 }
-            })
-            .catch(error => console.error("Erro ao carregar dados:", error));
-    });
-   
-};
-
+            });
+        })
+        .catch(error => console.error("Erro ao carregar dados:", error));
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     inicializateChartContent();
