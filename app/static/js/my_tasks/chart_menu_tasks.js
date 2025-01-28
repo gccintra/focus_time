@@ -1,7 +1,7 @@
 function inicializateChartContent() {
     const tasks = document.querySelectorAll('.custom-card');
 
-    fetch('/tasks/get_data_for_all_charts')
+    fetch('/task/get_data_for_all_charts')
         .then(response => response.json())
         .then(data => {
             const allTasksData = data.data.tasks;

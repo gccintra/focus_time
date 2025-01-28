@@ -11,19 +11,26 @@ Doing:
 - [x] Abstrair mais o codigo (templates, js, partials, mais classes, rotas)
 - [x] Refatorar pesado aqui (+segurança, melhorar a manipulação dos dados (dicionário x instâncias), melhorar os models.)
 
-To do:
-
 Doing:
-- [ ] Getters e Setters, + Segurança
-- [ ] Tratamento de Erros e apresentação para o usuário 
-- [ ] Classe exept
-- [ ] logging
-- [ ] configurar logging do flask: https://flask.palletsprojects.com/en/stable/logging/
-- [ ] Testes Unitários Fazer para Failure e Success
-- [ ] Validações ao tentar criar uma task com id igual (hard coded)
 
+- [ ] Criar User e Login/Register
+- [ ] Getters e Setters, + Segurança
+- [ ] Tratamento de Erros (Front-End)
+- [ ] Testes Unitários Fazer para Failure e Success
+- [ ] Delete e Edit Task
+- [ ] Edit To Do
+- [ ] Edit, Delete User
+
+To do:
+- [x] Melhorar DB Tabelas (Task, ToDo)
+- [x] ToDo Blueprint
+- [x] Classe exeption
+- [x] logging
+- [x] Tratamento de Erros (Back-End)
+- [ ] Validações ao tentar criar uma task com id igual (hard coded)
+- [ ] configurar logging do flask: https://flask.palletsprojects.com/en/stable/logging/
 - [ ] Adicionar cache em memória usando bibliotecas como functools.lru_cache.
-- [ ] Estudar e Melhorar os blueprints
+- [x] Estudar e Melhorar os blueprints
 - [x] REFATORAR TUDO, TENDO EM VISTA A REFATORACAO DE DATA_RECORD 
 - [x] SEPARAR CONTROLLER E ROUTES (ta tudo junto hoje em dia)
 - [x] Salvar o seconds_in_focus_per_day a todo segundo, e não somente quando o usuário clicar em stop. (para salvar o tempo msm se o usuário sair dar tela, fechar a tela, perder conexão com internet.)
@@ -31,6 +38,7 @@ Doing:
 - [ ] Gráfico do git hub
 - [ ] Testes unitários  
 - [x] Separar melhor as pastas dos arquivos 
+- [ ] Factory + Injeção de Dependências
 
 Pensar no cenário onde o timer foi iniciado antes da 00:00 e continuou até após 00:00
 

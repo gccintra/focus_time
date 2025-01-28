@@ -11,13 +11,6 @@ class TaskNotFoundError(TaskError):
             message = f"Tarefa com ID '{task_id}' não foi encontrada."
         super().__init__(message)
 
-class TaskTodoNotFoundError(TaskError):
-    """Erro para quando um to-do não é encontrada."""
-    def __init__(self, todo_id=None, message="To-do não encontrado."):
-        if todo_id:
-            message = f"To-do com ID '{todo_id}' não foi encontrado."
-        super().__init__(message)
-
 class TaskValidationError(TaskError):
     """Erro para validação de dados."""
     def __init__(self, field=None, message=None):
@@ -32,4 +25,33 @@ class TaskValidationError(TaskError):
 class DatabaseError(Exception):
     """Erro geral relacionado ao banco de dados."""
     def __init__(self, message="Erro ao acessar o banco de dados."):
+        super().__init__(message)
+
+
+
+
+
+class ToDoError(Exception):
+    """Erro geral relacionado ao ToDo."""
+    def __init__(self, message="Erro relacionado ao To-Do."):
+        super().__init__(message)
+
+
+class TodoNotFoundError(ToDoError):
+    """Erro para quando um to-do não é encontrada."""
+    def __init__(self, todo_id=None, message="To-do não encontrado."):
+        if todo_id:
+            message = f"To-do com ID '{todo_id}' não foi encontrado."
+        super().__init__(message)
+
+
+class ToDoValidationError(ToDoError):
+    """Erro para validação de dados."""
+    def __init__(self, field=None, message=None):
+        if field and not message:
+            message = f"O campo '{field}' é inválido ou está vazio."
+        elif field and message:
+            message = f"O campo '{field}' apresenta erro: {message}"
+        else:
+             message = f"Erro de validação de dados."
         super().__init__(message)

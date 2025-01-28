@@ -1,6 +1,7 @@
 import json
 import logging
 from ..models.task import Task
+from ..models.todo import ToDo
 from ..models.user import User
 from ..utils.logger import logger
 
@@ -9,6 +10,7 @@ class DataRecord:
         self.models_classes = {
             'user.json': User,
             'task.json': Task,
+            'todo.json': ToDo,
             'test_task.json': Task   
         }
 

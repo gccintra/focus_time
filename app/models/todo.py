@@ -1,17 +1,17 @@
 from app.models.base_model import BaseModel
 from datetime import datetime
-import uuid
-from app.models.exceptions import TaskValidationError
+from app.models.exceptions import ToDoValidationError
 
 
-class TaskToDo(BaseModel):
-    def __init__(self, to_do_title, to_do_identificator=None, to_do_completed_time=None, to_do_status=None, to_do_created_time=None):
+class ToDo(BaseModel):
+    def __init__(self, to_do_title, to_do_identificator, task_FK, to_do_created_time=None, to_do_status=None, to_do_completed_time=None):
         self.to_do_title = to_do_title
-        self._to_do_identificator = to_do_identificator or str(uuid.uuid4())
+        self._to_do_identificator = to_do_identificator 
+        self.__task_FK = task_FK
         self.to_do_created_time = to_do_created_time or datetime.now().isoformat()
         self._to_do_status = to_do_status or 'in progress'
         self.to_do_completed_time = to_do_completed_time
-
+ 
 
     @property
     def to_do_completed_time_formatted(self):
@@ -29,11 +29,16 @@ class TaskToDo(BaseModel):
     def to_do_identificator(self):
         return self._to_do_identificator
     
+    @property
+    def task_FK(self):
+        return self.__task_FK   
+
+    
     @to_do_status.setter
     def to_do_status(self, value):
         valid_statuses = ["in progress", "completed"]
         if value not in valid_statuses:
-            raise TaskValidationError('To-do Status', f"Invalid Status. Choose one: {', '.join(valid_statuses)}.")
+            raise ToDoValidationError('To-do Status', f"Invalid Status. Choose one: {', '.join(valid_statuses)}.")
         self._to_do_status = value
 
     @to_do_identificator.setter
@@ -42,6 +47,7 @@ class TaskToDo(BaseModel):
 
     def to_dict(self):
         return {
+            "task_FK": self.__task_FK,
             "to_do_title": self.to_do_title,
             "to_do_identificator": self._to_do_identificator,
             "to_do_created_time": self.to_do_created_time,

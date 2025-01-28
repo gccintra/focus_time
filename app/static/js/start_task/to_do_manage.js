@@ -10,12 +10,12 @@ document.getElementById('createTaskToDoButton').addEventListener('click', functi
   if (taskToDoName.trim() !== "") {
 
 
-    fetch(`/tasks/${taskId}/new_task_to_do`, {
+    fetch(`/todo/new_todo`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ name: taskToDoName })
+      body: JSON.stringify({ name: taskToDoName, task_id: taskId })
     })
     .then(response => response.json())
     .then(data => {
@@ -70,12 +70,12 @@ document.querySelectorAll('.to-do-grid').forEach(grid => {
         const isChecked = checkbox.checked;
 
         // Envia a requisição para o backend
-        fetch(`/tasks/${taskId}/change_to_do_state`, {
+        fetch(`/todo/change_state/${toDoId}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ status: isChecked ? "completed" : "in progress", id: toDoId }),
+          body: JSON.stringify({ status: isChecked ? "completed" : "in progress"}),
         })
           .then(response => response.json())
           .then(data => {
@@ -152,13 +152,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const toDoId = confirmDeleteButton.getAttribute('to-do-id');
 
     // Enviar requisição para deletar o item
-    fetch(`/tasks/${taskId}/delete_to_do`, {
+    fetch(`/todo/delete/${toDoId}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ id: toDoId })
-    })
+        }})
     .then(response => response.json())
     .then(data => {
         if (data.success) {

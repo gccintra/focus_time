@@ -3,7 +3,7 @@ document.getElementById('createTaskButton').addEventListener('click', function()
     var taskColor = document.getElementById('taskColor').value;
 
     if (taskName.trim() !== "") {
-      fetch("/tasks/new_task", {
+      fetch("/task/new_task", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

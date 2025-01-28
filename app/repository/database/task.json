@@ -13,31 +13,9 @@
             "2024-12-06": 1000,
             "2025-01-08": 809,
             "2025-01-09": 810,
-            "2025-01-21": 12013
-        },
-        "task_to_do_list": [
-            {
-                "to_do_title": "Steve Jobs",
-                "to_do_identificator": "9e175a77-48cf-4c89-a1f8-d7d2fbcc5c35",
-                "to_do_created_time": "2025-01-16T14:22:37.086992",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
-            },
-            {
-                "to_do_title": "Clean Code",
-                "to_do_identificator": "84fa28c6-59ac-4ab0-adb4-e1a1dbd0fbe4",
-                "to_do_created_time": "2025-01-16T14:22:37.086992",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
-            },
-            {
-                "to_do_title": "Lord of the Flies",
-                "to_do_identificator": "497f0279-6f49-4d8e-8a51-f2e05e2b2360",
-                "to_do_created_time": "2025-01-16T14:22:37.086992",
-                "to_do_status": "completed",
-                "to_do_completed_time": "2025-01-21T15:20:12.302699"
-            }
-        ]
+            "2025-01-21": 12013,
+            "2025-01-28": 12064
+        }
     },
     {
         "identificator": "163d9725-3519-474e-8e68-fc446ad71303",
@@ -50,59 +28,9 @@
             "2025-01-08": 2300,
             "2025-01-09": 809,
             "2025-01-12": 6004,
-            "2025-01-21": 29000
-        },
-        "task_to_do_list": [
-            {
-                "to_do_title": "Projeto OO",
-                "to_do_identificator": "b675822c-7887-4c52-a6b1-eacdff73456b",
-                "to_do_created_time": "2025-01-12T17:33:55.264851",
-                "to_do_status": "completed",
-                "to_do_completed_time": "2025-01-17T14:47:45.953140"
-            },
-            {
-                "to_do_title": "Bottle",
-                "to_do_identificator": "bb4f0d6f-7810-464f-8c52-5dda594dcc66",
-                "to_do_created_time": "2025-01-12T18:38:29.940703",
-                "to_do_status": "completed",
-                "to_do_completed_time": "2025-01-19T22:07:36.788702"
-            },
-            {
-                "to_do_title": "Ver como que faço para blabla agua mineral",
-                "to_do_identificator": "bb4f0d6f-7810-464f-8c52-5dda594dcc66",
-                "to_do_created_time": "2025-01-12T18:38:29.940703",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
-            },
-            {
-                "to_do_title": "Orientação a Objetos",
-                "to_do_identificator": "9f848461-0e85-42aa-a92a-a21ba8039d01",
-                "to_do_created_time": "2025-01-12T18:38:38.153245",
-                "to_do_status": "completed",
-                "to_do_completed_time": "2025-01-21T17:21:37.801510"
-            },
-            {
-                "to_do_title": "Lista de IAL",
-                "to_do_identificator": "ea9b818b-df7e-42dc-a9bb-5c2a63b64d39",
-                "to_do_created_time": "2025-01-12T18:38:43.845675",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
-            },
-            {
-                "to_do_title": "testes unitarios",
-                "to_do_identificator": "c8373ccc-b99f-4981-95be-1801fbf79601",
-                "to_do_created_time": "2025-01-16T12:43:21.957968",
-                "to_do_status": "completed",
-                "to_do_completed_time": "2025-01-16T17:23:26.241946"
-            },
-            {
-                "to_do_title": "Tarefa 2",
-                "to_do_identificator": "95316170-b1ec-47e4-844c-eee09adfa5a5",
-                "to_do_created_time": "2025-01-16T14:22:37.086992",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
-            }
-        ]
+            "2025-01-21": 29000,
+            "2025-01-28": 29006
+        }
     },
     {
         "identificator": "4a25959c-c4f9-486e-8874-9508426f5acd",
@@ -111,69 +39,10 @@
         "seconds_in_focus_per_day": {
             "2025-01-22": 6420,
             "2025-01-23": 17080,
-            "2025-01-24": 19599
-        },
-        "task_to_do_list": [
-            {
-                "to_do_title": "SIVOB Manual (Realizar Vistoria)",
-                "to_do_identificator": "de7004f5-8f0e-4cfe-9ccb-b32e913ccf69",
-                "to_do_created_time": "2025-01-22T15:38:18.302539",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
-            },
-            {
-                "to_do_title": "SIVOB Manual (Gerar Laudo)",
-                "to_do_identificator": "f9f20661-f992-4f34-8fef-a76aea7ad55f",
-                "to_do_created_time": "2025-01-22T16:50:24.387975",
-                "to_do_status": "completed",
-                "to_do_completed_time": "2025-01-22T16:53:49.085390"
-            },
-            {
-                "to_do_title": "Backlog ITL",
-                "to_do_identificator": "49b21a9b-86a1-461e-813d-b7950d0d1896",
-                "to_do_created_time": "2025-01-23T13:49:31.786219",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
-            },
-            {
-                "to_do_title": "Passar em todas as issues do ITL e verificar o milestones (Nas que não são HU)",
-                "to_do_identificator": "a2eaa24d-31a6-4879-a561-43185120ffab",
-                "to_do_created_time": "2025-01-23T17:50:16.602357",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
-            },
-            {
-                "to_do_title": "Sprint 27 ITL",
-                "to_do_identificator": "3430d58f-0eb4-4c31-96af-63bfdf8b28bd",
-                "to_do_created_time": "2025-01-24T13:51:23.900530",
-                "to_do_status": "completed",
-                "to_do_completed_time": "2025-01-24T16:20:34.955184"
-            },
-            {
-                "to_do_title": "Documentar Mudanças - ITL",
-                "to_do_identificator": "a820aade-a99d-4b76-9f57-ee94283d0144",
-                "to_do_created_time": "2025-01-24T13:51:32.815434",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
-            },
-            {
-                "to_do_title": "Documentar - Sprint 27 (ITL)",
-                "to_do_identificator": "6544eed5-e607-4878-abf3-e6b3532769dc",
-                "to_do_created_time": "2025-01-24T16:21:17.098126",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
-            }
-        ]
-    },
-    {
-        "identificator": "7a68dad6-a874-4396-9609-59d23b5f56ae",
-        "title": "adasd",
-        "color": "#561ea9",
-        "seconds_in_focus_per_day": {
-            "2025-01-21": 7623,
-            "2025-01-23": 9
-        },
-        "task_to_do_list": []
+            "2025-01-24": 19599,
+            "2025-01-27": 15882,
+            "2025-01-28": 14
+        }
     },
     {
         "identificator": "04d54a48-71db-46e2-afa8-d320b45a1458",
@@ -181,8 +50,7 @@
         "color": "#f2a41c",
         "seconds_in_focus_per_day": {
             "2025-01-23": 2341
-        },
-        "task_to_do_list": []
+        }
     },
     {
         "identificator": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
@@ -190,180 +58,8 @@
         "color": "#ff0000",
         "seconds_in_focus_per_day": {
             "2025-01-23": 6445,
-            "2025-01-26": 78
-        },
-        "task_to_do_list": [
-            {
-                "to_do_title": "Getters + Setters",
-                "to_do_identificator": "e3ef22c7-eb27-4e70-a3d8-d21c8f3e627e",
-                "to_do_created_time": "2025-01-21T22:24:10.822040",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
-            },
-            {
-                "to_do_title": "Separar Controllers e Routes",
-                "to_do_identificator": "fbea0e87-0aeb-4323-9fe7-80f1f5e9b452",
-                "to_do_created_time": "2025-01-21T22:24:32.356318",
-                "to_do_status": "completed",
-                "to_do_completed_time": "2025-01-24T09:59:48.059155"
-            },
-            {
-                "to_do_title": "Salvar o seconds_in_focus_per_day a todo segundo, e não somente quando o usuário clicar em stop",
-                "to_do_identificator": "49096c26-6162-4246-a439-ea7b83012e4a",
-                "to_do_created_time": "2025-01-21T22:24:49.431641",
-                "to_do_status": "completed",
-                "to_do_completed_time": "2025-01-23T12:05:15.506893"
-            },
-            {
-                "to_do_title": "Tratamento de Erros ",
-                "to_do_identificator": "f1caf21c-1c5f-434c-818d-b5e9b6c9a4a2",
-                "to_do_created_time": "2025-01-21T22:25:01.546454",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
-            },
-            {
-                "to_do_title": "Apresentação de mensagens para o usuário",
-                "to_do_identificator": "56f2f68a-c246-4a7d-8869-a018a1fb2d61",
-                "to_do_created_time": "2025-01-21T22:25:11.684168",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
-            },
-            {
-                "to_do_title": "Estrutura de Pastas (Organizar)",
-                "to_do_identificator": "72a95286-cef2-4f93-861b-0a0b3f6ebd1e",
-                "to_do_created_time": "2025-01-23T11:01:54.773123",
-                "to_do_status": "completed",
-                "to_do_completed_time": "2025-01-23T21:56:53.659791"
-            },
-            {
-                "to_do_title": "Salvar os arquivos static em cache (toda vez que dou f5 ele tenta buscar os dados e da 304)",
-                "to_do_identificator": "28cff7b3-857a-4d41-adb0-48733cb9d4e2",
-                "to_do_created_time": "2025-01-23T11:16:08.312918",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
-            },
-            {
-                "to_do_title": "Prioridade de Tasks",
-                "to_do_identificator": "61bb41f5-2a5d-4c2d-8763-7d65657f936c",
-                "to_do_created_time": "2025-01-23T14:45:56.841963",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
-            },
-            {
-                "to_do_title": "Ordenação das Tasks",
-                "to_do_identificator": "321711f8-86d7-4653-8009-e8d34cae2abb",
-                "to_do_created_time": "2025-01-23T14:46:02.699241",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
-            },
-            {
-                "to_do_title": "Ícone para o FocusTime",
-                "to_do_identificator": "8f31225e-b42a-4f0e-8655-6d43163cbd92",
-                "to_do_created_time": "2025-01-23T14:46:28.513909",
-                "to_do_status": "completed",
-                "to_do_completed_time": "2025-01-24T09:59:39.539191"
-            },
-            {
-                "to_do_title": "Tratativa para quando o usuário pressionar o \"Enter\" ao invés de confirmar clicando no botão",
-                "to_do_identificator": "0ebe1277-660b-4e0a-81fc-4acbaef6004a",
-                "to_do_created_time": "2025-01-23T14:46:47.849630",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
-            },
-            {
-                "to_do_title": "Fonte do Timer",
-                "to_do_identificator": "bfa65277-dae8-42c5-bfd7-dfdcf39f37c3",
-                "to_do_created_time": "2025-01-23T16:44:01.623855",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
-            },
-            {
-                "to_do_title": "Adicionar cache em memória usando bibliotecas como functools.lru_cache.",
-                "to_do_identificator": "bb084bf2-4f49-4281-9041-1e3048ffb4fa",
-                "to_do_created_time": "2025-01-24T10:43:20.382125",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
-            },
-            {
-                "to_do_title": "Repository",
-                "to_do_identificator": "b8061865-bed1-43fe-bc75-7927c8f48599",
-                "to_do_created_time": "2025-01-24T13:52:12.472491",
-                "to_do_status": "completed",
-                "to_do_completed_time": "2025-01-25T14:47:00.192545"
-            },
-            {
-                "to_do_title": "Configurar Logging do Flask: https://flask.palletsprojects.com/en/stable/logging/",
-                "to_do_identificator": "fbfdd7e4-b5bc-41b1-aaa7-5955225dc4b1",
-                "to_do_created_time": "2025-01-25T15:15:52.679308",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
-            },
-            {
-                "to_do_title": "get_data_for_chart_my_tasks_menu - Realizar somente 1 requisição e enviar todos os dados, tratar o resto no front-end",
-                "to_do_identificator": "5169f076-943b-4ae5-9027-e45b7021b7d6",
-                "to_do_created_time": "2025-01-25T22:27:52.904706",
-                "to_do_status": "completed",
-                "to_do_completed_time": "2025-01-26T11:25:35.854003"
-            },
-            {
-                "to_do_title": "Travar quantidade de caracteres para criação de to-do e de task",
-                "to_do_identificator": "c0aeaaa4-8c9e-4ee8-9b97-91103cfa043a",
-                "to_do_created_time": "2025-01-26T13:30:51.537011",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
-            },
-            {
-                "to_do_title": " Padrão de dados enviados para o front end (succes(true/false), data{}, error{code, message, detail}, message)",
-                "to_do_identificator": "a1ad893b-faa8-4982-a68c-fac9ae6b737f",
-                "to_do_created_time": "2025-01-26T13:34:18.452639",
-                "to_do_status": "in progress",
-                "to_do_completed_time": null
-            },
-            {
-                "to_do_title": "testando",
-                "to_do_identificator": "95a7f657-acca-4c8e-9817-b5af9a02d4bc",
-                "to_do_created_time": "2025-01-26T14:34:50.488998",
-                "to_do_status": "completed",
-                "to_do_completed_time": "2025-01-26T14:34:53.569914"
-            },
-            {
-                "to_do_title": "gesg",
-                "to_do_identificator": "7a47972b-6936-41f5-bafd-1c57dde3c3a5",
-                "to_do_created_time": "2025-01-26T14:36:33.918785",
-                "to_do_status": "completed",
-                "to_do_completed_time": "2025-01-26T14:36:44.087705"
-            },
-            {
-                "to_do_title": "sss",
-                "to_do_identificator": "1b19a240-04f5-4022-9c4a-9d2315d41de6",
-                "to_do_created_time": "2025-01-26T14:38:07.171449",
-                "to_do_status": "completed",
-                "to_do_completed_time": "2025-01-26T14:38:09.799797"
-            }
-        ]
-    },
-    {
-        "identificator": "ed14180b-60f0-47cd-9ba4-194e75e60677",
-        "title": "chat gpt",
-        "color": "#00fffb",
-        "seconds_in_focus_per_day": {},
-        "task_to_do_list": []
-    },
-    {
-        "identificator": "b17f0dca-2367-4f06-8691-e293c4297754",
-        "title": "dsgfsdgsfg",
-        "color": "#180830",
-        "seconds_in_focus_per_day": {
-            "2025-01-26": 2
-        },
-        "task_to_do_list": [
-            {
-                "to_do_title": "sdasf",
-                "to_do_identificator": "1bce5f6f-7848-4912-9f5b-ed511cacbc33",
-                "to_do_created_time": "2025-01-26T15:02:17.711230",
-                "to_do_status": "completed",
-                "to_do_completed_time": "2025-01-26T15:02:18.989400"
-            }
-        ]
+            "2025-01-26": 78,
+            "2025-01-28": 5
+        }
     }
 ]

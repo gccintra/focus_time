@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function saveElapsedTime(){
-        fetch(`/tasks/update_task_time/${taskId}`, {
+        fetch(`/task/update_task_time/${taskId}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
