@@ -1,4 +1,20 @@
-Doing:
+# Doing:
+
+- [ ] Tratamento de Erros (Front-End)
+    - [x] To Do
+    - [ ] Tasks
+- [ ] Deixar o toast mais bonito
+
+# To do:
+
+- [ ] Criar User e Login/Register
+- [ ] Getters e Setters, + Segurança
+- [ ] Testes Unitários Fazer para Failure e Success
+- [ ] Delete e Edit Task
+- [ ] Edit To Do
+- [ ] Edit, Delete User
+
+
 - [ ] ToDo para cada task
     - [x] BackEnd: Create
     - [x] Validação do nome do status
@@ -10,18 +26,6 @@ Doing:
 - [x] BUG: Ao criar nova task, tem que criar o gráfico tambem. (Atualizar no arquivo js)
 - [x] Abstrair mais o codigo (templates, js, partials, mais classes, rotas)
 - [x] Refatorar pesado aqui (+segurança, melhorar a manipulação dos dados (dicionário x instâncias), melhorar os models.)
-
-Doing:
-
-- [ ] Criar User e Login/Register
-- [ ] Getters e Setters, + Segurança
-- [ ] Tratamento de Erros (Front-End)
-- [ ] Testes Unitários Fazer para Failure e Success
-- [ ] Delete e Edit Task
-- [ ] Edit To Do
-- [ ] Edit, Delete User
-
-To do:
 - [x] Melhorar DB Tabelas (Task, ToDo)
 - [x] ToDo Blueprint
 - [x] Classe exeption

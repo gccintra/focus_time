@@ -1,6 +1,7 @@
 {% extends "partials/base.html" %}
 
 
+
 {% block content %}
 
   <!-- Task Grid -->  
@@ -76,13 +77,29 @@
     </div>
   </div>
 
+  <hr>
+
+  <h2 class="mt-5">Last 365 Days</h2>
+
+    <div class="py-4 px-4 my-5" id="github-container">
+        <div id="heatmap-container"></div>
+    </div>
+  
+
 
 {% endblock %}
 
 {% block script %}
-  <script src="{{ url_for('static', filename='js/my_tasks/chart_menu_tasks.js') }}"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+
+  <script src="{{ url_for('static', filename='js/my_tasks/chart_menu_tasks.js') }}"></script>
   <script src="{{ url_for('static', filename='js/my_tasks/create_task.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/my_tasks/jquery.heatmap.js') }}"></script>
+
+
+ 
+
 
   <script>
 
@@ -94,7 +111,58 @@
             window.location.href = `/task/${taskId}`;
           }
       }
-  });
+    });
+
+    $(document).ready(function () {
+      function generateLast365DaysData() {
+          let data = [];
+          let today = new Date();
+          
+          for (let i = 0; i < 365; i++) {
+              let date = new Date();
+              date.setDate(today.getDate() - i);
+              let formattedDate = date.toISOString().split('T')[0]; // Formato YYYY-MM-DD
+  
+              data.push({
+                  date: formattedDate,
+                  count: Math.floor(Math.random() * 101) // Número aleatório entre 0 e 100
+              });
+          }
+  
+          return data;
+      }
+  
+      $('#heatmap-container').heatmap({
+          data: generateLast365DaysData(),
+          cellSize: 25,
+          gutter: 8,
+          colors: {
+              0: '#303030',
+              0.25: '#c6e48b',
+              0.5: '#7bc96f',
+              0.75: '#239a3b',
+              1: '#196127'
+          },
+          locale: 'en-US',
+          debug: true // Para verificar se está carregando corretamente no console
+      });
+    });
+  
+    
+    function inicializateToDoTooltips(){
+      const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+      const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+      console.log(`Tooltip List: ${tooltipList}`)
+    };
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      inicializateToDoTooltips();
+    });
+
+
 
   </script>
 {% endblock %}

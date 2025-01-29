@@ -15,7 +15,7 @@ function inicializateChartContent() {
                 if (taskData.length > 0) {
                     const labels = allTasksData.map(t => t.title);
                     const taskMinutes = allTasksData.map(t => t.minutes);
-                    const colors = allTasksData.map(t => t.identificator === taskId ? t.color : "#474747");
+                    const colors = allTasksData.map(t => t.identificator === taskId ? t.color : "#303030");
 
                     const totalMinutes = taskMinutes.reduce((a, b) => a + b, 0);
                     const percentage = ((taskMinutes[labels.indexOf(taskData[0].title)] / totalMinutes) * 100).toFixed(1);

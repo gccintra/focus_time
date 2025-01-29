@@ -350,5 +350,37 @@
         "to_do_created_time": "2025-01-28T13:18:45.229695",
         "to_do_status": "in progress",
         "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "Tooltip do 365 days",
+        "to_do_identificator": "8522fd33-ee63-468c-a641-0f95d10547f3",
+        "to_do_created_time": "2025-01-29T09:35:01.798975",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "Estilização do scroll horizontal (365 days)",
+        "to_do_identificator": "9c6ba8a3-7090-487f-bf7a-e0089e717241",
+        "to_do_created_time": "2025-01-29T09:35:26.765933",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "(Back-End) Envio dos dados para montar o gráfico 365 days",
+        "to_do_identificator": "f7816589-6b60-427e-97ad-5c12f5a1905e",
+        "to_do_created_time": "2025-01-29T09:35:48.004812",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "Finalizar a apresentação de mensagens usuário front-end",
+        "to_do_identificator": "1717f685-222d-4c3f-9376-f228afebe707",
+        "to_do_created_time": "2025-01-29T09:36:10.062406",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
     }
 ]
