@@ -57,30 +57,6 @@
     },
     {
         "task_FK": "163d9725-3519-474e-8e68-fc446ad71303",
-        "to_do_title": "Projeto OO",
-        "to_do_identificator": "b675822c-7887-4c52-a6b1-eacdff73456b",
-        "to_do_created_time": "2025-01-12T17:33:55.264851",
-        "to_do_status": "completed",
-        "to_do_completed_time": "2025-01-17T14:47:45.953140"
-    },
-    {
-        "task_FK": "163d9725-3519-474e-8e68-fc446ad71303",
-        "to_do_title": "Bottle",
-        "to_do_identificator": "bb4f0d6f-7810-464f-8c52-5dda594dcc66",
-        "to_do_created_time": "2025-01-12T18:38:29.940703",
-        "to_do_status": "completed",
-        "to_do_completed_time": "2025-01-19T22:07:36.788702"
-    },
-    {
-        "task_FK": "163d9725-3519-474e-8e68-fc446ad71303",
-        "to_do_title": "Ver como que faço para blabla agua mineral",
-        "to_do_identificator": "bb4f0d6f-7810-464f-8c52-5dda594dcc66",
-        "to_do_created_time": "2025-01-12T18:38:29.940703",
-        "to_do_status": "in progress",
-        "to_do_completed_time": null
-    },
-    {
-        "task_FK": "163d9725-3519-474e-8e68-fc446ad71303",
         "to_do_title": "Orientação a Objetos",
         "to_do_identificator": "9f848461-0e85-42aa-a92a-a21ba8039d01",
         "to_do_created_time": "2025-01-12T18:38:38.153245",
@@ -100,14 +76,6 @@
         "to_do_title": "testes unitarios",
         "to_do_identificator": "c8373ccc-b99f-4981-95be-1801fbf79601",
         "to_do_created_time": "2025-01-16T12:43:21.957968",
-        "to_do_status": "completed",
-        "to_do_completed_time": "2025-01-16T17:23:26.241946"
-    },
-    {
-        "task_FK": "163d9725-3519-474e-8e68-fc446ad71303",
-        "to_do_title": "Tarefa 2",
-        "to_do_identificator": "95316170-b1ec-47e4-844c-eee09adfa5a5",
-        "to_do_created_time": "2025-01-16T14:22:37.086992",
         "to_do_status": "in progress",
         "to_do_completed_time": null
     },
@@ -356,6 +324,30 @@
         "to_do_title": "Mudar Titulo dessa tela (Start Task para o nome da task)",
         "to_do_identificator": "e0201821-535a-4521-bad5-07b30f9406f1",
         "to_do_created_time": "2025-01-27T15:08:05.789441",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "163d9725-3519-474e-8e68-fc446ad71303",
+        "to_do_title": "Injeção de Dependência (https://imasters.com.br/back-end/injecao-de-dependencia-em-java-e-python)",
+        "to_do_identificator": "4ec04a1c-2fd7-4b31-ab1e-6e9d0e506133",
+        "to_do_created_time": "2025-01-28T11:16:04.713742",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "session_id",
+        "to_do_identificator": "dda7bfa0-3ef5-4283-92ae-b210ec663a5b",
+        "to_do_created_time": "2025-01-28T13:18:13.431351",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "cookies",
+        "to_do_identificator": "78be5cd9-0e14-4976-9e05-a5b7d5f89df6",
+        "to_do_created_time": "2025-01-28T13:18:45.229695",
         "to_do_status": "in progress",
         "to_do_completed_time": null
     }

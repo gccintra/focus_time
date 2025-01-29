@@ -1,61 +1,45 @@
 const taskId = task_data.task_id; 
 
-// Create
 document.getElementById('createTaskToDoButton').addEventListener('click', function() {
-  var taskToDoName = document.getElementById('taskToDoName').value;
-  const toastSuccessToast = document.getElementById('successToast')
-  const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastSuccessToast)
+  const taskToDoName = document.getElementById('taskToDoName').value.trim();
 
-
-  if (taskToDoName.trim() !== "") {
-
-
-    fetch(`/todo/new_todo`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ name: taskToDoName, task_id: taskId })
-    })
-    .then(response => response.json())
-    .then(data => {
-        var toDoHTML = `
-          <div class="col-md-12 to-do-item">
-
-                <div 
-                    class="d-flex justify-content-between align-items-center to-do-card"
-                    data-id="${data.data.to_do_identificator}">
-        
-                    <div class="to-do-text-check d-flex align-items-center">
-                        <input class="form-check-input to-do-check-box me-3 mt-0 rounded-checkbox" type="checkbox" value="" aria-label="...">
-                        <span class="to-do-title mb-0">${data.data.to_do_title}</span>
-                    </div>
-                    
-                    <div class="icons">
-                      <i 
-                        class="bi bi-info-circle fs-4 me-3" 
-                        id="infoToDo" 
-                        data-bs-toggle="tooltip" 
-                        data-bs-placement="left"
-                        data-bs-custom-class="info-to-do-tooltip"
-                        data-bs-html="true"
-                        title="Created Time:<br>${data.data.to_do_created_time}">
-                      </i>  
-                      <i class="bi bi-trash fs-4" id="deleteToDo" data-bs-toggle="modal" data-bs-target="#DeleteToDo"></i>
-                    </div>
-
-                </div>
-
-            </div>
-        `;
-      document.querySelector('#toDoGridInProgress').innerHTML += toDoHTML;
-      $('#newTaskToDo').modal('hide'); 
-      toastBootstrap.show()
-      reinitializateToDoTooltipsAfterDOMUpdate();
-    });
-  } else {
-    alert("Please provide a to do task name.");
+  if (!taskToDoName) {
+      showToast('error', 'Enter a name for the To-Do.');
+      return;
   }
+
+  fetch(`/todo/new_todo`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: taskToDoName, task_id: taskId })
+  })
+  .then(response => response.json())
+  .then(({ success, message, data, error }) => {
+      if (success) {
+          const toDoHTML = `
+              <div class="col-md-12 to-do-item">
+                  <div class="d-flex justify-content-between align-items-center to-do-card" data-id="${data.id}">
+                      <div class="to-do-text-check d-flex align-items-center">
+                          <input class="form-check-input to-do-check-box me-3 mt-0 rounded-checkbox" type="checkbox" aria-label="...">
+                          <span class="to-do-title mb-0">${data.title}</span>
+                      </div>
+                      <div class="icons">
+                          <i class="bi bi-info-circle fs-4 me-3" id="infoToDo" data-bs-toggle="tooltip" data-bs-placement="left"
+                              data-bs-custom-class="info-to-do-tooltip" data-bs-html="true" title="Created Time:<br>${data.created_time}">
+                          </i>
+                          <i class="bi bi-trash fs-4" id="deleteToDo" data-bs-toggle="modal" data-bs-target="#DeleteToDo"></i>
+                      </div>
+                  </div>
+              </div>`;
+          document.querySelector('#toDoGridInProgress').innerHTML += toDoHTML;
+          $('#newTaskToDo').modal('hide');
+          showToast('success', message);
+          reinitializateToDoTooltipsAfterDOMUpdate();
+      } else {
+          showToast('error', message || 'Erro ao criar o To-Do.');
+      }
+  })
+  .catch(() => showToast('error', 'Something went wrong. Please try again later.'));
 });
 
 // Change State REFATORAR ESSA PARTE AQUI, TA MUITO CONFUSO
@@ -78,8 +62,8 @@ document.querySelectorAll('.to-do-grid').forEach(grid => {
           body: JSON.stringify({ status: isChecked ? "completed" : "in progress"}),
         })
           .then(response => response.json())
-          .then(data => {
-            if (data.success) {
+          .then(({ success, message, data, error })  => {
+            if (success) {
               const infoIcon = toDoItem.querySelector('#infoToDo');
 
               const currentGrid = isChecked
@@ -99,13 +83,13 @@ document.querySelectorAll('.to-do-grid').forEach(grid => {
               }
               
               if (infoIcon) {
-                if (data.data.status == 'completed'){
-                  newTitle = `Created Time:<br>${data.data.created_time}
+                if (data.status == 'completed'){
+                  newTitle = `Created Time:<br>${data.created_time}
                               <br>
-                              Completed Time:<br>${data.data.completed_time}`
+                              Completed Time:<br>${data.completed_time}`
                   infoIcon.setAttribute('title', newTitle);
                 } else {
-                  newTitle = `Created Time:<br>${data.data.created_time}`
+                  newTitle = `Created Time:<br>${data.created_time}`
                   infoIcon.setAttribute('title', newTitle);
                 }
                  
@@ -114,6 +98,7 @@ document.querySelectorAll('.to-do-grid').forEach(grid => {
               newGrid.appendChild(toDoItem);
 
               checkbox.checked = isChecked;
+              showToast('success', message);
               reinitializateToDoTooltipsAfterDOMUpdate();
             } else {
               alert("Erro ao atualizar o status do To-Do.");
@@ -121,6 +106,7 @@ document.querySelectorAll('.to-do-grid').forEach(grid => {
             }
           })
           .catch((error) => {
+            showToast('error', 'Something went wrong. Please try again later.');
             console.error("Erro:", error);
             checkbox.checked = !isChecked;
           });
@@ -137,12 +123,12 @@ document.addEventListener('DOMContentLoaded', function () {
   const confirmDeleteButton = document.getElementById('confirmDeleteToDoButton');
 
   deleteModal.addEventListener('show.bs.modal', function (event) {
-      const icon = event.relatedTarget; // Ícone que acionou a modal
+      const icon = event.relatedTarget; 
       const toDoCard = icon.closest(".to-do-card")
       const toDoId = toDoCard.getAttribute('data-id');
       const toDoTitle = toDoCard.querySelector(".to-do-title").textContent;
 
-      // Preencher os campos na modal
+      
       toDoTitleInModal.textContent = toDoTitle;
       confirmDeleteButton.setAttribute('to-do-id', toDoId);
 
@@ -151,23 +137,26 @@ document.addEventListener('DOMContentLoaded', function () {
   confirmDeleteButton.addEventListener('click', function () {
     const toDoId = confirmDeleteButton.getAttribute('to-do-id');
 
-    // Enviar requisição para deletar o item
     fetch(`/todo/delete/${toDoId}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json"
-        }})
+    }})
     .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            // Remover o item do DOM
+    .then(({ success, message, data, error }) => {
+        if (success) {
             document.querySelector(`.to-do-card[data-id="${toDoId}"]`).closest('.to-do-item').remove();
             $('#DeleteToDo').modal('hide'); 
+            showToast('success', message);
         } else {
-            alert("Error deleting the To Do item.");
             $('#DeleteToDo').modal('hide'); 
+            showToast('error', message)
         }
     })
-    .catch(error => console.error("Error:", error));
+    .catch((error) => {
+      showToast('error', 'Something went wrong. Please try again later.');
+      console.error(`Error: ${error}`);
+    });
+  });
 });
-});
+
