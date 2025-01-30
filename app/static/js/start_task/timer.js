@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
             startButton.textContent = "Start";
             
             // envia um request assíncrono e não bloqueante para um servidor web. O request não espera por uma resposta.
-            const url = `/tasks/update_task_time/${taskId}`;
+            const url = `/task/update_task_time/${taskId}`;
             const data = JSON.stringify({ elapsed_seconds: elapsedTime });
             const blob = new Blob([data], { type: "application/json" });
     

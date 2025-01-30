@@ -54,6 +54,8 @@ class ToDoController:
                 },
                 "error": None
             }), 200
+        
+        # Isso aqui não é 404, não é not found pq apareceu na tela pro usuario, é erro de servidor, algo de errado no codigo, tem que ser 500.
         except TodoNotFoundError as e:
            return jsonify({
                 "success": False,

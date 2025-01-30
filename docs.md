@@ -4,6 +4,7 @@
     - [x] To Do
     - [ ] Tasks
 - [ ] Deixar o toast mais bonito
+- [ ] last 365 days
 
 # To do:
 

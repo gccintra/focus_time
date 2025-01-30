@@ -55,7 +55,7 @@ class TaskController:
             return jsonify({"success": True, "data": {"message": "The seconds have been saved."}, "error": None}), 200
         except TaskNotFoundError:
             return jsonify({"success": False, "data": None, "error": "Task not found"}), 404
-        except TaskValidationError as e:
+        except TaskValidationError:
             logger.error(f"Erro ao atualizar o tempo de foco diário para a task {task_id}")
             return jsonify({"success": False, "data": None, "error": "Validation Error"}), 400
         except Exception as e:

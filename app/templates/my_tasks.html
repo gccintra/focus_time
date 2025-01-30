@@ -118,22 +118,27 @@
           let data = [];
           let today = new Date();
           
-          for (let i = 0; i < 365; i++) {
-              let date = new Date();
-              date.setDate(today.getDate() - i);
-              let formattedDate = date.toISOString().split('T')[0]; // Formato YYYY-MM-DD
-  
+          for (let i = 0; i < 900; i++) {
+              let date = new Date(); // Clone the today date
+              date.setDate(today.getDate() - i); // Subtract days correctly
+              let formattedDate = date.toISOString().split('T')[0]; // Format YYYY-MM-DD
+          
               data.push({
                   date: formattedDate,
-                  count: Math.floor(Math.random() * 101) // Número aleatório entre 0 e 100
+                  count: Math.floor(Math.random() * 101)  
               });
+              console.log(date.getDate(), today.getDate(), formattedDate, data[i].count)
+
           }
-  
+          console.log(data)
           return data;
       }
-  
+      
+           // { date: '2025-01-30', count: 100 },
+           // { date: '2025-01-29', count: 50 }
+          
       $('#heatmap-container').heatmap({
-          data: generateLast365DaysData(),
+          data: [{ date: '2024-05-30', count: 100 }, { date: '2025-05-30', count: 100 }, { date: '2023-01-10', count: 100 }],
           cellSize: 25,
           gutter: 8,
           colors: {
@@ -144,7 +149,7 @@
               1: '#196127'
           },
           locale: 'en-US',
-          debug: true // Para verificar se está carregando corretamente no console
+          debug: true // To check if data loads correctly in console
       });
     });
   

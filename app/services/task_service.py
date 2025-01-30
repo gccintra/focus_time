@@ -20,7 +20,7 @@ class TaskService:
         tasks_for_charts = []
 
         for task in tasks_data:
-            if task.week_total_minutes > 0:  
+        #    if task.week_total_minutes > 0:  
                 tasks_for_charts.append({
                     "identificator": task.identificator,
                     "title": task.title,

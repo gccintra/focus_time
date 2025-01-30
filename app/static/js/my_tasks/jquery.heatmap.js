@@ -249,27 +249,54 @@
 
             let startDate;
             let endDate;
+            
+            
+            // 1o caso -> Gera o gráfico a partir de todas as datas enviadas, calculando o inicio e o fim
 
-            if (data.length === 0) {
-                const currentYear = new Date().getFullYear();
-                startDate = new Date(`${currentYear}-01-01`);
-                endDate = new Date(`${currentYear}-12-31`);
-            } else {
-                startDate = new Date(data[0].date);
-                endDate = new Date(data[0].date);
+            // if (data.length === 0) {
+            //     const currentYear = new Date().getFullYear();
+            //     startDate = new Date(`${currentYear}-01-01`);
+            //     endDate = new Date(`${currentYear}-12-31`);
+            // } else {
+            //     startDate = new Date(data[0].date);
+            //     endDate = new Date(data[0].date);
 
-                for (const entry of data) {
-                    const entryDate = new Date(entry.date);
-                    if (entryDate < startDate) {
-                        startDate = entryDate;
-                    }
-                    if (entryDate > endDate) {
-                        endDate = entryDate;
-                    }
-                }
-            }
+            //     for (const entry of data) {
+            //         const entryDate = new Date(entry.date);
+            //         if (entryDate < startDate) {
+            //             startDate = entryDate;
+            //         }
+            //         if (entryDate > endDate) {
+            //             endDate = entryDate;
+            //         }
+            //     }
+            // }
+            // endDate.setDate(endDate.getDate() + 1);
+            
 
-            endDate.setDate(endDate.getDate() + 1);
+            // 2o caso -> Pega a ultima data enviada e calcula 1 ano antes dela como o inicio
+
+            // endDate = data.length > 0 ? data[0].date : new Date().toISOString().split('T')[0];
+            // for (const entry of data) {
+            //     if (entry.date > endDate) {
+            //         endDate = entry.date;
+            //     }
+            // }
+            // const endDateParts = endDate.split('-');
+            // startDate = `${endDateParts[0] - 1}-${endDateParts[1]}-${endDateParts[2]}`;
+
+
+
+           
+            // 3o caso -> pega a data de hoje como data final e 1 ano antes como data inicial independente dos dados recebidos
+
+            // Nesse caso a data final sempre será o dia de hoje e o dia inicial será 1 ano antes do dia de hj (qu é exatamente oque precisamos para nosso gráfico, caso precisemos de outra solução, podemos ultilizar os exemplos acima)
+            // Pensar no caso de ver por ano ou por mês.
+            // Nesse caso o endDate e o startData precisaria ser um parâmetro.
+            endDate = new Date().toISOString().split('T')[0];
+            const endDateParts = endDate.split('-');
+            startDate = `${endDateParts[0] - 1}-${endDateParts[1]}-${endDateParts[2]}`;
+          
 
             // Wochen und Daten vorbereiten
             const weeks = calculateWeeks($el, startDate, endDate, firstDayOfWeek);
@@ -277,9 +304,11 @@
             // Create a new dataMap using date strings as keys
             const dataMap = new Map();
             for (let entry of data) {
-                const entryDate = new Date(entry.date);
-                const dayKey = new Date(Date.UTC(entryDate.getFullYear(), entryDate.getMonth(), entryDate.getDate())).toISOString().split('T')[0];
-                dataMap.set(dayKey, entry.count);
+                // const entryDate = new Date(entry.date);
+                // const dayKey = new Date(Date.UTC(entryDate.getFullYear(), entryDate.getMonth(), entryDate.getDate())).toISOString().split('T')[0];
+                // console.log('Testando os entry: ' + entry.date, entryDate, dayKey)
+                // console.log('Testando os entry: ' + entry.date)
+                dataMap.set(entry.date, entry.count);
             }
             if (settings.debug) {
                 console.log('Berechnete Wochen:', weeks);
@@ -408,8 +437,8 @@
                 week.forEach(dayEntry => {
                     const cell = $('<div class="heatmap-cell"></div>');
                     const today = new Date();
-                    const cellDate = new Date(Date.UTC(dayEntry.date.getFullYear(), dayEntry.date.getMonth(), dayEntry.date.getDate()));
-
+                    const todayUTC = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()));
+                    const cellDate = new Date(Date.UTC(dayEntry.date.getFullYear(), dayEntry.date.getMonth(), dayEntry.date.getDate())); 
 
                     cell.css({
                         width: cellSizePx,
@@ -420,11 +449,12 @@
                         border: '1px solid rgba(255, 255, 255, 0.1)'
                     });
 
-                    if (cellDate.toDateString() === today.toDateString()) {
-                        cell.css('border', '1px solid #ffffff'); // Dezenter grauer Rahmen
+                    if (cellDate.toISOString().split('T')[0] === todayUTC.toISOString().split('T')[0]) {
                         // Optional:  HINTERGRUNDFARBE anpassen. Zuerst die aktuelle Farbe ermitteln
-                        const currentColor = cell.css('background-color');
-                        cell.css('background-color', shadeColor(currentColor, 0.2)); // 20% heller
+                        //const currentColor = cell.css('background-color');
+                        //cell.css('background-color', shadeColor(currentColor, 0.2)); // 20% heller
+                        console.log(`Today's cell: ${cellDate.toISOString()}`);
+                        cell.css("border", "1px solid red");
                     }
 
 

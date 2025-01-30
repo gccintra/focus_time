@@ -259,7 +259,31 @@ body {
         display: flex;
         max-width: 100%;
     }
-    /* Alterar o estilo do scrollbar */
+
+    /* Estilizando a barra de rolagem para navegadores baseados em WebKit */
+    #github-container::-webkit-scrollbar {
+        height: 16px; /* Altura da scrollbar */
+    }
+
+    #github-container::-webkit-scrollbar-track {
+        background: #303030; /* Cor do fundo da barra */
+        border-radius: 10px;
+    }
+
+    #github-container::-webkit-scrollbar-thumb {
+        background: #505050; /* Cor do "botão" da barra */
+        border-radius: 10px;
+    }
+
+    #github-container::-webkit-scrollbar-thumb:hover {
+        background: #707070; /* Cor ao passar o mouse */
+    }
+
+    /* Para Firefox
+    #github-container {
+        scrollbar-width: thin;
+        scrollbar-color: #505050 #303030;
+    } */
 
 }
 
