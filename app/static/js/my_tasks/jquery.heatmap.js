@@ -302,6 +302,7 @@
             const weeks = calculateWeeks($el, startDate, endDate, firstDayOfWeek);
 
             // Create a new dataMap using date strings as keys
+            // Alterei esse caso para não haver nenhuma alteração ao enviar os dados, independente do fuso horário do usuário, a data será a mesma que a enviada
             const dataMap = new Map();
             for (let entry of data) {
                 // const entryDate = new Date(entry.date);
@@ -325,6 +326,8 @@
 
             const minCount = hasValidCounts ? Math.min(...counts) : fallbackMin;
             const maxCount = hasValidCounts ? Math.max(...counts) : fallbackMax;
+            // console.log("MinCount: ", minCount)
+            // console.log("MaxCount: ", maxCount)
 
             if (settings.debug) {
                 console.log('DEBUG: Min-/Max-Werte:', {minCount, maxCount, hasValidCounts});
@@ -454,14 +457,14 @@
                         //const currentColor = cell.css('background-color');
                         //cell.css('background-color', shadeColor(currentColor, 0.2)); // 20% heller
                         console.log(`Today's cell: ${cellDate.toISOString()}`);
-                        cell.css("border", "1px solid red");
+                        cell.css("border", "1px solid rgb(207, 254, 216)");
                     }
 
 
                     if (dayEntry.date) {
                         cell
-                            .attr('data-bs-custom-class', 'info-tooltip')
                             .attr('data-bs-toggle', 'tooltip') // Bootstrap 5
+                            .attr('data-bs-custom-class', 'info-tooltip')
                             .attr('data-bs-html', true) // Tooltip mit HTML
                             .attr(
                                 'title',
@@ -535,12 +538,20 @@
             return settings.colors['0'];
         }
 
-        // Logarithmische Skalierung für alle nicht-null-Werte
-        const rangeLog = Math.log10(maxCount + 1) - Math.log10(minCount + 1);
-        const percentage = (Math.log10(count + 1) - Math.log10(minCount + 1)) / rangeLog;
+        // Evita divisão por zero e corrige range quando minCount = 0
+        const safeMin = Math.max(1, minCount);
+        const safeCount = Math.max(1, count);
+        const safeMax = Math.max(safeMin + 1, maxCount);
 
-        // Begrenzen auf Bereich [0, 1]
-        const scaledPercentage = Math.max(0, Math.min(percentage, 1));
+        // Normalização logarítmica ajustada
+        const rangeLog = Math.log(safeMax) - Math.log(safeMin);
+        let scaledPercentage = (Math.log(safeCount) - Math.log(safeMin)) / rangeLog;
+
+        // Ajuste linear para evitar que valores médios fiquem muito altos
+     //   scaledPercentage = Math.pow(scaledPercentage, 4); // Ajuste exponencial
+
+        scaledPercentage = Math.max(0, Math.min(scaledPercentage, 1));
+
 
         // Farbschlüssel erhalten und sortieren
         const colorKeys = Object.keys(settings.colors)

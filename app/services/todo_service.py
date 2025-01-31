@@ -34,7 +34,7 @@ class ToDoService:
             return todo_list
         except Exception as e:
             logger.error(e)
-    
+
     def change_to_do_state(self, todo_id, new_status):
         try:
             todo = self.get_todo_by_id(todo_id)

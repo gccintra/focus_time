@@ -210,38 +210,6 @@ body {
     --bs-tooltip-color: #ffffff;
 }
 
-/* #github-container {
-    overflow-x: auto;
-    display: flex;
-    max-width: 100%;
-}
-
-#heatmap-container {
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-     justify-content: center; 
-} 
-
-.heatmap-wrapper {
-    width: 100%;
-    max-width: 100%;
-}
-
-.heatmap {
-    width: 100%;
-    max-width: 100%;
-} */
-
-
-/* .heatmap-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 100%;
-    overflow-x: auto;
-} */
 
 .heatmap {
     display: flex;
@@ -258,6 +226,7 @@ body {
         scroll-behavior: smooth;
         display: flex;
         max-width: 100%;
+        padding-bottom: 16px; 
     }
 
     /* Estilizando a barra de rolagem para navegadores baseados em WebKit */
@@ -287,8 +256,14 @@ body {
 
 }
 
-
+/* 
 #github-container {
+    background-color: #212121;  
+    border-radius: 15px;       
+    border: 2px solid #303030;
+} */
+
+#graph365 {
     background-color: #212121;  
     border-radius: 15px;       
     border: 2px solid #303030;
@@ -298,6 +273,14 @@ body {
 
 /* ARRUMAR ESSE TOOLTIP, NÃO ESTÁ CARREGANDO LÁ */
 .info-tooltip {
-    --bs-tooltip-bg: #21b9f5;
-    --bs-tooltip-color: #ffffff;
+    --bs-tooltip-bg: #6d6d6d !important;
+    --bs-tooltip-color: #ffffff !important;
+}
+
+.less-more-cell {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }

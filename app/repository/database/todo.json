@@ -356,8 +356,8 @@
         "to_do_title": "Tooltip do 365 days",
         "to_do_identificator": "8522fd33-ee63-468c-a641-0f95d10547f3",
         "to_do_created_time": "2025-01-29T09:35:01.798975",
-        "to_do_status": "in progress",
-        "to_do_completed_time": null
+        "to_do_status": "completed",
+        "to_do_completed_time": "2025-01-31T10:19:16.868911"
     },
     {
         "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
@@ -393,25 +393,209 @@
     },
     {
         "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
-        "to_do_title": "365 days - cálculo da cor (MaxCount, MinCount)",
-        "to_do_identificator": "10cef7a6-3f6e-4713-a377-2e1d2f29ffd1",
-        "to_do_created_time": "2025-01-30T12:11:47.419904",
-        "to_do_status": "in progress",
-        "to_do_completed_time": null
-    },
-    {
-        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
         "to_do_title": "365 days - Lidar com vários fusos horários e usuários de diferentes países",
         "to_do_identificator": "ff6be45f-e8bc-469f-b592-e7cb9a5034e5",
         "to_do_created_time": "2025-01-30T12:29:00.443988",
-        "to_do_status": "in progress",
-        "to_do_completed_time": null
+        "to_do_status": "completed",
+        "to_do_completed_time": "2025-01-31T10:19:25.032059"
     },
     {
         "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
         "to_do_title": "365 days - Receber startDate e endDate como paramêtros, além de criar diversos modelos de gráficos (de acordo com a necessidade) e enviar como parâmetro qual tipo de gráfico será gerado",
         "to_do_identificator": "1f038698-2ee0-4dd9-b216-14df79a1eada",
         "to_do_created_time": "2025-01-30T15:03:36.094432",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "365 days - cálculo da cor (MaxCount=Maior tempo em foco entre os dados que estarão no gráfico, MinCount)",
+        "to_do_identificator": "414cefac-f5a8-4a89-97d2-d03325a10c9d",
+        "to_do_created_time": "2025-01-30T15:09:30.676603",
+        "to_do_status": "completed",
+        "to_do_completed_time": "2025-01-31T10:19:29.491700"
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "melhorar responsividade do To Do List (manter botões lado a lado, distância do texto para os botões)",
+        "to_do_identificator": "2ac82262-5355-4ffe-ad11-1bc13300ebc8",
+        "to_do_created_time": "2025-01-30T15:10:24.111691",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "4a25959c-c4f9-486e-8874-9508426f5acd",
+        "to_do_title": "Testar ITL",
+        "to_do_identificator": "809073d7-9c37-4f6e-85d6-d1cb12d6620a",
+        "to_do_created_time": "2025-01-30T15:11:52.198322",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "4a25959c-c4f9-486e-8874-9508426f5acd",
+        "to_do_title": "Apresentar e homologar ITL",
+        "to_do_identificator": "bd4bfa0d-562c-4d61-be82-32aecc97f9f2",
+        "to_do_created_time": "2025-01-30T15:11:59.963242",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "4a25959c-c4f9-486e-8874-9508426f5acd",
+        "to_do_title": "Exportar para Excel ITL",
+        "to_do_identificator": "57cb540a-9188-46ff-810d-2af541158c3d",
+        "to_do_created_time": "2025-01-30T15:12:13.132287",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "To Do List - Mais Detalhes, Label (Fazendo), atribuir a pessoa",
+        "to_do_identificator": "9542bc88-da5c-40d8-a81b-0ac84a82ac2d",
+        "to_do_created_time": "2025-01-30T15:21:20.627566",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "autenticaçao com JWT",
+        "to_do_identificator": "587cfb65-3952-498b-94e0-ae4a15c0f156",
+        "to_do_created_time": "2025-01-30T15:21:36.564308",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "Gamificar",
+        "to_do_identificator": "f8c12c01-7253-474c-a2c6-1a2181121992",
+        "to_do_created_time": "2025-01-30T15:23:49.716565",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "Criar \"Tasks\" conjuntas, pode ser usado por empresas/projetos",
+        "to_do_identificator": "dcc69c5c-e952-4f0e-9b0f-0ec24ab0d350",
+        "to_do_created_time": "2025-01-30T15:24:07.570773",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "Adicionar status como \"ausente\", \"em reunião\", etc.",
+        "to_do_identificator": "833f77f9-1728-4ab9-90c7-e60119e5278e",
+        "to_do_created_time": "2025-01-30T15:24:11.729013",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "Exibir informações sobre o projeto e cargo de cada usuário.",
+        "to_do_identificator": "95462556-1b61-41d8-b892-581520acdb0a",
+        "to_do_created_time": "2025-01-30T15:24:15.850846",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "Adicionar tags personalizadas como \"ausente\", \"em reunião\", \"break almoço\", etc.",
+        "to_do_identificator": "93777d72-0934-4b54-ad99-33338e8dfeff",
+        "to_do_created_time": "2025-01-30T15:24:20.183930",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "Implementar chats para comunicação entre usuários de uma mesma tarefa e chats individuais.",
+        "to_do_identificator": "2b1bd0f0-35d5-4d1e-9663-c89aff1ee04e",
+        "to_do_created_time": "2025-01-30T15:24:25.011140",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "Mostrar os usuários que estão focados no trabalho, junto ao tempo em que estão dedicando à tarefa.",
+        "to_do_identificator": "60b7445d-a482-4077-a4f6-136a08bc4770",
+        "to_do_created_time": "2025-01-30T15:24:29.191862",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "Enviar notificações quando um usuário estiver ausente por muito tempo. Caso não responda, parar o tempo de foco dele.",
+        "to_do_identificator": "df613be1-aca0-400d-8988-fe4c0fcac3ac",
+        "to_do_created_time": "2025-01-30T15:24:33.751485",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "Criar uma opção para agendar tempo de foco privado durante reuniões, onde o tempo não será ajustado (nem retirado nem adicionado).",
+        "to_do_identificator": "76619a4d-bbb7-41fb-906a-a1ce7ecfc680",
+        "to_do_created_time": "2025-01-30T15:24:40.869811",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "Permitir que os usuários editem o tempo de foco de dias anteriores. Enviar a mudança e a justificativa para o administrador.",
+        "to_do_identificator": "f9ee5282-8f4a-4ee1-a7f5-3f73ca510993",
+        "to_do_created_time": "2025-01-30T15:24:46.197835",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "MVP Robusto",
+        "to_do_identificator": "03de16e5-4ebc-4afe-8005-b7b609eefaf4",
+        "to_do_created_time": "2025-01-30T15:25:14.439962",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "Aplicar mais como P.O aqui no FocusTime, não somente como dev",
+        "to_do_identificator": "ef1eb4ae-69c9-4f7d-ac32-7a1a7611dd1f",
+        "to_do_created_time": "2025-01-30T15:25:32.074535",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "Organizar Backlog",
+        "to_do_identificator": "8b9e383e-0fa9-4a34-91f2-9bab8894a42b",
+        "to_do_created_time": "2025-01-30T15:25:49.988649",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "Exemplo de Task em Grupo: \"Concurso ITA\". Varios estudantes focados em estudar no concurso, com gamificação e apresentação dos que estão mais tempo estudando, to-do privado",
+        "to_do_identificator": "67b0e307-3d8c-4890-89ed-da02081967e1",
+        "to_do_created_time": "2025-01-30T15:27:04.235968",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "Task em Grupo - Apresentação dos usuários que estão em foco exatamente no momento da visualização + o timer de cada 1",
+        "to_do_identificator": "24c5fcaf-72a1-45dc-9fc4-3b82f5a26271",
+        "to_do_created_time": "2025-01-30T15:27:54.023800",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "4a25959c-c4f9-486e-8874-9508426f5acd",
+        "to_do_title": "Backlog com as melhorias",
+        "to_do_identificator": "9853571c-b57f-476b-810e-85719d49ba91",
+        "to_do_created_time": "2025-01-30T17:51:25.048083",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "163d9725-3519-474e-8e68-fc446ad71303",
+        "to_do_title": "Mexer com arquivos (Download, Upload, Delete)",
+        "to_do_identificator": "78c33821-453f-4e06-9eb4-5f29aa365e66",
+        "to_do_created_time": "2025-01-30T18:28:51.286738",
         "to_do_status": "in progress",
         "to_do_completed_time": null
     }
