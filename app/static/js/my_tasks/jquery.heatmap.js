@@ -447,7 +447,7 @@
                         width: cellSizePx,
                         height: cellSizePx,
                         backgroundColor: getCachedColor(dayEntry.count),
-                        borderRadius: parseInt(gutter) > 2 ? '5px' : gutter,
+                        borderRadius: parseInt(gutter) > 2 ? '6px' : gutter,
                         cursor: 'pointer',
                         border: '1px solid rgba(255, 255, 255, 0.1)'
                     });
@@ -548,7 +548,7 @@
         let scaledPercentage = (Math.log(safeCount) - Math.log(safeMin)) / rangeLog;
 
         // Ajuste linear para evitar que valores médios fiquem muito altos
-        // scaledPercentage = Math.pow(scaledPercentage, 2.3); // Ajuste exponencial
+        scaledPercentage = Math.pow(scaledPercentage, 2.3); // Ajuste exponencial
 
         scaledPercentage = Math.max(0, Math.min(scaledPercentage, 1));
 

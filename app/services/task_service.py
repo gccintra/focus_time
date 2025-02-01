@@ -69,8 +69,6 @@ class TaskService:
         tasks_data = self.task_db.get_models()
         minutes_per_day = {}
 
-        
-
         for task in tasks_data:
             for date, seconds in task.seconds_in_focus_per_day.items():
                 minutes = seconds // 60  
