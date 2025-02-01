@@ -3,6 +3,8 @@ from ..models.exceptions import TaskNotFoundError, TaskValidationError
 from ..repository.task_record import TaskRecord
 from ..utils.logger import logger
 from ..models.exceptions import DatabaseError
+from datetime import date, timedelta
+
 
 class TaskService:
     def __init__(self):
@@ -13,20 +15,25 @@ class TaskService:
             raise DatabaseError("Erro ao inicializar o banco de dados.")
 
     def get_all_tasks(self):
-        return self.task_db.get_models()
+        tasks = self.task_db.get_models()
+        sorted_tasks = sorted(tasks, key=lambda task: sum(task.seconds_in_focus_per_day.values()), reverse=True)
+        return sorted_tasks
+
       
     def get_data_for_all_charts(self):
         tasks_data = self.task_db.get_models()
         tasks_for_charts = []
 
         for task in tasks_data:
-        #    if task.week_total_minutes > 0:  
+            # if task.week_total_minutes > 0:  
                 tasks_for_charts.append({
                     "identificator": task.identificator,
                     "title": task.title,
                     "color": task.color,
                     "minutes": task.week_total_minutes
                 })
+
+        tasks_for_charts.sort(key=lambda x: x["minutes"])
         return tasks_for_charts
 
     def create_new_task(self, name, color):
@@ -58,3 +65,47 @@ class TaskService:
             raise
 
  
+    def get_data_for_last_365_days_home_chart(self):
+        tasks_data = self.task_db.get_models()
+        minutes_per_day = {}
+
+        
+
+        for task in tasks_data:
+            for date, seconds in task.seconds_in_focus_per_day.items():
+                minutes = seconds // 60  
+                if date in minutes_per_day:
+                    minutes_per_day[date] += minutes  
+                else:
+                    minutes_per_day[date] = minutes  
+
+        minutes_per_day = [{"date": date, "count": count} for date, count in minutes_per_day.items()]
+        return minutes_per_day
+
+
+
+
+
+        # tasks_data = self.task_db.get_models()
+        # minutes_per_day = []
+       
+        # for task in tasks_data:
+        #     for day in task.seconds_in_focus_per_day:
+        #         for minute_day in minutes_per_day:
+        #             if day == minute_day['date']:
+        #                 minute_in_array = int(minute_day['count'])
+        #                 minute_in_task = int(round(task.seconds_in_focus_per_day[day] / 60.0))
+        #                 minute_day['count'] = minute_in_array + minute_in_task
+        #                 break
+        #         else:
+        #             minutes = round(task.seconds_in_focus_per_day[day] / 60.0)
+
+        #             minutes_per_day.append({
+        #                 'date': day,
+        #                 'count': minutes
+        #             })
+    
+        
+        # return minutes_per_day
+
+

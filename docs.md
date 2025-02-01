@@ -3,8 +3,6 @@
 - [ ] Tratamento de Erros (Front-End)
     - [x] To Do
     - [ ] Tasks
-- [ ] Deixar o toast mais bonito
-- [ ] last 365 days
 
 # To do:
 
@@ -16,6 +14,8 @@
 - [ ] Edit, Delete User
 
 
+- [x] Deixar o toast mais bonito
+- [x] last 365 days
 - [ ] ToDo para cada task
     - [x] BackEnd: Create
     - [x] Validação do nome do status

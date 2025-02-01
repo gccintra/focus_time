@@ -548,7 +548,7 @@
         let scaledPercentage = (Math.log(safeCount) - Math.log(safeMin)) / rangeLog;
 
         // Ajuste linear para evitar que valores médios fiquem muito altos
-     //   scaledPercentage = Math.pow(scaledPercentage, 4); // Ajuste exponencial
+        // scaledPercentage = Math.pow(scaledPercentage, 2.3); // Ajuste exponencial
 
         scaledPercentage = Math.max(0, Math.min(scaledPercentage, 1));
 

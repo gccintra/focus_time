@@ -89,7 +89,13 @@ body {
     padding: 20px;
     border: 2px solid transparent;
     cursor: pointer; 
+    /* transition: transform 0.2s ease; */
+
 }
+
+/* .custom-card:hover {
+    transform: scale(1.015);
+} */
 
 #taskTitle {
     background-color: #212121;

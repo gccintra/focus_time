@@ -97,14 +97,6 @@
     },
     {
         "task_FK": "4a25959c-c4f9-486e-8874-9508426f5acd",
-        "to_do_title": "Backlog ITL",
-        "to_do_identificator": "49b21a9b-86a1-461e-813d-b7950d0d1896",
-        "to_do_created_time": "2025-01-23T13:49:31.786219",
-        "to_do_status": "in progress",
-        "to_do_completed_time": null
-    },
-    {
-        "task_FK": "4a25959c-c4f9-486e-8874-9508426f5acd",
         "to_do_title": "Passar em todas as issues do ITL e verificar o milestones (Nas que não são HU)",
         "to_do_identificator": "a2eaa24d-31a6-4879-a561-43185120ffab",
         "to_do_created_time": "2025-01-23T17:50:16.602357",
@@ -132,8 +124,8 @@
         "to_do_title": "Documentar - Sprint 27 (ITL)",
         "to_do_identificator": "6544eed5-e607-4878-abf3-e6b3532769dc",
         "to_do_created_time": "2025-01-24T16:21:17.098126",
-        "to_do_status": "in progress",
-        "to_do_completed_time": null
+        "to_do_status": "completed",
+        "to_do_completed_time": "2025-01-31T11:10:47.987285"
     },
     {
         "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
@@ -420,24 +412,24 @@
         "to_do_title": "melhorar responsividade do To Do List (manter botões lado a lado, distância do texto para os botões)",
         "to_do_identificator": "2ac82262-5355-4ffe-ad11-1bc13300ebc8",
         "to_do_created_time": "2025-01-30T15:10:24.111691",
-        "to_do_status": "in progress",
-        "to_do_completed_time": null
+        "to_do_status": "completed",
+        "to_do_completed_time": "2025-02-01T08:58:24.287823"
     },
     {
         "task_FK": "4a25959c-c4f9-486e-8874-9508426f5acd",
         "to_do_title": "Testar ITL",
         "to_do_identificator": "809073d7-9c37-4f6e-85d6-d1cb12d6620a",
         "to_do_created_time": "2025-01-30T15:11:52.198322",
-        "to_do_status": "in progress",
-        "to_do_completed_time": null
+        "to_do_status": "completed",
+        "to_do_completed_time": "2025-01-31T11:33:19.530031"
     },
     {
         "task_FK": "4a25959c-c4f9-486e-8874-9508426f5acd",
         "to_do_title": "Apresentar e homologar ITL",
         "to_do_identificator": "bd4bfa0d-562c-4d61-be82-32aecc97f9f2",
         "to_do_created_time": "2025-01-30T15:11:59.963242",
-        "to_do_status": "in progress",
-        "to_do_completed_time": null
+        "to_do_status": "completed",
+        "to_do_completed_time": "2025-01-31T10:55:18.218054"
     },
     {
         "task_FK": "4a25959c-c4f9-486e-8874-9508426f5acd",
@@ -584,18 +576,82 @@
         "to_do_completed_time": null
     },
     {
+        "task_FK": "163d9725-3519-474e-8e68-fc446ad71303",
+        "to_do_title": "Mexer com arquivos (Download, Upload, Delete)",
+        "to_do_identificator": "78c33821-453f-4e06-9eb4-5f29aa365e66",
+        "to_do_created_time": "2025-01-30T18:28:51.286738",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
         "task_FK": "4a25959c-c4f9-486e-8874-9508426f5acd",
-        "to_do_title": "Backlog com as melhorias",
-        "to_do_identificator": "9853571c-b57f-476b-810e-85719d49ba91",
-        "to_do_created_time": "2025-01-30T17:51:25.048083",
+        "to_do_title": "Backlog Sprint 28 - ITL",
+        "to_do_identificator": "ca6d1ff0-7e35-42f8-9045-c79202272533",
+        "to_do_created_time": "2025-01-31T11:10:34.186500",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "4a25959c-c4f9-486e-8874-9508426f5acd",
+        "to_do_title": "+ de 1 Técnico por Vistoria - SIVOB",
+        "to_do_identificator": "996a63b1-9004-468b-8de7-da9f7b02388e",
+        "to_do_created_time": "2025-01-31T11:16:29.372583",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "4a25959c-c4f9-486e-8874-9508426f5acd",
+        "to_do_title": "Emular SIVOB APP no pc",
+        "to_do_identificator": "9b83bd99-e360-4bf0-864e-0306e3548fd2",
+        "to_do_created_time": "2025-01-31T16:46:50.400955",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "Validação de entrada de dados (To Do e Task)",
+        "to_do_identificator": "43b6c011-bd7a-44e8-8e59-a128771043a2",
+        "to_do_created_time": "2025-02-01T09:04:48.491934",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "Ajustar os valores \"Today\" e \"Week\"",
+        "to_do_identificator": "87e33421-16a8-477a-aeac-1a3d17118aad",
+        "to_do_created_time": "2025-02-01T09:08:12.083531",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "Campos de Texto mais bonitos (tema escuro)",
+        "to_do_identificator": "5195084e-e2d0-4fc7-9c8d-b897197a29f1",
+        "to_do_created_time": "2025-02-01T09:08:27.225353",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "to_do_title": "Campos de Texto mais bonitos (tema escuro)",
+        "to_do_identificator": "93b827d0-0b94-47b3-ac6c-c0e372434d6a",
+        "to_do_created_time": "2025-02-01T09:08:27.472197",
         "to_do_status": "in progress",
         "to_do_completed_time": null
     },
     {
         "task_FK": "163d9725-3519-474e-8e68-fc446ad71303",
-        "to_do_title": "Mexer com arquivos (Download, Upload, Delete)",
-        "to_do_identificator": "78c33821-453f-4e06-9eb4-5f29aa365e66",
-        "to_do_created_time": "2025-01-30T18:28:51.286738",
+        "to_do_title": "Assincronismo",
+        "to_do_identificator": "d24c2634-baf5-40c7-b88e-5849b6b8ee8a",
+        "to_do_created_time": "2025-02-01T11:08:57.272664",
+        "to_do_status": "in progress",
+        "to_do_completed_time": null
+    },
+    {
+        "task_FK": "163d9725-3519-474e-8e68-fc446ad71303",
+        "to_do_title": "Observabilidade",
+        "to_do_identificator": "21c404a5-d10e-4a9d-bf0d-aa0133ed528f",
+        "to_do_created_time": "2025-02-01T11:39:19.781425",
         "to_do_status": "in progress",
         "to_do_completed_time": null
     }

@@ -63,5 +63,9 @@ class TaskController:
             return jsonify({"success": False, "data": None, "error": "Internal Server Error"}), 500
 
 
+    def get_data_for_last_365_days_home_chart(self):
+        minutes_per_day = self.service.get_data_for_last_365_days_home_chart()
+        return jsonify({"success": True, "data": {"minutes_per_day": minutes_per_day}, "error": None})
+
 
     
