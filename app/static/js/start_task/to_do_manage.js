@@ -101,7 +101,7 @@ document.querySelectorAll('.to-do-grid').forEach(grid => {
               showToast('success', message);
               reinitializateToDoTooltipsAfterDOMUpdate();
             } else {
-              alert("Erro ao atualizar o status do To-Do.");
+              showToast('error', message || 'Erro ao atualizar o status de To-Do');
               checkbox.checked = !isChecked; 
             }
           })

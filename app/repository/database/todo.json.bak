@@ -678,5 +678,13 @@
         "to_do_created_time": "2025-02-03T16:47:09.492502",
         "to_do_status": "in progress",
         "to_do_completed_time": null
+    },
+    {
+        "task_FK": "6554752a-6dfa-44b7-bc01-6703d1e88250",
+        "to_do_title": "teste",
+        "to_do_identificator": "a2db97cd-3995-4b11-912b-59d936b321ff",
+        "to_do_created_time": "2025-02-03T23:42:42.556948",
+        "to_do_status": "completed",
+        "to_do_completed_time": "2025-02-03T23:42:49.265088"
     }
 ]

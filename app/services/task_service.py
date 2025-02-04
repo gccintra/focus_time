@@ -16,7 +16,7 @@ class TaskService:
 
     def get_all_tasks(self):
         tasks = self.task_db.get_models()
-        sorted_tasks = sorted(tasks, key=lambda task: sum(task.seconds_in_focus_per_day.values()), reverse=True)
+        sorted_tasks = sorted(tasks, key=lambda task: task.week_total_minutes, reverse=True)
         return sorted_tasks
 
       
@@ -33,7 +33,7 @@ class TaskService:
                     "minutes": task.week_total_minutes
                 })
 
-        tasks_for_charts.sort(key=lambda x: x["minutes"])
+        tasks_for_charts.sort(key=lambda x: x["minutes"], reverse=False)
         return tasks_for_charts
 
     def create_new_task(self, name, color):

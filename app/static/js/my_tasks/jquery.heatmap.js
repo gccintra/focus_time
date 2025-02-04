@@ -180,7 +180,8 @@
 
             for (let i = 0; i < 7; i++) { // Erstelle eine Woche (7 Tage)
                 currentWeek.push(new Date(currentDate));
-                currentDate.setDate(currentDate.getDate() + 1); // Einen Tag vorwärts
+                currentDate.setUTCDate(currentDate.getUTCDate() + 1); // Use UTC date
+             //   currentDate.setDate(currentDate.getDate() + 1); // Einen Tag vorwärts
             }
 
             weeks.push(currentWeek);
@@ -193,11 +194,18 @@
         return weeks;
     }
 
+    // O problema está aqui!!!!!!!!! 
+    // {startDate: '2024-02-02', endDate: '2025-02-02', firstDayOfWeek: 0, start: '2024-01-28T03:00:00.000Z', end: '2025-02-02T02:59:59.999Z'}
+    // end deveria ser dia 08/02/2025.
+    // o startOfWeek está pegando o dia 26/01 inves do dia 02/02, será que é erro de fuso horário?
+
     function getEndOfWeek(date, firstDayOfWeek) {
         const startOfWeek = getStartOfWeek(date, firstDayOfWeek);
         const end = new Date(startOfWeek);
         end.setDate(startOfWeek.getDate() + 6); // 6 Tage nach dem Startdatum
         end.setHours(23, 59, 59, 999); // Uhrzeit auf Ende des Tages setzen
+        console.log('startOfWeek.getDate() ', startOfWeek.getDate())
+        console.log('end ', end)
         return end;
     }
 
@@ -210,6 +218,28 @@
         start.setHours(0, 0, 0, 0); // Uhrzeit auf Mitternacht
         return start;
     }
+
+    // function getStartOfWeek(date, firstDayOfWeek) {
+    //     const currentDay = date.getUTCDay();
+    //     const diff = (currentDay - firstDayOfWeek + 7) % 7;
+    
+    //     const start = new Date(date);
+    //     start.setUTCDate(date.getUTCDate() - diff);
+    //     start.setUTCHours(0, 0, 0, 0);
+    
+    //     console.log('Start of Week (UTC):', start.toISOString());
+    //     return start;
+    // }
+    
+    // function getEndOfWeek(date, firstDayOfWeek) {
+    //     const startOfWeek = getStartOfWeek(date, firstDayOfWeek);
+    //     const end = new Date(startOfWeek);
+    //     end.setUTCDate(startOfWeek.getUTCDate() + 6);
+    //     end.setUTCHours(23, 59, 59, 999);
+    
+    //     console.log('End of Week (UTC):', end.toISOString());
+    //     return end;
+    // }
 
     function drawHeatmap($el, myMoment) {
         const settings = getSettings($el);
@@ -293,9 +323,17 @@
             // Nesse caso a data final sempre será o dia de hoje e o dia inicial será 1 ano antes do dia de hj (qu é exatamente oque precisamos para nosso gráfico, caso precisemos de outra solução, podemos ultilizar os exemplos acima)
             // Pensar no caso de ver por ano ou por mês.
             // Nesse caso o endDate e o startData precisaria ser um parâmetro.
-            endDate = new Date().toISOString().split('T')[0];
-            const endDateParts = endDate.split('-');
-            startDate = `${endDateParts[0] - 1}-${endDateParts[1]}-${endDateParts[2]}`;
+            const today = new Date();
+            endDate = today.toISOString().split('T')[0];
+
+            startDate = new Date();
+            startDate.setFullYear(startDate.getFullYear() - 1); // Subtract 1 year
+            startDate = startDate.toISOString().split('T')[0];
+
+            // endDate = new Date().toISOString().split('T')[0];
+            // const endDateParts = endDate.split('-');
+            // startDate = `${endDateParts[0] - 1}-${endDateParts[1]}-${endDateParts[2]}`;
+
           
 
             // Wochen und Daten vorbereiten
@@ -521,6 +559,7 @@
 // Unterstützungsfunktion: Ermitteln, ob die Woche mit Montag oder Sonntag startet
     function getFirstDayOfWeek(myMoment) {
         // Hole die erste-Wochentag-Informationen von momentForHeatmap
+        console.log(myMoment.localeData().firstDayOfWeek())
         return myMoment.localeData().firstDayOfWeek();
     }
 

@@ -53,10 +53,18 @@ document.addEventListener("DOMContentLoaded", function() {
             body: JSON.stringify({ elapsed_seconds: elapsedTime })
         })
         .then(response => response.json())
-        .then(data => {
-            console.log(data.data.message);
+        .then(({ success, message, data, error }) => {
+            if (success){
+                console.log(message)
+            } else {
+                showToast('error', message || 'Erro ao salvar o tempo em foco');
+                console.log(error)
+            }
         })
-        .catch(error => console.error("Erro ao atualizar:", error));
+        .catch((error) => {
+            showToast('error', 'Something went wrong while saving time in focus.');
+            console.error("Erro ao salvar ElapsedTime: ", error);
+         }); 
     }
 
     function updateTimerDisplay(timerDisplay, seconds) {
