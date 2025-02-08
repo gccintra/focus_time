@@ -30,17 +30,17 @@
     
     <div class="row g-4 my-3 to-do-grid" id="toDoGridInProgress">
 
-        {% for to_do_item in to_do_list if to_do_item.to_do_status == 'in progress' %}
+        {% for to_do_item in to_do_list if to_do_item.status == 'in progress' %}
 
             <div class="col-md-12 to-do-item">
 
                 <div 
                     class="d-flex justify-content-between align-items-center to-do-card "
-                    data-id="{{ to_do_item.to_do_identificator }}">
+                    data-id="{{ to_do_item.identificator }}">
         
                     <div class="to-do-text-check d-flex align-items-center me-3 flex-grow-1 text-wrap">
                         <input class="form-check-input to-do-check-box me-3 mt-0 rounded-checkbox" type="checkbox" value="" aria-label="...">
-                        <span class="to-do-title mb-0 text-break">{{ to_do_item.to_do_title }}</span>
+                        <span class="to-do-title mb-0 text-break">{{ to_do_item.title }}</span>
                     </div>
                     
                     <div class="d-flex flex-shrink-0" id="icons">
@@ -51,7 +51,7 @@
                             data-bs-placement="left"
                             data-bs-custom-class="info-to-do-tooltip"
                             data-bs-html="true"
-                            title="Created Time:<br>{{ to_do_item.to_do_created_time_formatted }}">
+                            title="Created Time:<br>{{ to_do_item.created_time_formatted }}">
                         </i>                                             
                         <i class="bi bi-trash fs-4" id="deleteToDo" data-bs-toggle="modal" data-bs-target="#DeleteToDo"></i>
                     </div>
@@ -90,17 +90,17 @@
 
             <div class="row g-4 my-3 to-do-grid" id="toDoGridCompleted">
 
-                {% for to_do_item in to_do_list if to_do_item.to_do_status == 'completed' %}
+                {% for to_do_item in to_do_list if to_do_item.status == 'completed' %}
         
                     <div class="col-md-12 to-do-item">
         
                         <div 
                             class="d-flex justify-content-between align-items-center to-do-card"
-                            data-id="{{ to_do_item.to_do_identificator }}">
+                            data-id="{{ to_do_item.identificator }}">
                 
                             <div class="to-do-text-check d-flex align-items-center me-3 flex-grow-1 text-wrap">
                                 <input class="form-check-input to-do-check-box me-3 mt-0 rounded-checkbox" type="checkbox" value="" aria-label="..." checked>
-                                <span class="to-do-title mb-0 text-break"><del>{{ to_do_item.to_do_title }}</del></span>
+                                <span class="to-do-title mb-0 text-break"><del>{{ to_do_item.title }}</del></span>
                             </div>
                             <div class="d-flex flex-shrink-0" id="icons">
                                 <i 
@@ -111,9 +111,9 @@
                                     data-bs-custom-class="info-to-do-tooltip"
                                     data-bs-html="true"
                                     title=" 
-                                    Created Time:<br>{{ to_do_item.to_do_created_time_formatted }}
+                                    Created Time:<br>{{ to_do_item.created_time_formatted }}
                                     <br>
-                                    Completed Time:<br>{{ to_do_item.to_do_completed_time_formatted }}">
+                                    Completed Time:<br>{{ to_do_item.completed_time_formatted }}">
                                 </i>                                                                
                                 <i class="bi bi-trash fs-4" id="deleteToDo" data-bs-toggle="modal" data-bs-target="#DeleteToDo"></i>
                             </div>

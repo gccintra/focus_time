@@ -55,3 +55,27 @@ class ToDoValidationError(ToDoError):
         else:
              message = f"Erro de validação de dados."
         super().__init__(message)
+
+
+
+
+
+class UserError(Exception):
+    """Erro geral relacionado ao ToDo."""
+    def __init__(self, message="Erro relacionado ao User."):
+        super().__init__(message)
+
+
+class UserNotFoundError(UserError):
+    """Erro para quando um user não é encontrada."""
+    def __init__(self, user_identificator=None, message="User não encontrado."):
+        if user_identificator:
+            message = f"User com identificação '{user_identificator}' não foi encontrado."
+        super().__init__(message)
+
+
+class InvalidPasswordError(UserError):
+    """Erro para quando a senha é incorreta para autenticação."""
+    def __init__(self, message="Invalid Password!"):
+        super().__init__(message)
+

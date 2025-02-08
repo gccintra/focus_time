@@ -1,5 +1,15 @@
 # Doing (MVP):
 
+- [ ] Autenticação com JWT
+    - [ ] Register
+    - [ ] Login
+    - [ ] Logout
+    - https://www.youtube.com/watch?v=z92CWqvefr0&ab_channel=Spacedevs
+    - https://www.youtube.com/watch?v=sHyoMWnnLGU&ab_channel=MatheusBattisti-HoradeCodar
+    - o front-end vai enviar o token em toda requisição para o back-end
+    - Salvar token em cookies
+    - Cryptografar senha para salvar no banco
+- [ ] Websocket -> Confirmar Presença (enviar notificação) de 60 em 60 minutos, caso a presença não seja confirmada o tempo de foco é pausado
 - [ ] Validações de campo (Title)
 - [ ] Getters e Setters, + Segurança
     - [ ] Validações ao tentar criar uma task com id igual (hard coded)
@@ -10,11 +20,6 @@
     - [x] To Do
     - [x] Tasks
 - [x] Ordenação das tasks por maior porcentagem. (ta com bug)
-- [ ] Autenticação com JWT
-    - [ ] Register
-    - [ ] Login
-    - [ ] Logout
-- [ ] Websocket -> Confirmar Presença (enviar notificação) de 60 em 60 minutos, caso a presença não seja confirmada o tempo de foco é pausado
 - [ ] Bug nos dias (365)
     - [ ] Domingo (Não cria uma nova week)
     - [x] Segunda e Terça (o layout quebra, não elimina a primeira semana na esquerda)

@@ -1,8 +1,10 @@
 [
     {
-        "identificator": "6554752a-6dfa-44b7-bc01-6703d1e88250",
+        "user_FK": "user-d0b57306-ede7-4f64-8acd-dad87e46a300",
+        "identificator": "task-6554752a-6dfa-44b7-bc01-6703d1e88250",
         "title": "Leitura",
         "color": "#009dff",
+        "status": "active",
         "seconds_in_focus_per_day": {
             "2024-11-30": 1000,
             "2024-12-01": 1000,
@@ -14,13 +16,16 @@
             "2025-01-08": 809,
             "2025-01-09": 810,
             "2025-01-21": 12013,
-            "2025-01-28": 12064
+            "2025-01-28": 12064,
+            "2025-02-08": 12080
         }
     },
     {
-        "identificator": "163d9725-3519-474e-8e68-fc446ad71303",
+        "user_FK": "user-d0b57306-ede7-4f64-8acd-dad87e46a300",
+        "identificator": "task-163d9725-3519-474e-8e68-fc446ad71303",
         "title": "Estudar",
         "color": "#d400ff",
+        "status": "active",
         "seconds_in_focus_per_day": {
             "2024-12-03": 2039,
             "2024-12-04": 1003,
@@ -33,9 +38,11 @@
         }
     },
     {
-        "identificator": "4a25959c-c4f9-486e-8874-9508426f5acd",
+        "user_FK": "user-d0b57306-ede7-4f64-8acd-dad87e46a300",
+        "identificator": "task-4a25959c-c4f9-486e-8874-9508426f5acd",
         "title": "Trabalho (Teste Real)",
         "color": "#75ff7e",
+        "status": "active",
         "seconds_in_focus_per_day": {
             "2024-06-22": 14239,
             "2025-01-22": 6420,
@@ -45,21 +52,28 @@
             "2025-01-28": 14,
             "2025-01-29": 9641,
             "2025-01-30": 11340,
-            "2025-01-31": 14239
+            "2025-01-31": 14239,
+            "2025-02-04": 6279,
+            "2025-02-05": 8477,
+            "2025-02-06": 196
         }
     },
     {
-        "identificator": "04d54a48-71db-46e2-afa8-d320b45a1458",
+        "user_FK": "user-d0b57306-ede7-4f64-8acd-dad87e46a300",
+        "identificator": "task-04d54a48-71db-46e2-afa8-d320b45a1458",
         "title": "Jogar Marvel Rivals",
         "color": "#f2a41c",
+        "status": "active",
         "seconds_in_focus_per_day": {
             "2025-01-23": 2341
         }
     },
     {
-        "identificator": "f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "user_FK": "user-d0b57306-ede7-4f64-8acd-dad87e46a300",
+        "identificator": "task-f2a9da81-f968-497c-92ec-6750eee0ccdf",
         "title": "Focus Time Develop",
         "color": "#ff0000",
+        "status": "active",
         "seconds_in_focus_per_day": {
             "2025-01-23": 6445,
             "2025-01-24": 9832,

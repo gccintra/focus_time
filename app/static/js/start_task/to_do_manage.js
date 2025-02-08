@@ -8,10 +8,10 @@ document.getElementById('createTaskToDoButton').addEventListener('click', functi
       return;
   }
 
-  fetch(`/todo/new_todo`, {
+  fetch(`/todo/${taskId}/new_todo`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: taskToDoName, task_id: taskId })
+      body: JSON.stringify({ name: taskToDoName })
   })
   .then(response => response.json())
   .then(({ success, message, data, error }) => {
@@ -54,12 +54,12 @@ document.querySelectorAll('.to-do-grid').forEach(grid => {
         const isChecked = checkbox.checked;
 
         // Envia a requisição para o backend
-        fetch(`/todo/change_state/${toDoId}`, {
+        fetch(`/todo/change_state/${taskId}/${toDoId}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ status: isChecked ? "completed" : "in progress"}),
+          body: JSON.stringify({ status: isChecked ? "completed" : "in progress",  task_id: taskId}),
         })
           .then(response => response.json())
           .then(({ success, message, data, error })  => {
@@ -102,6 +102,7 @@ document.querySelectorAll('.to-do-grid').forEach(grid => {
               reinitializateToDoTooltipsAfterDOMUpdate();
             } else {
               showToast('error', message || 'Erro ao atualizar o status de To-Do');
+              console.error("Erro:", error);
               checkbox.checked = !isChecked; 
             }
           })
@@ -137,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
   confirmDeleteButton.addEventListener('click', function () {
     const toDoId = confirmDeleteButton.getAttribute('to-do-id');
 
-    fetch(`/todo/delete/${toDoId}`, {
+    fetch(`/todo/delete/${taskId}/${toDoId}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json"

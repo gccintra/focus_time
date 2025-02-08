@@ -4,11 +4,13 @@ from app.models.exceptions import TaskValidationError
 from app.models.base_model import BaseModel
 
 class Task(BaseModel):    
-    def __init__(self, identificator, title, color, seconds_in_focus_per_day={}): 
+    def __init__(self, user_FK, identificator, title, color, seconds_in_focus_per_day={}, status=None): 
+        self.user_FK = user_FK
         self.identificator = identificator
         self.title = title
         self.color = color
         self.seconds_in_focus_per_day = seconds_in_focus_per_day
+        self.status = status or 'active'
          
     @property
     def today_total_seconds(self):
@@ -48,7 +50,7 @@ class Task(BaseModel):
 
     @property
     def week_total_minutes(self):
-        return round(self.week_total_seconds / 60.0, 1)
+        return round(self.week_total_seconds / 60.0)
 
     @property
     def week_total_time(self):
@@ -70,8 +72,10 @@ class Task(BaseModel):
 
     def to_dict(self):
         return {
+            "user_FK": self.user_FK,
             "identificator": self.identificator,
             "title": self.title,
             "color": self.color,
-            "seconds_in_focus_per_day": self.seconds_in_focus_per_day
+            "status": self.status,
+            "seconds_in_focus_per_day": self.seconds_in_focus_per_day,
         }

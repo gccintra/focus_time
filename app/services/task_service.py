@@ -9,19 +9,20 @@ from datetime import date, timedelta
 class TaskService:
     def __init__(self):
         try:
-            self.task_db = TaskRecord("task.json")
+            self.task_db = TaskRecord()
         except ValueError as e:
             logger.error(f"Erro ao inicializar TaskRecord: {e}")
             raise DatabaseError("Erro ao inicializar o banco de dados.")
 
-    def get_all_tasks(self):
-        tasks = self.task_db.get_models()
+    def get_all_tasks(self, user_id=None):
+        tasks = self.task_db.get_models(user_id=user_id)
+
         sorted_tasks = sorted(tasks, key=lambda task: task.week_total_minutes, reverse=True)
         return sorted_tasks
 
       
-    def get_data_for_all_charts(self):
-        tasks_data = self.task_db.get_models()
+    def get_data_for_all_charts(self, user_id):
+        tasks_data = self.task_db.get_models(user_id=user_id)
         tasks_for_charts = []
 
         for task in tasks_data:
@@ -36,19 +37,19 @@ class TaskService:
         tasks_for_charts.sort(key=lambda x: x["minutes"], reverse=False)
         return tasks_for_charts
 
-    def create_new_task(self, name, color):
+    def create_new_task(self, name, color, user_id):
         try:
             identificator = self.task_db.generate_unique_id()
-            new_task = Task(identificator=identificator, title=name, color=color)
+            new_task = Task(identificator=identificator, title=name, color=color, user_FK=user_id)
             self.task_db.write(new_task)
             logger.info(f'Task {name} criada com sucesso!')
             return new_task
         except (TypeError, Exception):
             raise
        
-    def update_task_time(self, task_id, elapsed_seconds):
+    def update_task_time(self, task_id, elapsed_seconds, user_id):
         try:
-            task = self.get_task_by_id(task_id)
+            task = self.get_task_by_id(task_id, user_id)
             task.set_seconds_in_focus_per_day(elapsed_seconds)
             self.task_db.save()
         except TaskValidationError as e:
@@ -58,15 +59,15 @@ class TaskService:
             logger.error(f"Erro ao salvar tempo de foco diário para a task '{task.identificator}")
             raise
     
-    def get_task_by_id(self, task_id):
+    def get_task_by_id(self, task_id, user_id=None):
         try:
-            return self.task_db.get_task_by_id(task_id)
+            return self.task_db.get_task_by_id(task_id=task_id, user_id=user_id)
         except (TaskNotFoundError, Exception):
             raise
 
  
-    def get_data_for_last_365_days_home_chart(self):
-        tasks_data = self.task_db.get_models()
+    def get_data_for_last_365_days_home_chart(self, user_id):
+        tasks_data = self.task_db.get_models(user_id=user_id)
         minutes_per_day = {}
 
         for task in tasks_data:

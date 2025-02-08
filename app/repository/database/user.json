@@ -1,0 +1,16 @@
+[
+    {
+        "identificator": "user-e3b24f89-f674-4632-898c-624194201c69",
+        "username": "localhost",
+        "email": "user@localhost",
+        "password": "$2a$12$yNeO8.2adMv7Riuy7wTR5uoa82YJjvygCIirQfnBtH2yk34I4SD/2",
+        "status": "active"
+    },
+    {
+        "identificator": "user-d0b57306-ede7-4f64-8acd-dad87e46a300",
+        "username": "admin",
+        "email": "admin@localhost",
+        "password": "$2b$12$w7l/pkaV2hBZSnm.FLlL6.Je4scyLboai0Gwd6bbyAJu1xVHTx2vy",
+        "status": "active"
+    }
+]

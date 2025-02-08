@@ -1,0 +1,93 @@
+[
+    {
+        "identificator": "user-e3b24f89-f674-4632-898c-624194201c69",
+        "username": "localhost",
+        "email": "email@localhost",
+        "password": "$2a$12$yNeO8.2adMv7Riuy7wTR5uoa82YJjvygCIirQfnBtH2yk34I4SD/2",
+        "status": "active"
+    },
+    {
+        "identificator": "user-1b02ec86-0499-41ab-94c8-62519cefb6b1",
+        "username": "garrafa de agua",
+        "email": "gmail@888",
+        "password": "$2b$12$5LFde.xlijMcj.yQHqCW0.LgnZV4ZH9EL6M9NTdNhtc9H0RdEoaum",
+        "status": "active"
+    },
+    {
+        "identificator": "user-12d85b1c-a414-4e85-8f24-170a74a5711c",
+        "username": "notebook",
+        "email": "outlook@email",
+        "password": "$2b$12$.zsShRQKrLkkpdCFoYtWjOEeQr3QCbw9vNYDGGSXE6QtXA/SydF1i",
+        "status": "active"
+    },
+    {
+        "identificator": "user-dad14bcd-f16b-4f8a-939e-4e5b8ee6f095",
+        "username": "notebook",
+        "email": "outlook@email",
+        "password": "$2b$12$ZoAlcOXozWSQ5o.myUffye23q3.I6k8XHtcbytw0HX0FfKZ9B2xIG",
+        "status": "active"
+    },
+    {
+        "identificator": "user-c0dd5443-850d-48a0-82f1-48aae7a460a8",
+        "username": "gccintra",
+        "email": "cintra.gucintra@hotmail.com",
+        "password": "$2b$12$EFUrLXjbZVO6ymjLqFHoAO7YPHRpcxlKftg/v5cjop./lxpYoMrS.",
+        "status": "active"
+    },
+    {
+        "identificator": "user-a9ed2905-013f-4f56-a143-95351645b5d1",
+        "username": "Gustavo",
+        "email": "usuarioteste1@sestsenat.org.br",
+        "password": "$2b$12$SE9SFJGV1.3qQiQ1nAMRTODTdCCsUJyl63amtQQQJ8j9DWs.q/sGq",
+        "status": "active"
+    },
+    {
+        "identificator": "user-56602f2c-21a1-4638-b953-a3414c10222e",
+        "username": "17347028779",
+        "email": "gustavo.websis@sestsenat.org.br",
+        "password": "$2b$12$ZiSJ7UEV5Cv/bmTCKvd5Tel4cDAv/G5HB9N4daj4L3etkq5GmJ7ZO",
+        "status": "active"
+    },
+    {
+        "identificator": "user-36f50e40-912d-4d8f-8b25-98d0f88881cd",
+        "username": "123",
+        "email": "usuarioteste1@sestsenat.org.br",
+        "password": "$2b$12$6RzgsqMuVWjvlltZ1RayQe74q6RNjxKAjMA15L6XhIjsGszmUIdFi",
+        "status": "active"
+    },
+    {
+        "identificator": "user-f8a0799b-7334-4f43-a3e6-51e0fe1c235b",
+        "username": "123123",
+        "email": "usuarioteste1@sestsenat.org.br12",
+        "password": "$2b$12$XvZQSM0A6CWDIzorP.k5PeRDwwmOvY4mK/Ki.murqkHH/aRcanhPW",
+        "status": "active"
+    },
+    {
+        "identificator": "user-27c6b90f-b056-4dd3-8237-ebbb9461f21a",
+        "username": "admin",
+        "email": "admin@localhost.com",
+        "password": "$2b$12$q9LtCJ3iDqAzi33XlPk5juP0jDcHNmz6B/hIIYHdS7o9fu5qvknce",
+        "status": "active"
+    },
+    {
+        "identificator": "user-c8c44825-c185-4b25-83d0-e7169f447efa",
+        "username": "admin",
+        "email": "admin@localhost.com",
+        "password": "$2b$12$nDX5QQm.2THC9U8qPCHI8.1SNNzy7Z9gIkJNXE5lYCmr1VffKJ54S",
+        "status": "active"
+    },
+    {
+        "identificator": "user-04fb7278-0426-4bcd-b2e5-2a63979c5a4c",
+        "username": "admin3",
+        "email": "admin@localhost.com",
+        "password": "$2b$12$2u1jhPA9hzM1Yy0OWAVELuQhcSNw9IARb9LokmQWrmgrfazfUFAHe",
+        "status": "active"
+    },
+    {
+        "identificator": "user-3f8e1954-521e-42a3-9a2b-18989c948f71",
+        "username": "email",
+        "email": "email@email.com",
+        "password": "$2b$12$y09b87TfI01qYVKDQba0FuNTfxJ5RYY6rBNeoMYtfWx9IiIMoAlXy",
+        "status": "active"
+    }
+]

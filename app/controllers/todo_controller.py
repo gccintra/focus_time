@@ -10,19 +10,18 @@ class ToDoController:
         except DatabaseError as e:
             raise DatabaseError(f"Failed to initialize TaskService: {str(e)}")
 
-    def create_task_to_do(self, data):
+    def create_to_do(self, data, task_id):
         try:
-            to_do_name = data.get('name')
-            task_id = data.get('task_id')
-            new_to_do = self.service.create_todo(task_id, to_do_name)
+            name = data.get('name')
+            new_to_do = self.service.create_todo(task_id=task_id, to_do_name=name)
             return jsonify({
                 "success": True,
                 "message": "To-Do created successfully",
                 "data": {
-                    "id": new_to_do.to_do_identificator,
-                    "title": new_to_do.to_do_title,
-                    "created_time": new_to_do.to_do_created_time_formatted,
-                    "status": new_to_do.to_do_status
+                    "id": new_to_do.identificator,
+                    "title": new_to_do.title,
+                    "created_time": new_to_do.created_time_formatted,
+                    "status": new_to_do.status
                 },
                 "error": None
             }), 201
@@ -40,17 +39,17 @@ class ToDoController:
             }), 500
 
 
-    def change_to_do_state(self, data, todo_id):
+    def change_to_do_state(self, data, todo_id, task_id):
         try:
             new_status = data.get('status')
-            updated_to_do = self.service.change_to_do_state(todo_id, new_status)
+            updated_to_do = self.service.change_to_do_state(todo_id=todo_id, new_status=new_status, task_id=task_id)
             return jsonify({
                 "success": True,
                 "message": "To-Do status changed successfully",
                 "data": {
-                    "status": updated_to_do.to_do_status,
-                    "created_time": updated_to_do.to_do_created_time_formatted,
-                    "completed_time": getattr(updated_to_do, "to_do_completed_time_formatted", None)
+                    "status": updated_to_do.status,
+                    "created_time": updated_to_do.created_time_formatted,
+                    "completed_time": getattr(updated_to_do, "completed_time_formatted", None)
                 },
                 "error": None
             }), 200
@@ -93,9 +92,9 @@ class ToDoController:
             }), 500
         
 
-    def delete_to_do(self, todo_id):
+    def delete_to_do(self, todo_id, task_id):
         try:
-            self.service.delete_to_do(todo_id)
+            self.service.delete_to_do(to_do_id=todo_id, task_id=task_id)
             return jsonify({
                 "success": True,
                 "message": "To-Do deleted successfully.",

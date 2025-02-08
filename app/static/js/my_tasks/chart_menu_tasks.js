@@ -17,10 +17,22 @@ function inicializateChartContent() {
                     if (taskData.length > 0) {
                         const labels = allTasksData.map(t => t.title);
                         const taskMinutes = allTasksData.map(t => t.minutes);
+                        const totalMinutes = taskMinutes.reduce((a, b) => a + b, 0);
+
+                        console.log('totalMinutes: ', totalMinutes)
+
+                        if (totalMinutes < 1) {
+                            console.log(`Nenhum gráfico criado, pois totalMinutes é menor que 1.`);
+                            return; 
+                        }
+
+                        const percentage = ((taskMinutes[labels.indexOf(taskData[0].title)] / totalMinutes) * 100).toFixed(1);
                         const colors = allTasksData.map(t => t.identificator === taskId ? t.color : "#303030");
 
-                        const totalMinutes = taskMinutes.reduce((a, b) => a + b, 0);
-                        const percentage = ((taskMinutes[labels.indexOf(taskData[0].title)] / totalMinutes) * 100).toFixed(1);
+                        
+                        console.log(`Colors:`, colors);
+
+
 
                         new Chart(ctx, {
                             type: 'doughnut',

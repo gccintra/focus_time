@@ -12,12 +12,12 @@ class TaskController:
         except DatabaseError as e:
             raise DatabaseError(f"Failed to initialize TaskService: {str(e)}")
 
-    def my_tasks(self):
-        tasks = self.service.get_all_tasks()
-        return render_template("my_tasks.html", title="My Tasks", active_page="home", tasks=tasks)
+    def my_tasks(self, user_id=None):
+        tasks = self.service.get_all_tasks(user_id=user_id)
+        return render_template("my_tasks.html", title="My Tasks", tasks=tasks)
 
-    def get_data_for_all_charts(self):
-        tasks_for_chart = self.service.get_data_for_all_charts()
+    def get_data_for_all_charts(self, user_id):
+        tasks_for_chart = self.service.get_data_for_all_charts(user_id=user_id)
         return jsonify({
             "success": True,
             "message": "Data rescued successfully",
@@ -27,11 +27,11 @@ class TaskController:
             "error": None
             }), 200
 
-    def new_task(self, data):
+    def new_task(self, data, user_id):
         try:
             task_name = data.get('name')
             task_color = data.get('color')
-            task = self.service.create_new_task(task_name, task_color)
+            task = self.service.create_new_task(name=task_name, color=task_color, user_id=user_id)
             return jsonify({
                 "success": True,
                 "message": "Task created successfully",
@@ -57,9 +57,9 @@ class TaskController:
                 }
             }), 500
 
-    def start_task(self, task_id):
+    def start_task(self, task_id, user_id=None):
         try:
-            task, todo_list = self.task_todo_service.get_task_todo_list(task_id)
+            task, todo_list = self.task_todo_service.get_task_todo_list(task_id=task_id, user_id=user_id)
             return render_template("start_task.html", title="Start Task", task=task, to_do_list=todo_list)
         except TaskNotFoundError:
             return abort(404)
@@ -76,10 +76,10 @@ class TaskController:
                 }
             }), 500
 
-    def update_task_time(self, task_id, data):
+    def update_task_time(self, task_id, user_id, data):
         try:
             elapsed_seconds = int(data.get("elapsed_seconds"))
-            self.service.update_task_time(task_id, elapsed_seconds)
+            self.service.update_task_time(task_id=task_id, elapsed_seconds=elapsed_seconds, user_id=user_id,)
             return jsonify({
                 "success": True,
                 "message": "The seconds have been saved.",
@@ -89,11 +89,11 @@ class TaskController:
         except TaskNotFoundError as e:
             return jsonify({
                 "success": False,
-                "message": "To-Do not found.",
+                "message": "Task not found.",
                 "data": None,
                 "error": {
                     "code": 404,
-                    "type": "TodoNotFoundError",
+                    "type": "TaskNotFoundError",
                     "details": str(e)
                 }
             }), 404
@@ -123,8 +123,8 @@ class TaskController:
             }), 500
           
 
-    def get_data_for_last_365_days_home_chart(self):
-        minutes_per_day = self.service.get_data_for_last_365_days_home_chart()
+    def get_data_for_last_365_days_home_chart(self, user_id=None):
+        minutes_per_day = self.service.get_data_for_last_365_days_home_chart(user_id=user_id)
         return jsonify({
                 "success": True,
                 "message": 'data rescued successfully',
