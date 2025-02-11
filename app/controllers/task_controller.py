@@ -14,7 +14,7 @@ class TaskController:
 
     def my_tasks(self, user_id=None):
         tasks = self.service.get_all_tasks(user_id=user_id)
-        return render_template("my_tasks.html", title="My Tasks", tasks=tasks)
+        return render_template("my_tasks.html", title="My Tasks", tasks=tasks, active_page='home')
 
     def get_data_for_all_charts(self, user_id):
         tasks_for_chart = self.service.get_data_for_all_charts(user_id=user_id)

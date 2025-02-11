@@ -14,10 +14,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     .then(response => response.json())
     .then(({ success, message, data, error }) => {
         if (success){
-            showToast('success', message);
-            setTimeout(function() {
-                window.location.href = `/task`;
-            }, 3000);
+            window.location.href = `/task`;
         } else {
             showToast('error', message || 'Erro ao se registrar');
             console.log(error)

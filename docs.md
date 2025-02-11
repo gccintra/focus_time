@@ -1,8 +1,10 @@
 # Doing (MVP):
 
 - [ ] Autenticação com JWT
-    - [ ] Register
-    - [ ] Login
+    - [x] Register
+    - [x] Login
+    - [ ] FrontEnd Page Reponsiva (DOING)
+    - [ ] ao tentar acessar a página de login já autenticado, encaminhar para a tela principal
     - [ ] Logout
     - https://www.youtube.com/watch?v=z92CWqvefr0&ab_channel=Spacedevs
     - https://www.youtube.com/watch?v=sHyoMWnnLGU&ab_channel=MatheusBattisti-HoradeCodar

@@ -1,6 +1,6 @@
 [
     {
-        "user_FK": "user-e3b24f89-f674-4632-898c-624194201c69",
+        "user_FK": "user-d0b57306-ede7-4f64-8acd-dad87e46a300",
         "identificator": "task-6554752a-6dfa-44b7-bc01-6703d1e88250",
         "title": "Leitura",
         "color": "#009dff",
@@ -21,7 +21,7 @@
         }
     },
     {
-        "user_FK": "user-12d85b1c-a414-4e85-8f24-170a74a5711c",
+        "user_FK": "user-d0b57306-ede7-4f64-8acd-dad87e46a300",
         "identificator": "task-163d9725-3519-474e-8e68-fc446ad71303",
         "title": "Estudar",
         "color": "#d400ff",
@@ -38,7 +38,7 @@
         }
     },
     {
-        "user_FK": "user-1b02ec86-0499-41ab-94c8-62519cefb6b1",
+        "user_FK": "user-d0b57306-ede7-4f64-8acd-dad87e46a300",
         "identificator": "task-4a25959c-c4f9-486e-8874-9508426f5acd",
         "title": "Trabalho (Teste Real)",
         "color": "#75ff7e",
@@ -59,7 +59,7 @@
         }
     },
     {
-        "user_FK": "user-1b02ec86-0499-41ab-94c8-62519cefb6b1",
+        "user_FK": "user-d0b57306-ede7-4f64-8acd-dad87e46a300",
         "identificator": "task-04d54a48-71db-46e2-afa8-d320b45a1458",
         "title": "Jogar Marvel Rivals",
         "color": "#f2a41c",
@@ -69,7 +69,7 @@
         }
     },
     {
-        "user_FK": "user-e3b24f89-f674-4632-898c-624194201c69",
+        "user_FK": "user-d0b57306-ede7-4f64-8acd-dad87e46a300",
         "identificator": "task-f2a9da81-f968-497c-92ec-6750eee0ccdf",
         "title": "Focus Time Develop",
         "color": "#ff0000",
@@ -84,32 +84,5 @@
             "2025-01-29": 7043,
             "2025-02-01": 5
         }
-    },
-    {
-        "user_FK": "user-e3b24f89-f674-4632-898c-624194201c69",
-        "identificator": "task-c0841203-1632-4a4d-808f-d1c1712138eb",
-        "title": "aaa",
-        "color": "#563d7c",
-        "status": "active",
-        "seconds_in_focus_per_day": {
-            "2025-02-08": 5
-        }
-    },
-    {
-        "user_FK": "user-d0b57306-ede7-4f64-8acd-dad87e46a300",
-        "identificator": "task-4c8f19ae-df92-4b97-ab0f-a28ef00d26b7",
-        "title": "Admin",
-        "color": "#7cddfe",
-        "status": "active",
-        "seconds_in_focus_per_day": {
-        }
-    },
-    {
-        "user_FK": "user-d0b57306-ede7-4f64-8acd-dad87e46a300",
-        "identificator": "task-56a555bb-d428-4640-b7c0-9037bedb81f6",
-        "title": "Admin 2",
-        "color": "#563d7c",
-        "status": "active",
-        "seconds_in_focus_per_day": {}
     }
 ]

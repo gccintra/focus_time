@@ -33,6 +33,11 @@ class DataRecord:
             with open(self._filename, "r", encoding="utf-8") as fjson:
 
                 file_data = json.load(fjson)
+
+                if self.model_class == User:
+                    self._models = [self.model_class(**data, hashed=True) for data in file_data] 
+                    return
+                
                 if user_id:
                     self._models = [self.model_class(**data) for data in file_data if data.get('user_FK') == user_id]
                 elif task_id:
