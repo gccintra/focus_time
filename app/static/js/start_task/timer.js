@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function() {
         isRunning = true;
         startButton.textContent = "Stop";
 
-
         timerInterval = setInterval(() => {
             elapsedTime = Math.floor((Date.now() - startTime) / 1000);
             updateTimerDisplay(timerDisplay, elapsedTime);
@@ -31,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         saveInterval = setInterval(() => {
             saveElapsedTime();
-        }, 60000)
+        }, 600000)   // 10 minutes
 
     }
 

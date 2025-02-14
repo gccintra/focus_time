@@ -3,15 +3,15 @@
 - [ ] Autenticação com JWT
     - [x] Register
     - [x] Login
-    - [ ] FrontEnd Page Reponsiva (DOING)
-    - [ ] ao tentar acessar a página de login já autenticado, encaminhar para a tela principal
+    - [x] FrontEnd Page Reponsiva (DOING)
+    - [x] enviar para a tela de login caso o usario não esteja autenticado/token expirado (ver qual a melhor forma, redirecionar direto ou enviar um erro 401 e tratar isso em outro lugar, fora do decorador.)
+    - [x] ao tentar acessar a página de login já autenticado, encaminhar para a tela principal /task
     - [ ] Logout
     - https://www.youtube.com/watch?v=z92CWqvefr0&ab_channel=Spacedevs
     - https://www.youtube.com/watch?v=sHyoMWnnLGU&ab_channel=MatheusBattisti-HoradeCodar
-    - o front-end vai enviar o token em toda requisição para o back-end
-    - Salvar token em cookies
-    - Cryptografar senha para salvar no banco
-- [ ] Websocket -> Confirmar Presença (enviar notificação) de 60 em 60 minutos, caso a presença não seja confirmada o tempo de foco é pausado
+    - [x] Salvar token em cookies
+    - [x] Cryptografar senha para salvar no banco
+- [ ] WebSocket -> Apresentar todos os usuarios online, e se estão em foco em alguma tarefa, apresentar o tempo que estao em foco tambem.
 - [ ] Validações de campo (Title)
 - [ ] Getters e Setters, + Segurança
     - [ ] Validações ao tentar criar uma task com id igual (hard coded)
@@ -25,7 +25,7 @@
 - [ ] Bug nos dias (365)
     - [ ] Domingo (Não cria uma nova week)
     - [x] Segunda e Terça (o layout quebra, não elimina a primeira semana na esquerda)
-
+- [ ] verificações de metodos na requisição do backend (post, get etc)
 
 - [ ] Dockerizar
 - [ ] Testes Unitários (Failure and Success)
@@ -39,7 +39,7 @@
 - [ ] Edit To Do
 - [ ] Edit, Delete User
 
-
+- [ ] Websocket -> Confirmar Presença (enviar notificação) de 60 em 60 minutos, caso a presença não seja confirmada o tempo de foco é pausado
 - [x] Deixar o toast mais bonito
 - [x] last 365 days
 - [ ] ToDo para cada task

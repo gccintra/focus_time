@@ -702,5 +702,37 @@
         "status": "in progress",
         "created_time": "2025-02-11T14:11:05.647448",
         "completed_time": null
+    },
+    {
+        "task_FK": "task-f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "title": "Problema de quando o token expirar",
+        "identificator": "todo-637749cb-4adc-47d4-a3a0-7bf22837d344",
+        "status": "in progress",
+        "created_time": "2025-02-11T16:44:18.792600",
+        "completed_time": null
+    },
+    {
+        "task_FK": "task-f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "title": "Não é Week, mas sim: last 7 days",
+        "identificator": "todo-70aca5fa-a57d-4977-a758-cb9690a139ff",
+        "status": "in progress",
+        "created_time": "2025-02-12T08:12:49.418905",
+        "completed_time": null
+    },
+    {
+        "task_FK": "task-f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "title": "Adicionar um botão no navbar -> visualizar todos os usuários online e em foco (Websocket)",
+        "identificator": "todo-321dca0e-07ff-49ec-bd3d-f75260334150",
+        "status": "in progress",
+        "created_time": "2025-02-12T13:59:33.204653",
+        "completed_time": null
+    },
+    {
+        "task_FK": "task-f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "title": "enviar role pelo token e criar uma tela para admin",
+        "identificator": "todo-cd03472c-a748-40f4-b8e8-a22e6bc7c723",
+        "status": "in progress",
+        "created_time": "2025-02-12T14:00:24.342939",
+        "completed_time": null
     }
 ]

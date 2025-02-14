@@ -36,16 +36,13 @@ class AuthService:
             logger.error(f"Erro inesperado ao fazer login para o usuário '{user_email}': {e}")
             raise
 
-
                     
     def create_jwt_token(self, user):
-        # Defina a chave secreta da aplicação (geralmente armazenada em config)
         secret_key = current_app.config["SECRET_KEY"]
         
-        # Defina o payload (dados do token)
         payload = {
-            'id': user.identificator,  # Identificador único do usuário
-            'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=2)  # Tempo de expiração do token
+            'id': user.identificator,  
+            'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=6)  
         }
 
         # Gere o JWT usando a chave secreta e o payload

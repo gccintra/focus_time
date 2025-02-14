@@ -3,32 +3,32 @@
         "task_FK": "task-6554752a-6dfa-44b7-bc01-6703d1e88250",
         "title": "Steve Jobs",
         "identificator": "todo-9e175a77-48cf-4c89-a1f8-d7d2fbcc5c35",
-        "created_time": "2025-01-16T14:22:37.086992",
         "status": "in progress",
+        "created_time": "2025-01-16T14:22:37.086992",
         "completed_time": null
     },
     {
         "task_FK": "task-6554752a-6dfa-44b7-bc01-6703d1e88250",
         "title": "Clean Code",
         "identificator": "todo-84fa28c6-59ac-4ab0-adb4-e1a1dbd0fbe4",
-        "created_time": "2025-01-16T14:22:37.086992",
         "status": "in progress",
+        "created_time": "2025-01-16T14:22:37.086992",
         "completed_time": null
     },
     {
         "task_FK": "task-6554752a-6dfa-44b7-bc01-6703d1e88250",
         "title": "Lord of the Flies",
         "identificator": "todo-497f0279-6f49-4d8e-8a51-f2e05e2b2360",
-        "created_time": "2025-01-16T14:22:37.086992",
         "status": "in progress",
+        "created_time": "2025-01-16T14:22:37.086992",
         "completed_time": null
     },
     {
         "task_FK": "task-6554752a-6dfa-44b7-bc01-6703d1e88250",
         "title": "teste",
         "identificator": "todo-695dc1ff-78ff-4f4f-92a4-2452ec95f55d",
-        "created_time": "2025-01-27T23:32:55.574091",
         "status": "completed",
+        "created_time": "2025-01-27T23:32:55.574091",
         "completed_time": "2025-02-03T23:46:03.504787"
     },
     {
@@ -51,24 +51,24 @@
         "task_FK": "task-163d9725-3519-474e-8e68-fc446ad71303",
         "title": "Orientação a Objetos",
         "identificator": "todo-9f848461-0e85-42aa-a92a-a21ba8039d01",
-        "created_time": "2025-01-12T18:38:38.153245",
         "status": "completed",
+        "created_time": "2025-01-12T18:38:38.153245",
         "completed_time": "2025-01-21T17:21:37.801510"
     },
     {
         "task_FK": "task-163d9725-3519-474e-8e68-fc446ad71303",
         "title": "Lista de IAL",
         "identificator": "todo-ea9b818b-df7e-42dc-a9bb-5c2a63b64d39",
-        "created_time": "2025-01-12T18:38:43.845675",
         "status": "completed",
+        "created_time": "2025-01-12T18:38:43.845675",
         "completed_time": "2025-01-28T09:57:14.304051"
     },
     {
         "task_FK": "task-163d9725-3519-474e-8e68-fc446ad71303",
         "title": "testes unitarios",
         "identificator": "todo-c8373ccc-b99f-4981-95be-1801fbf79601",
-        "created_time": "2025-01-16T12:43:21.957968",
         "status": "in progress",
+        "created_time": "2025-01-16T12:43:21.957968",
         "completed_time": null
     },
     {
@@ -315,8 +315,8 @@
         "task_FK": "task-163d9725-3519-474e-8e68-fc446ad71303",
         "title": "Injeção de Dependência (https://imasters.com.br/back-end/injecao-de-dependencia-em-java-e-python)",
         "identificator": "todo-4ec04a1c-2fd7-4b31-ab1e-6e9d0e506133",
-        "created_time": "2025-01-28T11:16:04.713742",
         "status": "in progress",
+        "created_time": "2025-01-28T11:16:04.713742",
         "completed_time": null
     },
     {
@@ -563,8 +563,8 @@
         "task_FK": "task-163d9725-3519-474e-8e68-fc446ad71303",
         "title": "Mexer com arquivos (Download, Upload, Delete)",
         "identificator": "todo-78c33821-453f-4e06-9eb4-5f29aa365e66",
-        "created_time": "2025-01-30T18:28:51.286738",
         "status": "in progress",
+        "created_time": "2025-01-30T18:28:51.286738",
         "completed_time": null
     },
     {
@@ -627,16 +627,16 @@
         "task_FK": "task-163d9725-3519-474e-8e68-fc446ad71303",
         "title": "Assincronismo",
         "identificator": "todo-d24c2634-baf5-40c7-b88e-5849b6b8ee8a",
-        "created_time": "2025-02-01T11:08:57.272664",
         "status": "in progress",
+        "created_time": "2025-02-01T11:08:57.272664",
         "completed_time": null
     },
     {
         "task_FK": "task-163d9725-3519-474e-8e68-fc446ad71303",
         "title": "Observabilidade",
         "identificator": "todo-21c404a5-d10e-4a9d-bf0d-aa0133ed528f",
-        "created_time": "2025-02-01T11:39:19.781425",
         "status": "in progress",
+        "created_time": "2025-02-01T11:39:19.781425",
         "completed_time": null
     },
     {
@@ -694,5 +694,37 @@
         "status": "completed",
         "created_time": "2025-02-06T15:56:50.928441",
         "completed_time": "2025-02-11T14:09:46.745348"
+    },
+    {
+        "task_FK": "task-f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "title": "logout",
+        "identificator": "todo-66a1c96a-69a6-40bd-a854-031cf2bd9529",
+        "status": "in progress",
+        "created_time": "2025-02-11T14:11:05.647448",
+        "completed_time": null
+    },
+    {
+        "task_FK": "task-f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "title": "Problema de quando o token expirar",
+        "identificator": "todo-637749cb-4adc-47d4-a3a0-7bf22837d344",
+        "status": "in progress",
+        "created_time": "2025-02-11T16:44:18.792600",
+        "completed_time": null
+    },
+    {
+        "task_FK": "task-f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "title": "Não é Week, mas sim: last 7 days",
+        "identificator": "todo-70aca5fa-a57d-4977-a758-cb9690a139ff",
+        "status": "in progress",
+        "created_time": "2025-02-12T08:12:49.418905",
+        "completed_time": null
+    },
+    {
+        "task_FK": "task-f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "title": "Adicionar um botão no navbar -> visualizar todos os usuários online e em foco (Websocket)",
+        "identificator": "todo-321dca0e-07ff-49ec-bd3d-f75260334150",
+        "status": "in progress",
+        "created_time": "2025-02-12T13:59:33.204653",
+        "completed_time": null
     }
 ]

@@ -12,5 +12,12 @@
         "email": "admin@localhost",
         "password": "$2b$12$w7l/pkaV2hBZSnm.FLlL6.Je4scyLboai0Gwd6bbyAJu1xVHTx2vy",
         "status": "active"
+    },
+    {
+        "identificator": "user-60475128-16fe-4606-acf6-28c0b36cca01",
+        "username": "gccintra",
+        "email": "cintra.gustavo@hotmail.com",
+        "password": "$2b$12$OJnMJrejTc2WH9.R9S785eD4stsye.G1vgDvVRoMYzfuhVlhJKBTy",
+        "status": "active"
     }
 ]
