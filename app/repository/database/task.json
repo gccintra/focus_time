@@ -95,7 +95,7 @@
         "color": "#00c3d1",
         "status": "active",
         "seconds_in_focus_per_day": {
-            "2025-02-16": 1198
+            "2025-02-16": 4820
         }
     },
     {
@@ -132,7 +132,7 @@
         "color": "#ffffff",
         "status": "active",
         "seconds_in_focus_per_day": {
-            "2025-02-16": 7
+            "2025-02-16": 398
         }
     },
     {
@@ -143,6 +143,16 @@
         "status": "active",
         "seconds_in_focus_per_day": {
             "2025-02-16": 23
+        }
+    },
+    {
+        "user_FK": "user-e3b24f89-f674-4632-898c-624194201c69",
+        "identificator": "task-7544eff7-8e2f-4d59-80e3-b89b24b78723",
+        "title": "Cantar",
+        "color": "#00a7b3",
+        "status": "active",
+        "seconds_in_focus_per_day": {
+            "2025-02-16": 1526
         }
     }
 ]

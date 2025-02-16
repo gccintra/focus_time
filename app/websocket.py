@@ -4,7 +4,6 @@ from .utils.logger import logger
 from .extensions import socketio
 
 
-active_users = {}  # Armazena usuários conectados
 focused_users = {}  # Armazena usuários em foco
 
 @socketio.on("connect")
@@ -15,22 +14,6 @@ def handle_connect():
     # emit("user_connected", {"user_id": user_id}, broadcast=True)
     logger.info(f"Usuário {username} ({user_id}) conectado ao websocket.")
 
-
-# @socketio.on("disconnect")
-# def handle_disconnect():
-#     """ Remove um usuário ativo ao desconectar. """
-#     user_id = None
-
-#     # Encontrar o usuário desconectado (porque request.args pode não estar disponível)
-#     for uid, session in active_users.items():
-#         if request.sid == session:  # Verifica o ID da sessão
-#             user_id = uid
-#             break
-
-#     if user_id:
-#         del active_users[user_id]
-#         emit("user_disconnected", {"user_id": user_id}, broadcast=True)
-#         print(f"Usuário {user_id} desconectado.")
 
 
 @socketio.on("enter_focus")

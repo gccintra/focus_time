@@ -1,6 +1,8 @@
 const userId = user.user_id
 const username = user.username
 let usersInFocus = {}; 
+let focusTimer = null;
+
 
 function formatTime(seconds) {
     const h = String(Math.floor(seconds / 3600)).padStart(2, "0");
@@ -39,6 +41,8 @@ function updateUserInFocus() {
     });
     }
 
+
+
 const socket = io({ query: { user_id: userId, username: username } });
 
 socket.on("connect", () => {
@@ -51,10 +55,6 @@ socket.on("connect", () => {
 socket.on("update_focus_users", (data) => {
     usersInFocus = data.focused_users
     console.log("Usuários em foco agora:", usersInFocus);
-
-    if (!window.focusTimer) {
-        window.focusTimer = setInterval(updateUserInFocus, 1000);
-    }
 });
 
 socket.on("focus_user_joined", (data) => {
@@ -67,4 +67,21 @@ socket.on("focus_user_joined", (data) => {
 socket.on("focus_user_left", (data) => {
     console.log("Usuário saiu do foco agora: ", data);
     delete usersInFocus[data.user_id];
+});
+
+
+// Inicia o contador apenas quando o dropdown é aberto
+document.getElementById("communityDropdown").addEventListener("show.bs.dropdown", () => {
+    updateUserInFocus(); // Atualiza os usuários imediatamente
+    if (!focusTimer) {
+        focusTimer = setInterval(updateUserInFocus, 1000);
+    }
+});
+
+// Para o contador quando o dropdown é fechado
+document.getElementById("communityDropdown").addEventListener("hide.bs.dropdown", () => {
+    if (focusTimer) {
+        clearInterval(focusTimer);
+        focusTimer = null;
+    }
 });

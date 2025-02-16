@@ -64,3 +64,4 @@ class AuthController():
                     "details": str(e)
                 }
             }), 500
+        
