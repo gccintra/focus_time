@@ -11,7 +11,9 @@
     - https://www.youtube.com/watch?v=sHyoMWnnLGU&ab_channel=MatheusBattisti-HoradeCodar
     - [x] Salvar token em cookies
     - [x] Cryptografar senha para salvar no banco
-- [ ] WebSocket -> Apresentar todos os usuarios online, e se estão em foco em alguma tarefa, apresentar o tempo que estao em foco tambem.
+- [x] WebSocket -> Apresentar todos os usuarios online, e se estão em foco em alguma tarefa, apresentar o tempo que estao em foco tambem.
+- [x] WebSocket -> Alterar o ícone, deixar maior.
+
 - [ ] Validações de campo (Title)
 - [ ] Getters e Setters, + Segurança
     - [ ] Validações ao tentar criar uma task com id igual (hard coded)

@@ -194,14 +194,23 @@
         
         const task_data = {
             today_total_seconds: "{{ task.today_total_seconds }}",
-            task_id: "{{ task.identificator }}"
+            task_id: "{{ task.identificator }}",
+            task_name: "{{ task.title }}"
         };
+
+        const user_data = {
+            user_id: "{{ user.identificator }}",
+            username: "{{ user.username }}"
+        }
+
 
         document.getElementById('backButtom').addEventListener('click', function() {
             window.location.href = `/task/`;
         });
 
+
     </script>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ url_for('static', filename='js/start_task/to_do_manage.js') }}"></script>
     <script src="{{ url_for('static', filename='js/toast.js') }}"></script>

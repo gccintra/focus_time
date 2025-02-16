@@ -5,7 +5,7 @@
 {% block content %}
 
   <!-- Task Grid -->  
-  <div class="row g-5 my-5" id="taskGrid">
+  <div class="row g-5 mb-5" id="taskGrid">
     {% for task in tasks %}
       <div class="col-sm-12 col-md-6 col-lg-4">
         <!-- ignora esse erro, o html não está reconhecendo o jinja -->
@@ -98,21 +98,13 @@
 {% endblock %}
 
 {% block script %}
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <script>  
 
-  <script src="{{ url_for('static', filename='js/my_tasks/chart_menu_tasks.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/my_tasks/create_task.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/my_tasks/jquery.heatmap.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/my_tasks/last_365_days.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/toast.js') }}"></script>
+    const user = {
+      username: "{{ user.username }}",
+      user_id: "{{ user.identificator }}"
+    };
 
-
- 
-
-
-  <script>
 
     document.getElementById('taskGrid').addEventListener('click', function(event) {
       const card = event.target.closest('.custom-card');
@@ -126,6 +118,21 @@
 
 
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+
+
+  <script src="{{ url_for('static', filename='js/my_tasks/chart_menu_tasks.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/my_tasks/create_task.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/my_tasks/jquery.heatmap.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/my_tasks/last_365_days.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/my_tasks/in_focus_users.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/toast.js') }}"></script>
+
+
+
 {% endblock %}
 
 <!-- 

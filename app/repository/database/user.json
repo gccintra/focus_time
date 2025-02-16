@@ -19,5 +19,12 @@
         "email": "cintra.gustavo@hotmail.com",
         "password": "$2b$12$OJnMJrejTc2WH9.R9S785eD4stsye.G1vgDvVRoMYzfuhVlhJKBTy",
         "status": "active"
+    },
+    {
+        "identificator": "user-c36b9c09-99b2-4602-90c3-bcea0630e995",
+        "username": "gustavo",
+        "email": "gustavo@email",
+        "password": "$2b$12$7i9i40Tq1zi0s46b5pXueOWqHYbrfnxqey2l7SzoEliTBKfnQPG/q",
+        "status": "active"
     }
 ]

@@ -3,9 +3,20 @@ let saveInterval;
 let elapsedTime = parseInt(task_data.today_total_seconds) || 0;
 let isRunning = false;
 let startTime
+const userId = user_data.user_id; 
+const username = user_data.username;
+const taskName = task_data.task_name
+
+const socket = io({ query: { user_id: userId, username: username } });
+
+socket.on("connect", () => {
+    console.log("Conectado ao servidor WebSocket");
+});
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
+
     const startButton = document.querySelector("#timerButton");
     const timerDisplay = document.getElementById("timerDisplay");
     const taskId = task_data.task_id; 
@@ -23,6 +34,10 @@ document.addEventListener("DOMContentLoaded", function() {
         isRunning = true;
         startButton.textContent = "Stop";
 
+        // user_id: userId, username: username 
+        socket.emit("enter_focus", { username: username, user_id: userId, task_name: taskName, start_time: Date.now() });
+
+
         timerInterval = setInterval(() => {
             elapsedTime = Math.floor((Date.now() - startTime) / 1000);
             updateTimerDisplay(timerDisplay, elapsedTime);
@@ -39,6 +54,8 @@ document.addEventListener("DOMContentLoaded", function() {
         clearInterval(saveInterval);
         isRunning = false;
         startButton.textContent = "Start";
+
+        socket.emit("leave_focus", { user_id: userId });
 
         saveElapsedTime()
     }
@@ -75,6 +92,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.addEventListener("beforeunload", function () {
         if (isRunning) {
+            socket.emit("leave_focus", { user_id: userId });
+
             clearInterval(timerInterval);
             clearInterval(saveInterval);
             isRunning = false;
@@ -89,4 +108,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
 

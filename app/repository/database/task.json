@@ -57,7 +57,8 @@
             "2025-02-04": 6279,
             "2025-02-05": 8477,
             "2025-02-06": 196,
-            "2025-02-11": 12285
+            "2025-02-11": 12285,
+            "2025-02-15": 151
         }
     },
     {
@@ -93,6 +94,55 @@
         "title": "Enem Med 2026",
         "color": "#00c3d1",
         "status": "active",
+        "seconds_in_focus_per_day": {
+            "2025-02-16": 1198
+        }
+    },
+    {
+        "user_FK": "user-d0b57306-ede7-4f64-8acd-dad87e46a300",
+        "identificator": "task-dcc7c7c4-4bb5-4e97-bbed-9241d963ac3c",
+        "title": "teste",
+        "color": "#563d7c",
+        "status": "active",
         "seconds_in_focus_per_day": {}
+    },
+    {
+        "user_FK": "user-d0b57306-ede7-4f64-8acd-dad87e46a300",
+        "identificator": "task-af98bb42-47d0-4984-8e07-d7675e6b2ec7",
+        "title": "teste",
+        "color": "#563d7c",
+        "status": "active",
+        "seconds_in_focus_per_day": {}
+    },
+    {
+        "user_FK": "user-e3b24f89-f674-4632-898c-624194201c69",
+        "identificator": "task-06a8594d-da16-454f-8671-f7dea7a62fe6",
+        "title": "teste",
+        "color": "#563d7c",
+        "status": "active",
+        "seconds_in_focus_per_day": {
+            "2025-02-15": 73,
+            "2025-02-16": 1421
+        }
+    },
+    {
+        "user_FK": "user-e3b24f89-f674-4632-898c-624194201c69",
+        "identificator": "task-c000870e-1181-4a01-8239-687a75f22983",
+        "title": "Primeira Vaga .Net",
+        "color": "#ffffff",
+        "status": "active",
+        "seconds_in_focus_per_day": {
+            "2025-02-16": 7
+        }
+    },
+    {
+        "user_FK": "user-c36b9c09-99b2-4602-90c3-bcea0630e995",
+        "identificator": "task-d193c83e-c79e-41e0-a680-8518dfda7d97",
+        "title": "Leitura - 12 Livros/Ano",
+        "color": "#00d1a7",
+        "status": "active",
+        "seconds_in_focus_per_day": {
+            "2025-02-16": 23
+        }
     }
 ]

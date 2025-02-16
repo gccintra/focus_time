@@ -1,6 +1,7 @@
 from functools import wraps
 from flask import request, current_app, redirect, url_for, jsonify
 import jwt
+from app.repository.user_record import UserRecord  # Classe que manipula os usuários
 
 
 def login_required(f):
@@ -20,9 +21,10 @@ def login_required(f):
                 payload = jwt.decode(token, secret_key, algorithms=["HS256"])
                 user_id = payload.get("id")
 
-                request.current_user = user_id
-                request.auth_status = 200 
+                user_record = UserRecord()
+                user = user_record.get_user_by_id(user_id)
 
+                request.current_user = user  
 
             except (jwt.ExpiredSignatureError, jwt.InvalidTokenError):
                 # request.auth_status = 401  

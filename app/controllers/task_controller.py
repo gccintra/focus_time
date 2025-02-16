@@ -12,9 +12,9 @@ class TaskController:
         except DatabaseError as e:
             raise DatabaseError(f"Failed to initialize TaskService: {str(e)}")
 
-    def my_tasks(self, user_id=None):
-        tasks = self.service.get_all_tasks(user_id=user_id)
-        return render_template("my_tasks.html", title="My Tasks", tasks=tasks, active_page='home')
+    def my_tasks(self, user=None):
+        tasks = self.service.get_all_tasks(user_id=user.identificator)
+        return render_template("my_tasks.html", title="My Tasks", tasks=tasks, active_page='home', user=user)
 
     def get_data_for_all_charts(self, user_id):
         tasks_for_chart = self.service.get_data_for_all_charts(user_id=user_id)
@@ -57,10 +57,10 @@ class TaskController:
                 }
             }), 500
 
-    def start_task(self, task_id, user_id=None):
+    def start_task(self, task_id, user=None):
         try:
-            task, todo_list = self.task_todo_service.get_task_todo_list(task_id=task_id, user_id=user_id)
-            return render_template("start_task.html", title="Start Task", task=task, to_do_list=todo_list)
+            task, todo_list = self.task_todo_service.get_task_todo_list(task_id=task_id, user_id=user.identificator)
+            return render_template("start_task.html", title="Start Task", task=task, to_do_list=todo_list, user=user)
         except TaskNotFoundError:
             return abort(404)
         except Exception as e:   
