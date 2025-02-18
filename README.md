@@ -6,7 +6,7 @@ O FocusTime é um sistema de gerenciamento de tempo que permite aos usuários se
 
 ## 🚀 Tecnologias Utilizadas
 
-Backend: Flask, Flask-SocketIO, Flask-JWT-Extended
+Backend: Python, Flask, Flask-SocketIO, Flask-JWT-Extended
 
 Frontend: HTML, CSS (Bootstrap), JavaScript
 
