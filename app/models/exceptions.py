@@ -79,3 +79,13 @@ class InvalidPasswordError(UserError):
     def __init__(self, message="Invalid Password!"):
         super().__init__(message)
 
+
+class EmailAlreadyExists(UserError):
+    def __init__(self, message="Already have an account with this email, try another!"):
+        super().__init__(message)
+
+
+class UsernameAlreadyExists(UserError):
+    def __init__(self, message="Already have an account with this username, try another!"):
+        super().__init__(message)
+

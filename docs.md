@@ -1,12 +1,12 @@
 # Doing (MVP):
 
-- [ ] Autenticação com JWT
+- [x] Autenticação com JWT
     - [x] Register
     - [x] Login
     - [x] FrontEnd Page Reponsiva (DOING)
     - [x] enviar para a tela de login caso o usario não esteja autenticado/token expirado (ver qual a melhor forma, redirecionar direto ou enviar um erro 401 e tratar isso em outro lugar, fora do decorador.)
     - [x] ao tentar acessar a página de login já autenticado, encaminhar para a tela principal /task
-    - [ ] Logout
+    - [x] Logout
     - https://www.youtube.com/watch?v=z92CWqvefr0&ab_channel=Spacedevs
     - https://www.youtube.com/watch?v=sHyoMWnnLGU&ab_channel=MatheusBattisti-HoradeCodar
     - [x] Salvar token em cookies
@@ -14,11 +14,16 @@
 - [x] WebSocket -> Apresentar todos os usuarios online, e se estão em foco em alguma tarefa, apresentar o tempo que estao em foco tambem.
 - [x] WebSocket -> Alterar o ícone, deixar maior.
 
+- [x] Unicidade de e-mail e username.
+- [x] Requisitos Minimos Senha
+
 - [ ] Validações de campo (Title)
 - [ ] Getters e Setters, + Segurança
     - [ ] Validações ao tentar criar uma task com id igual (hard coded)
     - [ ] Adicionar cache em memória usando bibliotecas como functools.lru_cache.
-- [ ] Layout de Today e Week na página principal
+- [ ] verificações de metodos na requisição do backend (post, get etc)
+- [ ] mudar a nomeclatura do 'start_task'
+
 - [x] Padrão de dados retornados para o front-end (TASKS)
 - [x] Tratamento de Erros e Apresentação de Mensagens (Front-End)
     - [x] To Do
@@ -27,7 +32,6 @@
 - [ ] Bug nos dias (365)
     - [ ] Domingo (Não cria uma nova week)
     - [x] Segunda e Terça (o layout quebra, não elimina a primeira semana na esquerda)
-- [ ] verificações de metodos na requisição do backend (post, get etc)
 
 - [ ] Dockerizar
 - [ ] Testes Unitários (Failure and Success)
@@ -40,6 +44,9 @@
 - [ ] Delete e Edit Task
 - [ ] Edit To Do
 - [ ] Edit, Delete User
+
+- [ ] Travar multiplas requisições ao pressionar o botão diversas vezes
+- [ ] Layout de Today e Week na página principal
 
 - [ ] Websocket -> Confirmar Presença (enviar notificação) de 60 em 60 minutos, caso a presença não seja confirmada o tempo de foco é pausado
 - [x] Deixar o toast mais bonito
@@ -75,11 +82,5 @@ Pensar no cenário onde o timer foi iniciado antes da 00:00 e continuou até ap�
 - [ ] salvar em banco de dados inves de arquivo
 - [ ] my perfomance
 - [ ] edit e delete
-
-
-Aprender:
-
-- [ ] Docker
-- [ ] Git
 
 

@@ -616,14 +616,6 @@
         "completed_time": null
     },
     {
-        "task_FK": "task-f2a9da81-f968-497c-92ec-6750eee0ccdf",
-        "title": "Campos de Texto mais bonitos (tema escuro)",
-        "identificator": "todo-93b827d0-0b94-47b3-ac6c-c0e372434d6a",
-        "status": "in progress",
-        "created_time": "2025-02-01T09:08:27.472197",
-        "completed_time": null
-    },
-    {
         "task_FK": "task-163d9725-3519-474e-8e68-fc446ad71303",
         "title": "Assincronismo",
         "identificator": "todo-d24c2634-baf5-40c7-b88e-5849b6b8ee8a",
@@ -699,9 +691,9 @@
         "task_FK": "task-f2a9da81-f968-497c-92ec-6750eee0ccdf",
         "title": "logout",
         "identificator": "todo-66a1c96a-69a6-40bd-a854-031cf2bd9529",
-        "status": "in progress",
+        "status": "completed",
         "created_time": "2025-02-11T14:11:05.647448",
-        "completed_time": null
+        "completed_time": "2025-02-17T13:23:44.960002"
     },
     {
         "task_FK": "task-f2a9da81-f968-497c-92ec-6750eee0ccdf",
@@ -723,9 +715,9 @@
         "task_FK": "task-f2a9da81-f968-497c-92ec-6750eee0ccdf",
         "title": "Adicionar um botão no navbar -> visualizar todos os usuários online e em foco (Websocket)",
         "identificator": "todo-321dca0e-07ff-49ec-bd3d-f75260334150",
-        "status": "in progress",
+        "status": "completed",
         "created_time": "2025-02-12T13:59:33.204653",
-        "completed_time": null
+        "completed_time": "2025-02-17T13:23:38.320002"
     },
     {
         "task_FK": "task-f2a9da81-f968-497c-92ec-6750eee0ccdf",

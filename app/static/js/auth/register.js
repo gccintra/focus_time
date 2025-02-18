@@ -18,7 +18,7 @@ document.getElementById('registerForm').addEventListener('submit', function(e) {
             showToast('success', message);
             setTimeout(function() {
                 window.location.href = `/`;
-            }, 3000);
+            }, 2000);
         } else {
             showToast('error', message || 'Erro ao se registrar');
             console.log(error)

@@ -1,10 +1,11 @@
 from ..repository.user_record import UserRecord
 from ..models.user import User
 from ..utils.logger import logger
-from ..models.exceptions import UserNotFoundError, InvalidPasswordError
+from ..models.exceptions import UserNotFoundError, InvalidPasswordError, EmailAlreadyExists, UsernameAlreadyExists
 import datetime
 import jwt
 from flask import current_app, make_response
+from ..utils.utils import validate_password
 
 class AuthService:
     def __init__(self):
@@ -12,10 +13,27 @@ class AuthService:
 
     def create_user(self, user_email, username, password):
         identificator = self.db.generate_unique_id()
-        user = User(identificator=identificator, username=username, email=user_email, password=password)
-        self.db.write(user)
-        logger.info(f'User {username} criado com sucesso!')
-        return user
+        
+        try:
+            self.db.verify_unique_email(user_email)
+            self.db.verify_unique_username(username)
+            validate_password(password=password)
+
+            user = User(identificator=identificator, username=username, email=user_email, password=password)
+            self.db.write(user)
+
+            logger.info(f'User {username} criado com sucesso!')
+            return user
+
+        except (UsernameAlreadyExists, EmailAlreadyExists) as e:
+            logger.warning(f"Falha ao criar usuário: {e}")  # Agora funciona para ambos os casos
+            raise
+        except ValueError as e:
+            logger.warning(f"Falha ao criar usuário: {e}")
+            raise
+        except Exception as e:
+            logger.error(f"Erro inesperado ao criar usuário: {e}")
+            raise
 
     def login(self, user_email, password):
         try:

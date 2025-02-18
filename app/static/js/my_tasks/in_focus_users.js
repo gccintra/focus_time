@@ -14,7 +14,6 @@ function formatTime(seconds) {
 function updateUserInFocus() {
     const userList = document.getElementById("activeUsersList");
 
-    // Remove todos os itens, exceto os dois primeiros (título e divisor)
     while (userList.children.length > 2) {
         userList.removeChild(userList.lastChild);
     }
@@ -32,7 +31,6 @@ function updateUserInFocus() {
         userItem.innerHTML = `<span class="dropdown-item-text text-start" data-id="${key}"><strong>${value.username}</strong><br><small>${value.task_name} - ${formattedTime }</small></span>`;
         userList.appendChild(userItem);
         
-        // Adiciona um divisor abaixo de cada usuário, exceto o último
         if (key !== lastKey) {
             const divider = document.createElement("li");
             divider.innerHTML = `<hr class="dropdown-divider">`;
@@ -70,15 +68,13 @@ socket.on("focus_user_left", (data) => {
 });
 
 
-// Inicia o contador apenas quando o dropdown é aberto
 document.getElementById("communityDropdown").addEventListener("show.bs.dropdown", () => {
-    updateUserInFocus(); // Atualiza os usuários imediatamente
+    updateUserInFocus(); 
     if (!focusTimer) {
         focusTimer = setInterval(updateUserInFocus, 1000);
     }
 });
 
-// Para o contador quando o dropdown é fechado
 document.getElementById("communityDropdown").addEventListener("hide.bs.dropdown", () => {
     if (focusTimer) {
         clearInterval(focusTimer);

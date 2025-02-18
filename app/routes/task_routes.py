@@ -7,13 +7,13 @@ task_bp = Blueprint("task", __name__, url_prefix="/task")
 task_controller = TaskController()
 
 @task_bp.route("/", methods=["GET"])
-@login_required   # Exemplo
+@login_required  
 def tasks_route():
     user = request.current_user
     return task_controller.my_tasks(user=user)
 
 @task_bp.route("/get_data_for_all_doughnut_home_charts", methods=["GET"])
-@login_required   # Exemplo
+@login_required 
 def get_data_for_all_charts_menu_route():
     user_id = request.current_user.identificator
     return task_controller.get_data_for_all_charts(user_id=user_id)

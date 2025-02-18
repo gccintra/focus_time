@@ -26,7 +26,6 @@ class User:
             "email": self.email,
             "password": self.password,
             "status": self.status
-
         } 
     
 
