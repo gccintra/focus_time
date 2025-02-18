@@ -1,10 +1,10 @@
-FocusTime
+# FocusTime
 
-📌 Sobre a Aplicação
+## 📌 Sobre a Aplicação
 
 O FocusTime é um sistema de gerenciamento de tempo que permite aos usuários se concentrarem em suas tarefas enquanto monitoram e interagem com outros usuários em sessões de foco. O sistema utiliza Flask como backend e WebSockets para comunicação em tempo real.
 
-🚀 Tecnologias Utilizadas
+## 🚀 Tecnologias Utilizadas
 
 Backend: Flask, Flask-SocketIO, Flask-JWT-Extended
 
@@ -14,7 +14,7 @@ Banco de Dados: SQLite/PostgreSQL (dependendo da configuração)
 
 Autenticação: JWT (JSON Web Token) com armazenamento em cookies
 
-⚙️ Funcionalidades
+## ⚙️ Funcionalidades
 
 🔹 Autenticação de Usuários
 
@@ -42,12 +42,12 @@ Análises de produtividade com gráficos
 
 🔌 Configuração e Execução
 
-📦 Instalação
+## 📦 Instalação
 
 Clone o repositório:
 
-git clone https://github.com/seu-usuario/focustime.git
-cd focustime
+git clone https://github.com/gccintra/focus_time
+cd focus_time
 
 Crie um ambiente virtual e ative-o:
 
