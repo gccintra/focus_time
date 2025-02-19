@@ -30,23 +30,3 @@ class User:
     
 
 
-# from app.models.base_model import BaseModel
-
-# class User(BaseModel):
-#     def __init__(self, username, password):
-#         self.username = username
-#         self.password = password
-
-
-#     def verify_password(self):
-#         return 
-    
-#     def generate_password_hash(self):
-#         return 
-
-
-#     def to_dict(self):
-#         return {}
-    
-
-

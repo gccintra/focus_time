@@ -28,9 +28,9 @@ class TaskController:
             }), 200
 
     def new_task(self, data, user_id):
+        task_name = data.get('name') if isinstance(data, dict) else None
+        task_color = data.get('color') if isinstance(data, dict) else None
         try:
-            task_name = data.get('name')
-            task_color = data.get('color')
             task = self.service.create_new_task(name=task_name, color=task_color, user_id=user_id)
             return jsonify({
                 "success": True,
@@ -44,6 +44,17 @@ class TaskController:
                 },
                 "error": None
             }), 200
+        except TaskValidationError as e:
+            return jsonify({
+                "success": False,
+                "message": str(e),
+                "data": None,
+                "error": {
+                    "code": 400,
+                    "type": "BadRequest",
+                    "details": str(e)
+                }
+            }), 400
         except Exception as e:   #TypeError, Exception
             logger.error(f"Erro ao criar a task {task_name}: {str(e)}")
             return jsonify({
@@ -77,8 +88,9 @@ class TaskController:
             }), 500
 
     def update_task_time(self, task_id, user_id, data):
+        elapsed_seconds = int(data.get("elapsed_seconds")) if isinstance(data, dict) else None
+
         try:
-            elapsed_seconds = int(data.get("elapsed_seconds"))
             self.service.update_task_time(task_id=task_id, elapsed_seconds=elapsed_seconds, user_id=user_id,)
             return jsonify({
                 "success": True,
@@ -105,7 +117,7 @@ class TaskController:
                 "data": None,
                 "error": {
                     "code": 400,
-                    "type": "ToDoValitantionError",
+                    "type": "TaskValidationError",
                     "details": str(e)
                 }
             }), 400

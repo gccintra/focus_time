@@ -57,6 +57,26 @@ body {
     border-color: #cccccc;
 }
 
+/* Input Dark */
+
+.dark-input {
+    background-color: #212121; /* Fundo do input */
+    border: 2px solid #303030; /* Borda mais escura */
+    color: #fff; /* Texto branco */
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+}
+
+.dark-input:focus {
+    border-color: #6A17FF; /* Azul neon ao focar */
+    color: #fff; /* Texto branco */
+    background-color: #212121; /* Fundo do input */
+}
+
+.dark-input::placeholder {
+    color: #aaa; /* Cor do placeholder */
+}
 
 /* Primary Modal */
 

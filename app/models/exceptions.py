@@ -12,23 +12,20 @@ class TaskNotFoundError(TaskError):
         super().__init__(message)
 
 class TaskValidationError(TaskError):
-    """Erro para validação de dados."""
     def __init__(self, field=None, message=None):
         if field and not message:
-            message = f"O campo '{field}' é inválido ou está vazio."
+            message = f"The field '{field}' is required or contains invalid data."
         elif field and message:
-            message = f"O campo '{field}' apresenta erro: {message}"
-        else:
-             message = f"Erro de validação de dados."
+            message = f"Validation error in field '{field}': {message}"
+        elif not message and not field:
+            message = "Task validation failed due to invalid or missing data."
         super().__init__(message)
+
 
 class DatabaseError(Exception):
     """Erro geral relacionado ao banco de dados."""
     def __init__(self, message="Erro ao acessar o banco de dados."):
         super().__init__(message)
-
-
-
 
 
 class ToDoError(Exception):
@@ -49,11 +46,11 @@ class ToDoValidationError(ToDoError):
     """Erro para validação de dados."""
     def __init__(self, field=None, message=None):
         if field and not message:
-            message = f"O campo '{field}' é inválido ou está vazio."
+            message = f"The field '{field}' is required or contains invalid data."
         elif field and message:
-            message = f"O campo '{field}' apresenta erro: {message}"
-        else:
-             message = f"Erro de validação de dados."
+            message = f"Validation error in field '{field}': {message}"
+        elif not message and not field:
+             message = f"To-do validation failed due to invalid or missing data."
         super().__init__(message)
 
 

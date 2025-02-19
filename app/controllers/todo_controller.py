@@ -11,8 +11,8 @@ class ToDoController:
             raise DatabaseError(f"Failed to initialize TaskService: {str(e)}")
 
     def create_to_do(self, data, task_id):
-        try:
-            name = data.get('name')
+        name = data.get('name')
+        try:        
             new_to_do = self.service.create_todo(task_id=task_id, to_do_name=name)
             return jsonify({
                 "success": True,
@@ -25,6 +25,17 @@ class ToDoController:
                 },
                 "error": None
             }), 201
+        except ToDoValidationError as e:
+            return jsonify({
+                "success": False,
+                "message": str(e),
+                "data": None,
+                "error": {
+                    "code": 400,
+                    "type": "ToDoValitantionError",
+                    "details": str(e)
+                }
+            }), 400
         except Exception as e:
             logger.error(f"Erro ao criar to-do para a task {task_id}: {str(e)}")
             return jsonify({

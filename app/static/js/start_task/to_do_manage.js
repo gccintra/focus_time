@@ -1,17 +1,17 @@
 const taskId = task_data.task_id; 
 
 document.getElementById('createTaskToDoButton').addEventListener('click', function() {
-  const taskToDoName = document.getElementById('taskToDoName').value.trim();
+  const ToDoName = document.getElementById('taskToDoName').value.trim();
 
-  if (!taskToDoName) {
-      showToast('error', 'Enter a name for the To-Do.');
+  if (ToDoName === "") {
+      showToast('error', 'Please, provide a to-do name');
       return;
   }
 
   fetch(`/todo/${taskId}/new_todo`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: taskToDoName })
+      body: JSON.stringify({ name: ToDoName })
   })
   .then(response => response.json())
   .then(({ success, message, data, error }) => {

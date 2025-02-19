@@ -7,6 +7,8 @@ from datetime import date, timedelta
 
 
 class TaskService:
+    TASK_NAME_MAX_LEN = 30
+
     def __init__(self):
         try:
             self.task_db = TaskRecord()
@@ -39,12 +41,21 @@ class TaskService:
 
     def create_new_task(self, name, color, user_id):
         try:
+            if not name:
+                raise TaskValidationError(field="Task Name", message="Task name is required.")
+            if len(name) > self.TASK_NAME_MAX_LEN:
+                raise TaskValidationError(field="Task Name", message=f"Task name must be at most {self.TASK_NAME_MAX_LEN} characters.")
+            
             identificator = self.task_db.generate_unique_id()
             new_task = Task(identificator=identificator, title=name, color=color, user_FK=user_id)
             self.task_db.write(new_task)
             logger.info(f'Task {name} criada com sucesso!')
             return new_task
-        except (TypeError, Exception):
+        except TaskValidationError as e:
+            logger.warning(f"Task creation failed: {str(e)}")
+            raise
+        except Exception as e:
+            logger.error(f"Unexpected error creating task '{name}': {str(e)}")
             raise
        
     def update_task_time(self, task_id, elapsed_seconds, user_id):

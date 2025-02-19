@@ -17,24 +17,32 @@
 - [x] Unicidade de e-mail e username.
 - [x] Requisitos Minimos Senha
 
-- [ ] Validações de campo (Title)
+- [x] Validações de campo
+    - [x] Front-end
+        - [x] Incluir tamanho maximo de caracteres
+        - [x] Campo Vazio
+    - [x] Back-end
+        - [x] Incluir tamanho maximo de caracteres
+        - [x] Campo Vazio
+
 - [ ] Getters e Setters, + Segurança
     - [ ] Validações ao tentar criar uma task com id igual (hard coded)
     - [ ] Adicionar cache em memória usando bibliotecas como functools.lru_cache.
+
 - [ ] verificações de metodos na requisição do backend (post, get etc)
-- [ ] mudar a nomeclatura do 'start_task'
 
 - [x] Padrão de dados retornados para o front-end (TASKS)
 - [x] Tratamento de Erros e Apresentação de Mensagens (Front-End)
     - [x] To Do
     - [x] Tasks
 - [x] Ordenação das tasks por maior porcentagem. (ta com bug)
-- [ ] Bug nos dias (365)
-    - [ ] Domingo (Não cria uma nova week)
-    - [x] Segunda e Terça (o layout quebra, não elimina a primeira semana na esquerda)
 
 - [ ] Dockerizar
 - [ ] Testes Unitários (Failure and Success)
+- [ ] mudar a nomeclatura do 'start_task'
+- [ ] Bug nos dias (365)
+    - [ ] Domingo (Não cria uma nova week)
+    - [x] Segunda e Terça (o layout quebra, não elimina a primeira semana na esquerda)
 
 
 

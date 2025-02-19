@@ -41,7 +41,7 @@
     {
         "user_FK": "user-d0b57306-ede7-4f64-8acd-dad87e46a300",
         "identificator": "task-4a25959c-c4f9-486e-8874-9508426f5acd",
-        "title": "Trabalho (Teste Real)",
+        "title": "Trabalho",
         "color": "#75ff7e",
         "status": "active",
         "seconds_in_focus_per_day": {
@@ -59,13 +59,15 @@
             "2025-02-06": 196,
             "2025-02-11": 12285,
             "2025-02-15": 151,
-            "2025-02-17": 14174
+            "2025-02-17": 14174,
+            "2025-02-18": 1,
+            "2025-02-19": 1371
         }
     },
     {
         "user_FK": "user-d0b57306-ede7-4f64-8acd-dad87e46a300",
         "identificator": "task-04d54a48-71db-46e2-afa8-d320b45a1458",
-        "title": "Jogar Marvel Rivals",
+        "title": "Enem Med 2026",
         "color": "#f2a41c",
         "status": "active",
         "seconds_in_focus_per_day": {
@@ -86,7 +88,8 @@
             "2025-01-27": 2038,
             "2025-01-28": 2038,
             "2025-01-29": 7043,
-            "2025-02-01": 5
+            "2025-02-01": 5,
+            "2025-02-19": 529
         }
     },
     {
@@ -96,34 +99,8 @@
         "color": "#00c3d1",
         "status": "active",
         "seconds_in_focus_per_day": {
-            "2025-02-16": 4820
-        }
-    },
-    {
-        "user_FK": "user-d0b57306-ede7-4f64-8acd-dad87e46a300",
-        "identificator": "task-dcc7c7c4-4bb5-4e97-bbed-9241d963ac3c",
-        "title": "teste",
-        "color": "#563d7c",
-        "status": "active",
-        "seconds_in_focus_per_day": {}
-    },
-    {
-        "user_FK": "user-d0b57306-ede7-4f64-8acd-dad87e46a300",
-        "identificator": "task-af98bb42-47d0-4984-8e07-d7675e6b2ec7",
-        "title": "teste",
-        "color": "#563d7c",
-        "status": "active",
-        "seconds_in_focus_per_day": {}
-    },
-    {
-        "user_FK": "user-e3b24f89-f674-4632-898c-624194201c69",
-        "identificator": "task-06a8594d-da16-454f-8671-f7dea7a62fe6",
-        "title": "teste",
-        "color": "#563d7c",
-        "status": "active",
-        "seconds_in_focus_per_day": {
-            "2025-02-15": 73,
-            "2025-02-16": 1421
+            "2025-02-16": 4820,
+            "2025-02-19": 1245
         }
     },
     {
@@ -154,6 +131,24 @@
         "status": "active",
         "seconds_in_focus_per_day": {
             "2025-02-16": 1526
+        }
+    },
+    {
+        "user_FK": "user-d0b57306-ede7-4f64-8acd-dad87e46a300",
+        "identificator": "task-579c068c-47d2-4220-9be7-5e698ff22921",
+        "title": "IME ITA 2025 (Só para Focados)",
+        "color": "#2ccc00",
+        "status": "active",
+        "seconds_in_focus_per_day": {}
+    },
+    {
+        "user_FK": "user-c36b9c09-99b2-4602-90c3-bcea0630e995",
+        "identificator": "task-0a77104d-5e81-4e11-b2b0-6473234be025",
+        "title": "IME ITA 2025",
+        "color": "#1aff34",
+        "status": "active",
+        "seconds_in_focus_per_day": {
+            "2025-02-19": 88
         }
     }
 ]

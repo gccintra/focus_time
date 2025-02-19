@@ -1,4 +1,4 @@
-function showToast(type, message) {
+function showToast(type, message, delay=4000) {
     const toastContainer = document.getElementById("toastContainer");
 
     // Criando um ID único para o toast
@@ -26,7 +26,7 @@ function showToast(type, message) {
 
     // Inicializando o toast do Bootstrap
     const toastElement = document.getElementById(toastId);
-    const toast = new bootstrap.Toast(toastElement);
+    const toast = new bootstrap.Toast(toastElement, { delay: delay });
     toast.show();
 
     // Remover o toast após o tempo definido (para evitar acúmulo)

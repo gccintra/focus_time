@@ -616,14 +616,6 @@
         "completed_time": null
     },
     {
-        "task_FK": "task-f2a9da81-f968-497c-92ec-6750eee0ccdf",
-        "title": "Campos de Texto mais bonitos (tema escuro)",
-        "identificator": "todo-93b827d0-0b94-47b3-ac6c-c0e372434d6a",
-        "status": "in progress",
-        "created_time": "2025-02-01T09:08:27.472197",
-        "completed_time": null
-    },
-    {
         "task_FK": "task-163d9725-3519-474e-8e68-fc446ad71303",
         "title": "Assincronismo",
         "identificator": "todo-d24c2634-baf5-40c7-b88e-5849b6b8ee8a",
@@ -733,6 +725,14 @@
         "identificator": "todo-cd03472c-a748-40f4-b8e8-a22e6bc7c723",
         "status": "in progress",
         "created_time": "2025-02-12T14:00:24.342939",
+        "completed_time": null
+    },
+    {
+        "task_FK": "task-f2a9da81-f968-497c-92ec-6750eee0ccdf",
+        "title": "https://getbootstrap.com/docs/4.0/components/forms/?",
+        "identificator": "todo-c2ae8081-b947-4a41-9687-c2e486ee6856",
+        "status": "in progress",
+        "created_time": "2025-02-19T14:24:22.163734",
         "completed_time": null
     }
 ]

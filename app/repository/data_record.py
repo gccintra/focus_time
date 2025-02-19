@@ -86,7 +86,7 @@ class DataRecord:
             except (FileNotFoundError, json.JSONDecodeError):
                 existing_data = []
 
-            # Criar um dicionário {identificador: objeto} para facilitar atualizações
+            # Criar um dicionário {identificador:  } para facilitar atualizações
             existing_dict = {item["identificator"]: item for item in existing_data}
 
 
