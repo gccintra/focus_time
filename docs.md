@@ -25,11 +25,8 @@
         - [x] Incluir tamanho maximo de caracteres
         - [x] Campo Vazio
 
-- [ ] Getters e Setters, + Segurança
-    - [ ] Validações ao tentar criar uma task com id igual (hard coded)
-    - [ ] Adicionar cache em memória usando bibliotecas como functools.lru_cache.
-
-- [ ] verificações de metodos na requisição do backend (post, get etc)
+- [x] Getters e Setters, + Segurança
+    - [x] Validações ao tentar criar uma task com id igual (hard coded)
 
 - [x] Padrão de dados retornados para o front-end (TASKS)
 - [x] Tratamento de Erros e Apresentação de Mensagens (Front-End)
@@ -37,8 +34,22 @@
     - [x] Tasks
 - [x] Ordenação das tasks por maior porcentagem. (ta com bug)
 
+- [x] Encapsulamento e validações de models.
+
+- [ ] Testes  
+    - [x] Models
+    - [ ] Testes de Integração
+    - [ ] Controllers
+    - [ ] Services
+    - [ ] Repositories
+
+
+- [ ] Adicionar cache em memória usando bibliotecas como functools.lru_cache.
+
+- [ ] verificações de metodos na requisição do backend (post, get etc)
+
+
 - [ ] Dockerizar
-- [ ] Testes Unitários (Failure and Success)
 - [ ] mudar a nomeclatura do 'start_task'
 - [ ] Bug nos dias (365)
     - [ ] Domingo (Não cria uma nova week)
@@ -48,6 +59,9 @@
 
 
 # To do:
+
+- [ ] Docker + Banco de Dados
+
 
 - [ ] Delete e Edit Task
 - [ ] Edit To Do

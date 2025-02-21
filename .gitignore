@@ -3,6 +3,8 @@ env/
 .venv/
 .env/
 
+coverage/
+
 __pycache__/
 *.pyc
 *.pyo

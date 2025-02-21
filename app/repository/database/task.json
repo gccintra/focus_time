@@ -148,7 +148,18 @@
         "color": "#1aff34",
         "status": "active",
         "seconds_in_focus_per_day": {
-            "2025-02-19": 88
+            "2025-02-19": 88,
+            "2025-02-20": 12
+        }
+    },
+    {
+        "user_FK": "user-fa064bd4-c2b5-4d58-b8b2-9c6b86b991ef",
+        "identificator": "task-2f49aa0b-ed40-4db9-b658-5b9ae4f71bfb",
+        "title": "testa",
+        "color": "#b994ff",
+        "status": "active",
+        "seconds_in_focus_per_day": {
+            "2025-02-21": 60
         }
     }
 ]

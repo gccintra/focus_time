@@ -40,5 +40,12 @@
         "email": "cintra.gucintra@gmail.com",
         "password": "$2b$12$/SwscmqUrd8pVT8BmIj0IuZAlWo4Q0xteqrJM58q.wgWMJkPChWpW",
         "status": "active"
+    },
+    {
+        "identificator": "user-fa064bd4-c2b5-4d58-b8b2-9c6b86b991ef",
+        "username": "email",
+        "email": "novoemail@email",
+        "password": "$2b$12$rdHH2MGIETrsbkvDlunYj.asfjMwdBMehi/KWGNKbuf5F5FJwfiaq",
+        "status": "active"
     }
 ]

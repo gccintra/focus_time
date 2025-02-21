@@ -1,6 +1,6 @@
 from app.services.auth_service import AuthService
 from flask import jsonify, make_response
-from ..models.exceptions import UserNotFoundError, InvalidPasswordError, UsernameAlreadyExists, EmailAlreadyExists
+from ..models.exceptions import UserNotFoundError, InvalidPasswordError, UsernameAlreadyExists, EmailAlreadyExists, InvalidCreatePasswordError, UserValidationError
 from ..utils.logger import logger
 
 
@@ -46,14 +46,25 @@ class AuthController():
                     "details": str(e)
                 }
             }), 400
-        except ValueError as e:
+        except InvalidCreatePasswordError as e:
             return jsonify({
                 "success": False,
                 "message": str(e),
                 "data": None,
                 "error": {
                     "code": 400,
-                    "type": "EmailAlreadyExists",
+                    "type": "InvalidCreatePasswordError",
+                    "details": str(e)
+                }
+            }), 400
+        except UserValidationError as e:
+            return jsonify({
+                "success": False,
+                "message": str(e),
+                "data": None,
+                "error": {
+                    "code": 400,
+                    "type": "UserValidationError",
                     "details": str(e)
                 }
             }), 400

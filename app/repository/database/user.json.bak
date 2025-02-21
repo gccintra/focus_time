@@ -33,5 +33,12 @@
         "email": "admin@localhost2",
         "password": "$2b$12$nrQc5ufumu7LiTIOlLJoveVW9M/Mc2.kn.QYC0PJt4yyKMXYoO6pK",
         "status": "active"
+    },
+    {
+        "identificator": "user-cd5ef760-bb8f-4d9c-b9f5-c7a472a2a019",
+        "username": "gucintra",
+        "email": "cintra.gucintra@gmail.com",
+        "password": "$2b$12$/SwscmqUrd8pVT8BmIj0IuZAlWo4Q0xteqrJM58q.wgWMJkPChWpW",
+        "status": "active"
     }
 ]

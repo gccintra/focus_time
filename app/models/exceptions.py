@@ -86,3 +86,19 @@ class UsernameAlreadyExists(UserError):
     def __init__(self, message="Already have an account with this username, try another!"):
         super().__init__(message)
 
+
+class UserValidationError(ToDoError):
+    """Erro para validação de dados."""
+    def __init__(self, field=None, message=None):
+        if field and not message:
+            message = f"The field '{field}' is required or contains invalid data."
+        elif field and message:
+            message = f"Validation error in field '{field}': {message}"
+        elif not message and not field:
+             message = f"User validation failed due to invalid or missing data."
+        super().__init__(message)
+
+class InvalidCreatePasswordError(UserError):
+    """Erro para quando a senha é incorreta para autenticação."""
+    def __init__(self, message="Invalid Password Format!"):
+        super().__init__(message)

@@ -15,13 +15,14 @@ class ToDoService:
 
     def create_todo(self, task_id, to_do_name):
         try:
-            if not to_do_name:
-                raise ToDoValidationError(field="To-do Name", message="To-do name is required.")
             identificator = self.db.generate_unique_id()
             new_to_do = ToDo(title=to_do_name, identificator=identificator, task_FK=task_id)
             self.db.write(new_to_do)
             logger.info(f'To do {to_do_name} para a task {task_id} criado com sucesso!')
             return new_to_do
+        except ToDoValidationError as e:
+            logger.warning(f"To-do creation failed: {str(e)}")
+            raise
         except (TypeError, Exception):
             raise
 
